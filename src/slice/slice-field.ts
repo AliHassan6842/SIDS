@@ -30,12 +30,12 @@ const fieldSlice = createSlice({
     actionSetFieldError(state, action: PayloadAction<string | null>) { state.error = action.payload; },
     actionSetFieldSuccess(state, action: PayloadAction<string | null>) { state.success = action.payload; },
     actionUpsertFieldLocal(state, action: PayloadAction<IField>) {
-      const idx = state.list.data.findIndex((f) => f.FieldID === action.payload.FieldID);
+      const idx = state.list.data.findIndex((f) => f.fieldId === action.payload.fieldId);
       if (idx >= 0) state.list.data[idx] = action.payload;
       else state.list.data.unshift(action.payload);
     },
     actionRemoveField(state, action: PayloadAction<number>) {
-      state.list.data = state.list.data.filter((f) => f.FieldID !== action.payload);
+      state.list.data = state.list.data.filter((f) => f.fieldId !== action.payload);
     },
   },
 });

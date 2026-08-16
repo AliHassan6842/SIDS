@@ -2,14 +2,14 @@ import { call, put, takeEvery } from "redux-saga/effects";
 import type { SagaIterator } from "redux-saga";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { IUserProfile } from "../types/user/user";
-import { actionGetProfile, actionUpdateProfile, actionSetProfile, actionSetUserLoading, actionSetUserSaveLoading } from "../slice/slice-user";
-import { apiGetProfile, apiUpdateProfile } from "../api/api-user";
+import { actionGetProfile, actionSetProfile, actionSetProfileLoading, actionUpdateProfile, actionSetProfileSaveLoading, actionSetProfileError, actionSetProfileSuccess } from "../slice/slice-user";
+import { getProfile, updateProfile } from "../api/v1-contracts";
 import { showAlert } from "../slice/slice-alert-global";
 
 function* fetchProfile(): SagaIterator {
   try {
-    yield put(actionSetUserLoading(true));
-    const res = yield call(apiGetProfile);
+    yield put(actionSetProfileLoading(true));
+    const res = yield call(getProfile);
     yield put(actionSetProfile(res));
   } catch {} finally { yield put(actionSetUserLoading(false)); }
 }
@@ -17,7 +17,7 @@ function* fetchProfile(): SagaIterator {
 function* updateProfile(action: PayloadAction<Partial<IUserProfile>>): SagaIterator {
   try {
     yield put(actionSetUserSaveLoading(true));
-    const res = yield call(apiUpdateProfile, action.payload);
+    const res = yield call(updateProfile, action.payload);
     yield put(actionSetProfile(res));
     yield put(showAlert({ message: "Profile updated successfully", severity: "success" }));
   } catch (e: any) {

@@ -1,13 +1,13 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, takeLatest, takeEvery, delay } from "redux-saga/effects";
 import type { SagaIterator } from "redux-saga";
-import { actionGetAlerts, actionMarkAllRead, actionSetAlerts, actionSetAlertLoading } from "../slice/slice-alert";
-import { apiGetAlerts, apiMarkAllAlertsRead } from "../api/api-alert";
+import { actionGetAlerts, actionSetAlerts, actionSetAlertLoading, actionSetAlertError, actionMarkAllRead, actionSetAlertSuccess } from "../slice/slice-alert";
+import { getAlerts, markAllAlertsRead } from "../api/v1-contracts";
 import { showAlert } from "../slice/slice-alert-global";
 
 function* fetchAlerts(): SagaIterator {
   try {
     yield put(actionSetAlertLoading(true));
-    const res = yield call(apiGetAlerts);
+    const res = yield call(getAlerts);
     yield put(actionSetAlerts(Array.isArray(res) ? res : res?.data ?? []));
   } catch (e: any) {
     yield put(showAlert({ message: "Failed to load alerts", severity: "error" }));
@@ -16,7 +16,7 @@ function* fetchAlerts(): SagaIterator {
 
 function* markAllRead(): SagaIterator {
   try {
-    yield call(apiMarkAllAlertsRead);
+    yield call(markAllAlertsRead);
     yield put(actionGetAlerts());
   } catch {}
 }

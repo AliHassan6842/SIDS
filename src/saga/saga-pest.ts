@@ -7,13 +7,13 @@ import {
   actionSetAnalyzeLoading, actionSetPestSaveLoading, actionSetPestError,
   actionSetPestSuccess, actionRemoveDetection,
 } from "../slice/slice-pest";
-import { apiGetDetectionHistory, apiUploadPestImage, apiDeleteDetection } from "../api/api-pest";
+import { getDetectionHistory, uploadPestImage, deleteDetection as apiDeleteDetection } from "../api/v1-contracts";
 import { showAlert } from "../slice/slice-alert-global";
 
 function* fetchHistory(action: PayloadAction<Record<string, any> | undefined>): SagaIterator {
   try {
     yield put(actionSetPestLoading(true));
-    const res = yield call(apiGetDetectionHistory, action.payload);
+    const res = yield call(getDetectionHistory, action.payload);
     yield put(actionSetDetectionHistory(res));
   } catch (e: any) {
     yield put(actionSetPestError(e.message ?? "Failed to fetch history"));
@@ -23,7 +23,7 @@ function* fetchHistory(action: PayloadAction<Record<string, any> | undefined>): 
 function* analyzeImage(action: PayloadAction<FormData>): SagaIterator {
   try {
     yield put(actionSetAnalyzeLoading(true));
-    const result = yield call(apiUploadPestImage, action.payload);
+    const result = yield call(uploadPestImage, action.payload);
     yield put(actionSetCurrentResult(result));
     yield put(actionSetPestSuccess("Pest analysis complete"));
     yield put(showAlert({ message: "Pest detected successfully!", severity: "success" }));

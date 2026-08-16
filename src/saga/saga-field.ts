@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery, takeLatest, delay } from "redux-saga/effects";
 import type { SagaIterator } from "redux-saga";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { IField } from "../types/field/field";
@@ -7,13 +7,13 @@ import {
   actionSetFields, actionSetFieldLoading, actionSetFieldSaveLoading,
   actionSetFieldError, actionSetFieldSuccess, actionUpsertFieldLocal, actionRemoveField,
 } from "../slice/slice-field";
-import { apiGetFields, apiUpsertField, apiDeleteField } from "../api/api-field";
+import { getFields, upsertField, deleteField } from "../api/v1-contracts";
 import { showAlert } from "../slice/slice-alert-global";
 
 function* fetchFields(action: PayloadAction<Record<string, any> | undefined>): SagaIterator {
   try {
     yield put(actionSetFieldLoading(true));
-    const res = yield call(apiGetFields, action.payload);
+    const res = yield call(getFields, action.payload);
     yield put(actionSetFields(res));
   } catch (e: any) {
     yield put(actionSetFieldError(e.message ?? "Failed to load fields"));
@@ -23,7 +23,7 @@ function* fetchFields(action: PayloadAction<Record<string, any> | undefined>): S
 function* upsertField(action: PayloadAction<Partial<IField>>): SagaIterator {
   try {
     yield put(actionSetFieldSaveLoading(true));
-    const res: IField = yield call(apiUpsertField, action.payload);
+    const res: IField = yield call(upsertField, action.payload);
     yield put(actionUpsertFieldLocal(res));
     const msg = action.payload.FieldID ? "Field updated" : "Field created";
     yield put(actionSetFieldSuccess(msg));
@@ -35,7 +35,7 @@ function* upsertField(action: PayloadAction<Partial<IField>>): SagaIterator {
 
 function* deleteField(action: PayloadAction<number>): SagaIterator {
   try {
-    yield call(apiDeleteField, action.payload);
+    yield call(deleteField, action.payload);
     yield put(actionRemoveField(action.payload));
     yield put(showAlert({ message: "Field deleted", severity: "success" }));
   } catch (e: any) {
