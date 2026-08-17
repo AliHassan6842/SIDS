@@ -1,0 +1,20 @@
+{
+    "model_id": "sids-disease-classifier-0.1.0",
+    "version": "0.1.0",
+    "model_type": "disease_classification",
+    "status": "CURRENT",
+    "artifacts": [
+        {
+            "file_name": "best_model.pth",
+            "sha256": "8bb7fe4bd50beb958c0fc5f0f7aa818a1822beef1ae4e1ca910728b1e27b275d",
+            "size_bytes": 243633757
+        }
+    ],
+    "metrics": {
+        "val_loss": 0.0413,
+        "val_accuracy": 0.9848,
+        "val_f1": 0.9852
+    },
+    "created_at": "2026-08-17T03:00:00Z",
+    "dataset_version": "plantvillage-split-v0.1"
+}

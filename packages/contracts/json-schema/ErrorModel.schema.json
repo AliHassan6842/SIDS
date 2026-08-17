@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sids.ai/schema/ErrorModel.schema.json",
+  "title": "ErrorModel",
+  "description": "Standard error response schema across all services.",
+  "type": "object",
+  "properties": {
+    "errorCode": {
+      "type": "string",
+      "description": "A domain-specific, stable error code (e.g., 'IMAGE_DECODE_FAILED', 'RATE_LIMIT_EXCEEDED')."
+    },
+    "message": {
+      "type": "string",
+      "description": "Human-readable error description."
+    },
+    "details": {
+      "type": "array",
+      "description": "Additional context or validation errors.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "issue": {
+            "type": "string"
+          }
+        },
+        "required": ["issue"]
+      }
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "traceId": {
+      "type": "string",
+      "description": "Distributed tracing ID for debugging."
+    }
+  },
+  "required": ["errorCode", "message", "timestamp"]
+}

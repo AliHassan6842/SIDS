@@ -1,0 +1,13 @@
+{
+  "model_id": "sids-pest-detector",
+  "version": "0.1.0",
+  "task": "PEST_DETECTION",
+  "dataset_version": "SIDS-Pest-v0.1",
+  "framework": "ONNX",
+  "input_size": [640, 640],
+  "metrics": {
+    "mAP50": 0.88,
+    "mAP50-95": 0.65
+  },
+  "status": "CURRENT"
+}

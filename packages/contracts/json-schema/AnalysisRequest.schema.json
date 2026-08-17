@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sids.ai/schema/AnalysisRequest.schema.json",
+  "title": "AnalysisRequest",
+  "description": "Request payload for submitting an image for AI analysis.",
+  "type": "object",
+  "properties": {
+    "requestId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the request."
+    },
+    "imageUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to fetch the image from. Alternative to base64 if images are pre-uploaded."
+    },
+    "imageBase64": {
+      "type": "string",
+      "description": "Base64 encoded image string."
+    },
+    "cropType": {
+      "type": "string",
+      "enum": ["COTTON", "RICE", "TOMATO", "UNKNOWN"],
+      "description": "The known crop type to constrain the analysis. 'UNKNOWN' if not provided."
+    },
+    "context": {
+      "type": "object",
+      "description": "Optional context for the analysis.",
+      "properties": {
+        "location": {
+          "type": "object",
+          "properties": {
+            "latitude": { "type": "number" },
+            "longitude": { "type": "number" }
+          }
+        },
+        "capturedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "required": ["requestId"],
+  "oneOf": [
+    { "required": ["imageUrl"] },
+    { "required": ["imageBase64"] }
+  ]
+}

@@ -1,46 +1,86 @@
-# Logs
-logs
+# Node and JavaScript build output
+node_modules/
+.pnpm-store/
+dist/
+dist-ssr/
+build/
+coverage/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Python
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
 
-# Editor directories and files
+# Java
+.gradle/
+target/
+out/
+*.class
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.cert
+*.crt
+*.pfx
+*.p12
+secrets.json
+credentials.json
+
+# ML data, runs, checkpoints, and weights
+ml/datasets/
+ml/runs/
+runs/
+wandb/
+mlruns/
+checkpoints/
+ml/exports/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.engine
+
+# Knowledge Subsystem
+knowledge/raw-cache/
+knowledge/processed/
+
+# Small, reviewed model fixtures may be committed only in this explicit location.
+!ml/model-registry/fixtures/
+!ml/model-registry/fixtures/**
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE and OS
+.idea/
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.DS_Store
+Thumbs.db
 
-# Environment Variables and Secrets
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env.*
-
-# Certificates and Keys
-*.pem
-*.key
-*.cert
-*.crt
-*.pfx
-*.p12
-
-# Other security files
-secrets.json
-config.json
-credentials.json
-auth.json
+# Local Docker/runtime data
+.docker-data/
+infra/data/
+infra/runtime/
+postgres-data/
+valkey-data/
+object-storage-data/
