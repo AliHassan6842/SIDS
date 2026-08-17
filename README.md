@@ -1,49 +1,80 @@
 # SIDS — AI Digital Crop Scout
 
-SIDS (Smart Insect Detection System) is a planned offline-first platform that helps farmers capture crop observations, obtain bounded AI analysis, and make field decisions using verified context. The repository is currently in **F0 — Foundation**. It contains the existing frontend plus architecture and workspace boundaries; backend, AI, data, and infrastructure features are not implemented yet.
+SIDS (Smart Insect Detection System) is an offline-first platform that helps farmers capture crop observations, obtain bounded AI analysis, and make field decisions using verified agricultural context. 
 
-## Monorepo map
+## 🚀 Getting Started
 
-| Path | Purpose | Primary owner |
-| --- | --- | --- |
-| `apps/web` | Existing React/Vite frontend | Frontend member |
-| `services/core-api` | Future Java/Spring business API | Java platform member |
-| `services/ai-service` | Future production Python inference runtime | AI/research lead |
-| `ml` | Research, datasets, training, and evaluation | AI/research lead |
-| `knowledge` | Trusted agronomy source and retrieval preparation | AI/research lead |
-| `packages/contracts` | Shared cross-boundary contract specifications | Shared |
-| `infra` | Future local and deployment infrastructure | Shared |
-| `docs` | Architecture, decisions, playbooks, and project rules | Shared |
+This repository is built as a **Feature-First Modular Monolith** spanning across Java (Core Business), Python (AI/ML), and React (Web). Follow these steps to spin up the entire cluster locally.
 
-The frontend is protected by `apps/web/AGENTS.md`. Foundation work relocated it without changing its source, manifest, lockfile, or configuration.
+### Prerequisites
+- **Java 21 JDK**: Required for the Spring Boot Core API. (Ensure `JAVA_HOME` is set).
+- **Python 3.10+**: Required for the FastAPI AI Service and ML training pipelines.
+- **Docker Desktop**: Required to spin up local infrastructure (PostgreSQL, Valkey, MinIO).
+- **Node.js & pnpm**: Required for frontend and monorepo script management (`corepack enable`).
 
-## JavaScript workspace setup
+### Step 1: Download the Datasets & Models
+The raw image datasets and pre-trained `.pt` / `.onnx` models are externally managed in Google Drive.
+1. Download the `datasets.zip` and `models.zip` files from our shared Google Drive.
+2. Extract the datasets into `ml/datasets/`.
+3. Extract the models (`yolo11n.pt` and others) into `ml/model-registry/` so the Java and Python applications can dynamically load them.
 
-Node.js with Corepack is recommended. The repository pins pnpm in the root manifest.
+### Step 2: Environment Configuration
+Copy the sample environment file to create your local active configuration:
+```sh
+cp .env.example .env
+```
+This `.env` securely holds the database credentials and MinIO storage keys globally for all modules without hardcoding them in the source.
+
+### Step 3: Run the System
+You can boot the entire system with one single command using `pnpm`.
 
 ```sh
-corepack enable
+# 1. Install workspace dependencies
 pnpm install
+
+# 2. Boot the entire cluster (Infra + AI + Java + Web)
+pnpm run dev:all
 ```
 
-An existing npm lockfile remains inside `apps/web` as frontend-owned history. F0 does not replace it. Root pnpm commands delegate frontend scripts to npm so they do not migrate its dependency tree. The root `.npmrc` changes pnpm's dependency check to warning-only, preventing an automatic install from rewriting npm-managed dependencies. Coordinate any future lockfile/package-manager migration with the frontend owner.
+If you prefer to run services individually:
+- `pnpm run infra:up`: Starts PostgreSQL (with pgvector), Valkey, and MinIO locally via Docker.
+- `pnpm run api:dev`: Starts the Java Spring Boot Core API.
+- `pnpm run ai:dev`: Starts the Python FastAPI AI inference engine.
+- `pnpm run ai:worker`: Starts the Python Valkey background consumer.
+- `pnpm run web:dev`: Starts the React Web Frontend.
 
-Run the existing frontend from the repository root:
+---
 
-```sh
-pnpm web
-pnpm web:check
-pnpm web:build
-```
+## 🏗️ Architecture & Dependencies
 
-No root install is required merely to inspect or parse the workspace. If installing dependencies, review the resulting lockfile and frontend dependency tree before committing.
+The system uses specific, isolated dependencies for each module to enforce the **IPM-First (Integrated Pest Management)** agronomic rules.
 
-## Planned systems
+### 1. Core API (`services/core-api`)
+**Language**: Java 21 | **Framework**: Spring Boot 3.4
+- **Spring Boot Modulith**: Ensures strict boundaries between modules like `farm`, `survey`, `diagnosis`, and `agronomy`.
+- **Spring Data JPA (Hibernate)**: Manages all business-critical domain tables (like Users, Tasks, and Farm Memberships) inside PostgreSQL.
+- **Spring JdbcClient**: Used specifically in the `knowledge` module for lightweight raw-read access to Python's threshold tables, avoiding duplicated schemas.
+- **Spring Boot OAuth2 Resource Server**: Enforces secure JWT validation on all endpoints.
+- **AWS SDK (S3)**: Connects to MinIO (`StorageProvider`) for durable agricultural image preservation.
 
-- Java/Spring core API: durable domain state, authorization, offline sync, agronomic decisions, and orchestration.
-- Python/FastAPI AI service: validated production inference with explicit uncertainty and model metadata.
-- PostgreSQL with pgvector: durable data plus hybrid knowledge retrieval.
-- Valkey: transient cache, rate controls, idempotency, locks, and AI job streams.
-- Object storage: agricultural imagery and derived image artifacts.
+### 2. AI Inference Engine (`services/ai-service`)
+**Language**: Python 3.10 | **Framework**: FastAPI
+- **Ultralytics (YOLO)**: Runs in the `detector.py` to identify pests within raw images.
+- **ONNX Runtime**: Used by `classifier.py` for highly optimized, low-latency crop disease classification without massive GPU overhead.
+- **Redis (Valkey) Streams**: Acts as the asynchronous transport layer (`sids:ai:jobs`) bridging Java requests with Python processing nodes.
+- **pgvector**: Used in `retrieval` to query the AI embeddings for semantic knowledge extraction.
 
-These systems, authentication, schemas, workers, models, training pipelines, datasets, and agronomic logic are intentionally absent in F0.
+### 3. Infrastructure (`infra/docker-compose.yml`)
+- **PostgreSQL 16 (pgvector)**: The single source of durable truth for both business state and ML vector embeddings.
+- **Valkey 7.2**: High-performance transient memory store managing the AI Job queues and Redis consumer groups.
+- **MinIO**: Local S3-compatible object storage server that hosts the uploaded observation imagery securely behind presigned URLs.
+
+## ⚙️ Development Workflow
+
+1. **Frontend**: The `apps/web` folder is owned by the Frontend team. Backend engineers must not mutate React components or Vite settings.
+2. **AI Analysis Flow**:
+   - The user submits an image to Java. Java streams it to MinIO.
+   - Java drops a job on the Valkey stream.
+   - The Python `ai:worker` consumes the image, evaluates it using YOLO, and posts back to Valkey.
+   - Java reads the response, validates it, and triggers the `AgronomyDecisionEngine` to look up localized thresholds (e.g., Punjab Agriculture tables) and assigns a recommended Task.
+3. **Commit Rules**: Never commit AI prompt markdown files. The `.gitignore` at the root automatically filters these out to maintain project cleanliness.
