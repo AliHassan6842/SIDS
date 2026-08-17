@@ -18,6 +18,5 @@ def test_analyze():
     response = client.post("/internal/v1/analyze", json=payload)
     assert response.status_code == 200
     data = response.json()
-    assert data["routing"]["problemType"] == "PEST"
-    assert len(data["predictions"]) == 1
-    assert data["predictions"][0]["classId"] == "cotton-whitefly"
+    assert data["routing"]["problemType"] == "UNKNOWN"
+    assert len(data["predictions"]) == 0

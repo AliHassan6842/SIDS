@@ -16,6 +16,14 @@ class Settings(BaseSettings):
     iq_exposure_min: float = 40.0
     iq_exposure_max: float = 220.0
     
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+    # Object Storage Settings (S3 / MinIO)
+    storage_endpoint: str | None = None
+    storage_bucket: str = "sids-images"
+    storage_access_key: str | None = None
+    storage_secret_key: str | None = None
+    storage_region: str = "us-east-1"
+    
+    model_config = SettingsConfigDict(env_file="../../.env", env_file_encoding="utf-8", extra="ignore")
 
 settings = Settings()
+

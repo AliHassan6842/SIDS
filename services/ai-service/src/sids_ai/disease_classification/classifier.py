@@ -46,7 +46,7 @@ class DiseaseClassifier:
             raise RuntimeError("Model not loaded")
             
         if self.session is None:
-            return [Prediction(classId="cotton-leaf-curl", commonName="Cotton Leaf Curl", scientificName="Begomovirus", confidence=0.92)]
+            raise RuntimeError("Model not available")
             
         input_tensor = self.preprocess(image)
         outputs = self.session.run(None, {self.input_name: input_tensor})

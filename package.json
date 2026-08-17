@@ -5,9 +5,16 @@
   "description": "SIDS 2026 private monorepo",
   "packageManager": "pnpm@11.18.0",
   "scripts": {
-    "web": "npm --prefix apps/web run dev",
+    "dev": "pnpm run infra:up && pnpm run ai:dev & pnpm run web:dev",
+    "dev:all": "pnpm run infra:up && pnpm run ai:worker & pnpm run ai:dev & pnpm run web:dev",
+    "web:dev": "npm --prefix apps/web run dev",
     "web:build": "npm --prefix apps/web run build",
     "web:check": "npm --prefix apps/web run lint",
+    "ai:dev": "cd services/ai-service && uvicorn api.main:app --reload --port 8000",
+    "ai:worker": "cd services/ai-service && python -m sids_ai.workers.consumer",
+    "ai:test": "pytest tests/",
+    "infra:up": "docker compose -f infra/docker-compose.yml up -d",
+    "infra:down": "docker compose -f infra/docker-compose.yml down",
     "check": "npm --prefix apps/web run lint",
     "lint": "npm --prefix apps/web run lint"
   }

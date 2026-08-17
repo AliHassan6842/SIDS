@@ -1,6 +1,6 @@
 import logging
 
-from train_yolo import train
+from ml.training.detection.train_yolo import train
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)

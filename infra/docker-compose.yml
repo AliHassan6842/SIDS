@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: sids-postgres
+    environment:
+      POSTGRES_USER: ${DATABASE_USER:-sids_user}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-sids_pass}
+      POSTGRES_DB: ${DATABASE_NAME:-sids}
+    ports:
+      - "${DATABASE_PORT:-5432}:5432"
+    volumes:
+      - sids_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  cache:
+    image: valkey/valkey:7.2
+    container_name: sids-valkey
+    command: valkey-server --requirepass ${VALKEY_PASSWORD:-valkey_pass}
+    ports:
+      - "${VALKEY_PORT:-6379}:6379"
+    restart: unless-stopped
+
+  storage:
+    image: minio/minio:latest
+    container_name: sids-minio
+    environment:
+      MINIO_ROOT_USER: ${STORAGE_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${STORAGE_SECRET_KEY:-minioadmin}
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - sids_miniodata:/data
+    restart: unless-stopped
+
+  create-bucket:
+    image: minio/mc:latest
+    container_name: sids-minio-setup
+    depends_on:
+      - storage
+    entrypoint: >
+      /bin/sh -c "
+      sleep 5;
+      mc config host add myminio http://storage:9000 ${STORAGE_ACCESS_KEY:-minioadmin} ${STORAGE_SECRET_KEY:-minioadmin};
+      mc mb myminio/${STORAGE_BUCKET:-sids-images} || true;
+      mc anonymous set public myminio/${STORAGE_BUCKET:-sids-images};
+      exit 0;
+      "
+
+volumes:
+  sids_pgdata:
+  sids_miniodata:

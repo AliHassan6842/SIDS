@@ -11,7 +11,7 @@ except ImportError:
 # --- CONFIGURATION ---
 # TODO for the Admin: Upload `best_model.pth` to Google Drive, right click -> Get Link, 
 # and extract the file ID from the URL (the random string of characters).
-GOOGLE_DRIVE_FILE_ID = "YOUR_GOOGLE_DRIVE_FILE_ID_HERE"
+GOOGLE_DRIVE_FILE_ID = "1FB19HciYe4cRbXu6z_lY4EpM-hWr4zMr"
 MODEL_EXPORT_DIR = "ml/exports/classification_v1"
 MANIFEST_PATH = "ml/model-registry/manifests/sids-disease-classifier-0.1.0.json"
 MODEL_FILENAME = "best_model.pth"

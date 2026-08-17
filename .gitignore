@@ -84,3 +84,12 @@ infra/runtime/
 postgres-data/
 valkey-data/
 object-storage-data/
+
+# AI Assistance / Prompt Files
+prompt*.md
+Prompt*.md
+SIDS_2026_AI*.md
+AGENTS.md
+generate_ai_scaffold.py
+implement_real_code.py
+scratch/

@@ -9,10 +9,10 @@ def test_high_confidence_retrieves_knowledge_but_no_decision():
     vision_prediction = {
         "status": "DETECTED",
         "confidence": 0.96,
-        "pest_id": "fall_armyworm"
+        "pest_id": "mango-hopper"
     }
     
-    evidence_bundle = CaseEvidenceService.resolve_evidence(vision_prediction, crop_id="maize")
+    evidence_bundle = CaseEvidenceService.resolve_evidence(vision_prediction, crop_id="mango")
     
     # 1. AI Decision must explicitly be None (Java handles it)
     assert evidence_bundle.decision is None, "AI must not make decisions!"
@@ -23,8 +23,8 @@ def test_high_confidence_retrieves_knowledge_but_no_decision():
     # 3. Knowledge evidence is appended
     assert evidence_bundle.knowledgeEvidence is not None
     assert "threshold" in evidence_bundle.knowledgeEvidence
-    assert evidence_bundle.knowledgeEvidence["threshold"].pest_id == "fall_armyworm"
-    assert evidence_bundle.knowledgeEvidence["threshold"].threshold_value == 20.0
+    assert evidence_bundle.knowledgeEvidence["threshold"].pest_id == "mango-hopper"
+    assert evidence_bundle.knowledgeEvidence["threshold"].threshold_value == 5.0
 
 def test_low_confidence_aborts_knowledge_retrieval():
     """
@@ -34,10 +34,10 @@ def test_low_confidence_aborts_knowledge_retrieval():
     vision_prediction = {
         "status": "UNKNOWN",
         "confidence": 0.30,
-        "pest_id": "fall_armyworm"
+        "pest_id": "mango-hopper"
     }
     
-    evidence_bundle = CaseEvidenceService.resolve_evidence(vision_prediction, crop_id="maize")
+    evidence_bundle = CaseEvidenceService.resolve_evidence(vision_prediction, crop_id="mango")
     
     # 1. AI Decision must explicitly be None
     assert evidence_bundle.decision is None

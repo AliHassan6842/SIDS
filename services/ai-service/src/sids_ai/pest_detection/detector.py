@@ -33,8 +33,7 @@ class PestDetector:
             raise RuntimeError("Model not loaded")
             
         if self.model is None:
-            # Fallback smoke logic
-            return [Prediction(classId="cotton-whitefly", commonName="Cotton Whitefly", scientificName="Bemisia tabaci", confidence=0.88, count=1)]
+            raise RuntimeError("Model not available")
             
         results = self.model.predict(image, conf=0.25, verbose=False)
         predictions = []
