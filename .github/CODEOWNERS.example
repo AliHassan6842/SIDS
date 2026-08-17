@@ -1,0 +1,9 @@
+# Copy to CODEOWNERS only after replacing placeholders with real GitHub users/teams.
+/apps/web/ @frontend-owner
+/services/core-api/ @java-platform-owner
+/services/ai-service/ @ai-research-owner
+/ml/ @ai-research-owner
+/knowledge/ @ai-research-owner
+/packages/contracts/ @frontend-owner @java-platform-owner @ai-research-owner
+/infra/ @platform-owner
+/docs/ @project-maintainers

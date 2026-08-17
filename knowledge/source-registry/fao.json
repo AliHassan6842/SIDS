@@ -1,0 +1,27 @@
+{
+  "source_id": "fao-ipm",
+  "name": "FAO Pest and Pesticide Management",
+  "authority": "Food and Agriculture Organization",
+  "authority_level": "INTERNATIONAL",
+  "country": "GLOBAL",
+  "province": null,
+  "source_type": "INTERNATIONAL_GUIDANCE",
+  "allowed_domains": [
+    "fao.org"
+  ],
+  "crop_scope": [
+    "all"
+  ],
+  "problem_scope": [
+    "ipm",
+    "pesticide_management"
+  ],
+  "language": "en",
+  "retrieval_method": "HTTP_SCRAPE",
+  "license_or_usage_notes": "International public guidance",
+  "last_checked": null,
+  "last_successful_ingestion": null,
+  "content_checksum": null,
+  "review_status": "APPROVED",
+  "active": true
+}

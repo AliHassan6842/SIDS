@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sids.ai/schema/Prediction.schema.json",
+  "title": "Prediction",
+  "description": "A single model prediction (detection or classification).",
+  "type": "object",
+  "properties": {
+    "predictionId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["PEST_DETECTION", "DISEASE_CLASSIFICATION"],
+      "description": "Type of the prediction."
+    },
+    "classId": {
+      "type": "string",
+      "description": "Taxonomy identifier for the predicted class (e.g., 'cotton-whitefly')."
+    },
+    "className": {
+      "type": "string",
+      "description": "Human-readable name of the class."
+    },
+    "boundingBox": {
+      "type": "object",
+      "description": "Bounding box coordinates for detections, in normalized [0, 1] format.",
+      "properties": {
+        "x1": { "type": "number", "minimum": 0, "maximum": 1 },
+        "y1": { "type": "number", "minimum": 0, "maximum": 1 },
+        "x2": { "type": "number", "minimum": 0, "maximum": 1 },
+        "y2": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "required": ["x1", "y1", "x2", "y2"]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL", "UNKNOWN"],
+      "description": "Estimated severity, typically for diseases."
+    },
+    "uncertainty": {
+      "$ref": "Uncertainty.schema.json"
+    }
+  },
+  "required": ["predictionId", "type", "classId", "className", "uncertainty"]
+}

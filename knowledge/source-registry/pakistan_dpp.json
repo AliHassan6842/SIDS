@@ -1,0 +1,27 @@
+{
+  "source_id": "pakistan-dpp",
+  "name": "Pakistan Department of Plant Protection",
+  "authority": "Government of Pakistan",
+  "authority_level": "FEDERAL_GOVERNMENT",
+  "country": "PK",
+  "province": null,
+  "source_type": "REGULATORY",
+  "allowed_domains": [
+    "plantprotection.gov.pk"
+  ],
+  "crop_scope": [
+    "all"
+  ],
+  "problem_scope": [
+    "pesticide_registration",
+    "quarantine"
+  ],
+  "language": "en",
+  "retrieval_method": "HTTP_SCRAPE_PDF",
+  "license_or_usage_notes": "Public government regulatory records",
+  "last_checked": null,
+  "last_successful_ingestion": null,
+  "content_checksum": null,
+  "review_status": "APPROVED",
+  "active": true
+}

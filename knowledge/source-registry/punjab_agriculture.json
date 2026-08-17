@@ -1,0 +1,34 @@
+{
+  "source_id": "punjab-agriculture-ext",
+  "name": "Punjab Agriculture Department",
+  "authority": "Government of Punjab",
+  "authority_level": "PROVINCIAL_GOVERNMENT",
+  "country": "PK",
+  "province": "Punjab",
+  "source_type": "GOVERNMENT_EXTENSION",
+  "allowed_domains": [
+    "agripunjab.gov.pk",
+    "ext.agripunjab.gov.pk",
+    "pestwarning.agripunjab.gov.pk"
+  ],
+  "crop_scope": [
+    "cotton",
+    "rice",
+    "wheat",
+    "maize",
+    "sugarcane",
+    "vegetables"
+  ],
+  "problem_scope": [
+    "pests",
+    "diseases"
+  ],
+  "language": "en",
+  "retrieval_method": "HTTP_SCRAPE",
+  "license_or_usage_notes": "Public government information",
+  "last_checked": null,
+  "last_successful_ingestion": null,
+  "content_checksum": null,
+  "review_status": "APPROVED",
+  "active": true
+}

@@ -1,0 +1,12 @@
+{
+    "extraPaths": [
+        "services/ai-service/src"
+    ],
+    "reportMissingImports": "warning",
+    "reportArgumentType": "warning",
+    "reportAttributeAccessIssue": "warning",
+    "reportCallIssue": "warning",
+    "reportPossiblyUnboundVariable": "warning",
+    "reportOptionalIterable": "warning",
+    "reportIndexIssue": "warning"
+}
