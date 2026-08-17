@@ -8,6 +8,7 @@
     "dev": "pnpm run infra:up && pnpm run ai:dev & pnpm run web:dev",
     "dev:all": "pnpm run infra:up && pnpm run ai:worker & pnpm run ai:dev & pnpm run api:dev & pnpm run web:dev",
     "api:dev": "cd services/core-api && ./mvnw spring-boot:run",
+    "download:assets": "python ml/scripts/download/download_model.py",
     "web:dev": "npm --prefix apps/web run dev",
     "web:build": "npm --prefix apps/web run build",
     "web:check": "npm --prefix apps/web run lint",

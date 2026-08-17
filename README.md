@@ -13,10 +13,17 @@ This repository is built as a **Feature-First Modular Monolith** spanning across
 - **Node.js & pnpm**: Required for frontend and monorepo script management (`corepack enable`).
 
 ### Step 1: Download the Datasets & Models
-The raw image datasets and pre-trained `.pt` / `.onnx` models are externally managed in Google Drive.
-1. Download the `datasets.zip` and `models.zip` files from our shared Google Drive.
-2. Extract the datasets into `ml/datasets/`.
-3. Extract the models (`yolo11n.pt` and others) into `ml/model-registry/` so the Java and Python applications can dynamically load them.
+Because ML models and datasets are massively large binary files, they are securely managed externally via Google Drive. You must download them before running the inference engine.
+
+We have built an automated downloader that syncs the assets straight from Drive into your local workspace. From the root directory, simply run:
+```sh
+pnpm run download:assets
+```
+This single command will:
+1. Download the YOLO Pest Detector (`best.pt`).
+2. Download the PyTorch Disease Classifier (`best_model.pth`).
+3. Download and extract the raw training images (`datasets.zip`).
+It will place all models inside `ml/model-registry/` and the images inside `ml/datasets/` automatically.
 
 ### Step 2: Environment Configuration
 Copy the sample environment file to create your local active configuration:
