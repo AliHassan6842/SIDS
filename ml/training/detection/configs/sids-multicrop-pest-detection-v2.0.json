@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "experiment_id": "sids-multicrop-pest-detection-v2.0-gpu-candidate",
+  "dataset_version": "sids-multicrop-pest-detection-v2.0",
+  "task": "pest-detection",
+  "status": "READY_NOT_EXECUTED_REQUIRES_GPU",
+  "architecture": "YOLO11n detection transfer learning",
+  "classes": 12,
+  "prepared_images": {"train": 2128, "val": 531, "test": 735},
+  "recommended_gpu_command": "yolo detect train model=yolo11n.pt data=ml/data/prepared/sids-multicrop-pest-detection-v2.0/data.yaml epochs=50 imgsz=640 batch=16 device=0 workers=4 seed=20260823 deterministic=True project=ml/runs/detect name=sids-multicrop-pest-detection-v2.0-gpu plots=True",
+  "independent_test_command": "yolo detect val model=ml/runs/detect/sids-multicrop-pest-detection-v2.0-gpu/weights/best.pt data=ml/data/prepared/sids-multicrop-pest-detection-v2.0/data.yaml split=test imgsz=640 batch=16 device=0 workers=4 project=ml/runs/eval name=sids-multicrop-pest-detection-v2.0-test plots=False",
+  "seed": 20260823,
+  "promotion_gates": {
+    "overall_test_map50_min": 0.65,
+    "each_crop_macro_map50_min": 0.55,
+    "each_class_test_map50_min": 0.50,
+    "known_accepted_precision_min": 0.80,
+    "known_correct_detection_rate_min": 0.30,
+    "bau_unsupported_holdout_false_accept_rate_max": 0.10,
+    "coco8_non_insect_holdout_false_accept_rate_max": 0.10,
+    "runtime_invalid_payload_must_reject": true,
+    "automatic_promotion": false
+  },
+  "local_cpu_decision": {
+    "executed": false,
+    "reason": "The local i7-6600U two-core machine took 0.180 hours for two 320px epochs on 283 images; scaling 2,128 images to a meaningful 50-epoch 640px run is not a bounded honest local task. No metrics are fabricated."
+  }
+}

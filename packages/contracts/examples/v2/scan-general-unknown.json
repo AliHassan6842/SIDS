@@ -1,0 +1,16 @@
+{
+  "id": "40000000-0000-0000-0000-000000000010",
+  "mode": "GENERAL_INSECT",
+  "crop": null,
+  "status": "UNKNOWN",
+  "reason": "MODEL_UNAVAILABLE",
+  "confidence": null,
+  "bbox": null,
+  "imageUrl": "/api/v1/scans/40000000-0000-0000-0000-000000000010/image",
+  "pest": null,
+  "model": null,
+  "trainingConsent": false,
+  "consentedAt": null,
+  "reviewStatus": "NOT_SUBMITTED",
+  "createdAt": "2026-08-23T12:05:00Z"
+}

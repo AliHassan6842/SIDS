@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-26",
+  "dataset_id": "sids-general-insect-classification-v2.0",
+  "status": "TAXONOMY_FROZEN_BEFORE_FETCH",
+  "task": "coarse-general-insect-open-set-classification",
+  "supported_classes": [
+    {
+      "model_index": 0,
+      "class_slug": "beetle",
+      "taxon_name": "Coleoptera",
+      "inaturalist_taxon_id": 47208,
+      "rank": "order",
+      "scientific_name": null,
+      "product_claim": "coarse beetle group only"
+    },
+    {
+      "model_index": 1,
+      "class_slug": "grasshopper",
+      "taxon_name": "Caelifera",
+      "inaturalist_taxon_id": 67688,
+      "rank": "suborder",
+      "scientific_name": null,
+      "product_claim": "coarse grasshopper group only"
+    },
+    {
+      "model_index": 2,
+      "class_slug": "mosquito",
+      "taxon_name": "Culicidae",
+      "inaturalist_taxon_id": 52134,
+      "rank": "family",
+      "scientific_name": null,
+      "product_claim": "coarse mosquito group only"
+    }
+  ],
+  "allowed_photo_licenses": ["CC0", "CC-BY", "CC-BY-SA"],
+  "observation_quality_grade": "research",
+  "minimum_usable_per_supported_class": 120,
+  "minimum_sealed_test_per_supported_class": 30,
+  "minimum_unsupported_insect_ood": 100,
+  "minimum_non_insect_or_household_ood": 100,
+  "unsupported_insect_ood_taxa": [
+    {"taxon_name": "Odonata", "inaturalist_taxon_id": 47792, "rank": "order"},
+    {"taxon_name": "Mantodea", "inaturalist_taxon_id": 48112, "rank": "order"},
+    {"taxon_name": "Hemiptera", "inaturalist_taxon_id": 47744, "rank": "order"}
+  ],
+  "non_insect_ood_source": {
+    "dataset": "Open Images V7 validation images",
+    "selection": "human-annotated household furniture/appliance bounding-box classes",
+    "image_license_required": "CC BY 2.0",
+    "official_download_page": "https://storage.googleapis.com/openimages/web/download_v7.html"
+  },
+  "split_controls": [
+    "one photo per observation",
+    "photographer group cannot cross split",
+    "exact SHA-256 cannot cross split",
+    "pHash near-duplicate component cannot cross split",
+    "sealed test manifest is generated before training"
+  ],
+  "source_api": "https://api.inaturalist.org/v1/observations",
+  "api_reference": "https://www.inaturalist.org/pages/api+reference",
+  "promotion": {"allowed": false, "reason": "Fetch, preparation, training, and sealed evaluation not yet complete"}
+}

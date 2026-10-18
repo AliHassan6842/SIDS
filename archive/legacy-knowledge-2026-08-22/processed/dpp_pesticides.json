@@ -1,0 +1,54 @@
+[
+    {
+        "registration_id": "DPP-10924",
+        "product_name": "Confidor 200 SL",
+        "registrant": "Bayer CropScience",
+        "active_ingredients": [
+            "Imidacloprid"
+        ],
+        "concentration": "200 SL",
+        "formulation": "Soluble Liquid",
+        "registered_crops": [
+            "cotton",
+            "mango",
+            "citrus",
+            "tomato"
+        ],
+        "registered_targets": [
+            "whitefly",
+            "aphid",
+            "jassid",
+            "mango-hopper"
+        ],
+        "registration_status": "ACTIVE",
+        "source_id": "pakistan_dpp",
+        "source_url": "http://www.plantprotection.gov.pk/",
+        "retrieved_at": "2026-08-16T23:19:14.483773Z",
+        "checksum": "hash123",
+        "review_status": "APPROVED"
+    },
+    {
+        "registration_id": "DPP-44912",
+        "product_name": "Coragen 20 SC",
+        "registrant": "FMC",
+        "active_ingredients": [
+            "Chlorantraniliprole"
+        ],
+        "concentration": "20 SC",
+        "formulation": "Suspension Concentrate",
+        "registered_crops": [
+            "tomato",
+            "cotton"
+        ],
+        "registered_targets": [
+            "tomato-fruit-borer",
+            "bollworm"
+        ],
+        "registration_status": "ACTIVE",
+        "source_id": "pakistan_dpp",
+        "source_url": "http://www.plantprotection.gov.pk/",
+        "retrieved_at": "2026-08-16T23:19:14.484296Z",
+        "checksum": "hash456",
+        "review_status": "APPROVED"
+    }
+]

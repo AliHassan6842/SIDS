@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "dataset_id": "sids-rice-pest-detection-v1.1",
+  "task": "pest-detection",
+  "status": "PREPARED_NOT_PROMOTED",
+  "crop_scope": [
+    "rice"
+  ],
+  "classes": [
+    {
+      "model_index": 0,
+      "pest_id": "rice-leaf-roller",
+      "source_dataset": "IP102 v1.1 COCO derivative",
+      "source_category_id": 1,
+      "source_label": "rice leaf roller",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 1,
+      "pest_id": "asiatic-rice-borer",
+      "source_dataset": "IP102 v1.1 COCO derivative",
+      "source_category_id": 4,
+      "source_label": "asiatic rice borer",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 2,
+      "pest_id": "rice-water-weevil",
+      "source_dataset": "IP102 v1.1 COCO derivative",
+      "source_category_id": 11,
+      "source_label": "rice water weevil",
+      "scientific_name_mapping": null
+    }
+  ],
+  "sources": [
+    "ip102-coco-v1",
+    "bau-insectv2-v2"
+  ],
+  "training_source": "ip102-coco-v1",
+  "supplementary_evaluation_source": "bau-insectv2-v2",
+  "supplementary_use": "rejection probe only; no coarse BAU label is a supported class",
+  "split_seed": 20260822,
+  "prepared_relative_path": "ml/data/prepared/sids-rice-pest-detection-v1.1",
+  "prepared_counts": {
+    "split_images": {
+      "train": 292,
+      "val": 74,
+      "test": 98
+    },
+    "split_boxes": {
+      "train": 312,
+      "val": 77,
+      "test": 103
+    },
+    "class_split_images": {
+      "rice-leaf-roller": {
+        "train": 99,
+        "val": 25,
+        "test": 35
+      },
+      "asiatic-rice-borer": {
+        "train": 99,
+        "val": 26,
+        "test": 33
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      }
+    },
+    "class_split_boxes": {
+      "rice-leaf-roller": {
+        "train": 109,
+        "val": 26,
+        "test": 39
+      },
+      "asiatic-rice-borer": {
+        "train": 109,
+        "val": 28,
+        "test": 34
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      }
+    }
+  },
+  "leakage_policy": "Exact and dHash-distance<=2 train/test matches removed from training candidates",
+  "audit_report": "ml/reports/sids-rice-pest-detection-v1.1-audit.json",
+  "audit_report_sha256": "4803e4557e707eba173d4576d45805c03e329eb14a0b8816353f7abc2841da19",
+  "license": {
+    "ip102": "Academic use only; contact original author for other purposes",
+    "bau_insectv2": "CC BY 4.0",
+    "redistribution": "Raw images and prepared image material are not committed"
+  }
+}

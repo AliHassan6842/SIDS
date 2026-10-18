@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-22",
+  "datasets": [
+    {
+      "datasetId": "ip102-coco-v1",
+      "canonicalDataset": "IP102 v1.1",
+      "purpose": "Primary pest-detection dataset audit and bounded academic FYP training",
+      "publisher": "Zenodo derivative prepared by Wenbin Tan",
+      "sourceUrl": "https://zenodo.org/records/15546285/files/ip102.zip?download=1",
+      "recordUrl": "https://zenodo.org/records/15546285",
+      "doi": "10.5281/zenodo.15546285",
+      "originalProjectUrl": "https://github.com/xpwu95/IP102",
+      "terms": "Original IP102 publisher states free for academic usage; contact the author for other purposes. The Zenodo derivative does not display a separate license.",
+      "expectedBytes": 798292200,
+      "expectedMd5": "2bfdcd300cae03e1cacb34dada660f6d",
+      "localPath": "ml/data/fetched/ip102/ip102-coco-v1.zip",
+      "status": "VERIFIED_AND_EXTRACTED",
+      "actualBytes": 798292200,
+      "actualSha256": "662187aae875b32d3b43db6c5a4f0cf6a2305ef83d95eddcff1df2c35ce26308",
+      "verifiedAt": "2026-08-22"
+    },
+    {
+      "datasetId": "bau-insectv2-v2",
+      "canonicalDataset": "BAU-Insectv2 Agricultural Plant Insect Dataset, version 2",
+      "purpose": "Supplementary classification and unsupported-input audit evidence",
+      "publisher": "Mendeley Data",
+      "sourceUrl": "https://data.mendeley.com/public-files/datasets/x2c6c8thdk/files/3ee56d13-aebf-41ff-8296-67d916f1396c/file_downloaded",
+      "recordUrl": "https://data.mendeley.com/datasets/x2c6c8thdk/2",
+      "doi": "10.17632/x2c6c8thdk.2",
+      "terms": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "expectedBytes": 64389120,
+      "expectedMd5": null,
+      "localPath": "ml/data/fetched/bau-insectv2/BAU-Insectv2-v2.zip",
+      "status": "VERIFIED_AND_EXTRACTED",
+      "actualBytes": 64389120,
+      "actualSha256": "af2c13d87efd069af0cfc0a064f896b2b941cd8a01ffbd1588d6fb9b5b3881c7",
+      "verifiedAt": "2026-08-22"
+    }
+  ]
+}

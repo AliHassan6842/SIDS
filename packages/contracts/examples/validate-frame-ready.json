@@ -1,0 +1,6 @@
+{
+  "valid": true,
+  "reason": null,
+  "insectCandidate": true,
+  "quality": { "brightness": "OK", "blur": "OK", "subjectSize": "OK" }
+}

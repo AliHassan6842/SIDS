@@ -1,0 +1,6 @@
+{
+  "status": "UNKNOWN",
+  "reason": "LOW_CONFIDENCE",
+  "prediction": null,
+  "model": { "id": "sids-pest-detector", "version": "1.0.0", "datasetVersion": "sids-pests-v1" }
+}

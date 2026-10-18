@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v1/BoundingBox.schema.json",
+  "title": "Normalized bounding box",
+  "type": "object",
+  "properties": {
+    "x": { "type": "number", "minimum": 0, "maximum": 1 },
+    "y": { "type": "number", "minimum": 0, "maximum": 1 },
+    "width": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+    "height": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+  },
+  "required": ["x", "y", "width", "height"],
+  "additionalProperties": false
+}

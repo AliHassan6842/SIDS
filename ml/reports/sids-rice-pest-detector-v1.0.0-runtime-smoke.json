@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "manifest": "models\\manifests\\sids-pest-detector.json",
+  "model_id": "sids-rice-pest-detector",
+  "model_version": "1.0.0",
+  "dataset_version": "sids-rice-pest-detection-v1.3",
+  "artifact_path": "D:\\vs code\\uniSIDS\\FinalYearProject\\models\\artifacts\\sids-rice-pest-detector-v1.0.0.pt",
+  "artifact_sha256": "b3af4057f3d59c21efd27266ee519fe487c0433468f641973b3f89290ea674bc",
+  "acceptance_threshold": 0.66,
+  "groups": {
+    "known_pests": {
+      "status": "EXECUTED",
+      "images": 65,
+      "identified": 20,
+      "unknown": 45,
+      "rejected_before_inference": 22,
+      "rejection_reasons": {
+        "SUBJECT_TOO_SMALL": 22
+      },
+      "latency_ms_per_image": 118.86983999910836,
+      "identified_samples": [
+        {
+          "path": "ml\\data\\prepared\\sids-rice-pest-detection-v1.3\\images\\test\\IP000000064.jpg",
+          "pest_id": "rice-leaf-roller",
+          "confidence": 0.933199942111969,
+          "bbox": {
+            "x": 0.03806304931640625,
+            "y": 0.30062880996585817,
+            "width": 0.9612377356752125,
+            "height": 0.48941569365272225
+          }
+        },
+        {
+          "path": "ml\\data\\prepared\\sids-rice-pest-detection-v1.3\\images\\test\\IP000000110.jpg",
+          "pest_id": "rice-leaf-roller",
+          "confidence": 0.978821873664856,
+          "bbox": {
+            "x": 0.19788838195800781,
+            "y": 0.28075704266948087,
+            "width": 0.7460465545654297,
+            "height": 0.4509055352980091
+          }
+        },
+        {
+          "path": "ml\\data\\prepared\\sids-rice-pest-detection-v1.3\\images\\test\\IP000000115.jpg",
+          "pest_id": "rice-leaf-roller",
+          "confidence": 0.7076959013938904,
+          "bbox": {
+            "x": 0.1525758559733754,
+            "y": 0.6018527152095633,
+            "width": 0.7591055068012061,
+            "height": 0.3981472847904367
+          }
+        },
+        {
+          "path": "ml\\data\\prepared\\sids-rice-pest-detection-v1.3\\images\\test\\IP000000290.jpg",
+          "pest_id": "rice-leaf-roller",
+          "confidence": 0.8917660713195801,
+          "bbox": {
+            "x": 0.37663344291791523,
+            "y": 0.05524079695991846,
+            "width": 0.5047769206843964,
+            "height": 0.8799857374550639
+          }
+        }
+      ]
+    },
+    "unsupported_insects": {
+      "status": "EXECUTED",
+      "images": 45,
+      "identified": 2,
+      "unknown": 43,
+      "rejected_before_inference": 36,
+      "rejection_reasons": {
+        "SUBJECT_TOO_SMALL": 36
+      },
+      "latency_ms_per_image": 31.596615558697117,
+      "identified_samples": [
+        {
+          "path": "ml\\data\\fetched\\bau-insectv2\\extracted\\extracted_folder\\pest\\test\\mosquito\\jpg_44.jpg",
+          "pest_id": "rice-leaf-roller",
+          "confidence": 0.7893537878990173,
+          "bbox": {
+            "x": 0.2587947998046875,
+            "y": 0.202758544921875,
+            "width": 0.48770465087890624,
+            "height": 0.47338251410590276
+          }
+        },
+        {
+          "path": "ml\\data\\fetched\\bau-insectv2\\extracted\\extracted_folder\\pest\\test\\stem_borer\\jpg_28.jpg",
+          "pest_id": "rice-leaf-roller",
+          "confidence": 0.870810329914093,
+          "bbox": {
+            "x": 0.022040271759033205,
+            "y": 0.10473587036132813,
+            "width": 0.9510028648376465,
+            "height": 0.6569680480957031
+          }
+        }
+      ]
+    },
+    "non_insect_random_objects": {
+      "status": "EXECUTED",
+      "images": 4,
+      "identified": 0,
+      "unknown": 4,
+      "rejected_before_inference": 0,
+      "rejection_reasons": {},
+      "latency_ms_per_image": 85.25805003591813,
+      "identified_samples": []
+    }
+  },
+  "bad_image": {
+    "status": "PASS_REJECTED_INVALID_PAYLOAD",
+    "reason": "INVALID_IMAGE",
+    "message": "Only valid JPEG and PNG images are accepted.",
+    "payload_bytes": 93,
+    "latency_ms": 0.4214000655338168
+  },
+  "note": "This smoke run checks runtime loading and response behavior; AP and leakage-safe threshold metrics live in the evaluation reports."
+}

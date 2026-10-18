@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "status": "RESEARCH_CANDIDATE_NOT_PROMOTED",
+  "dataset_version": "sids-general-insect-classification-v1.0",
+  "task": "coarse-general-insect-classification",
+  "classes": [
+    "beetle",
+    "grasshopper",
+    "mosquito"
+  ],
+  "architecture": "torchvision mobilenet_v3_small frozen feature extractor",
+  "pretrained_weights": "MobileNet_V3_Small_Weights.DEFAULT",
+  "seed": 20260823,
+  "epochs": 8,
+  "image_size": 160,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "device": "cpu",
+  "elapsed_seconds": 108.06868060003035,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6778066194974459,
+      "train_accuracy": 0.6538461538461539,
+      "train_macro_f1": 0.6527048814791946,
+      "validation_loss": 0.446314879826137,
+      "validation_accuracy": 0.8214285714285714,
+      "validation_macro_f1": 0.8238325281803544
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.19005161615518423,
+      "train_accuracy": 0.9384615384615385,
+      "train_macro_f1": 0.9385620915032679,
+      "validation_loss": 0.3498733730188438,
+      "validation_accuracy": 0.8928571428571429,
+      "validation_macro_f1": 0.8952472293265132
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.09956910642795265,
+      "train_accuracy": 0.9615384615384616,
+      "train_macro_f1": 0.9618679050567596,
+      "validation_loss": 0.24666491523385048,
+      "validation_accuracy": 0.9285714285714286,
+      "validation_macro_f1": 0.9280303030303031
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.04032648604076642,
+      "train_accuracy": 0.9923076923076923,
+      "train_macro_f1": 0.9924154277095454,
+      "validation_loss": 0.24175784098250525,
+      "validation_accuracy": 0.9285714285714286,
+      "validation_macro_f1": 0.9249164578111947
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.014655528604411161,
+      "train_accuracy": 1.0,
+      "train_macro_f1": 1.0,
+      "validation_loss": 0.26862558429794653,
+      "validation_accuracy": 0.9285714285714286,
+      "validation_macro_f1": 0.9280303030303031
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.014592240939516788,
+      "train_accuracy": 1.0,
+      "train_macro_f1": 1.0,
+      "validation_loss": 0.25191432264234337,
+      "validation_accuracy": 0.9285714285714286,
+      "validation_macro_f1": 0.9280303030303031
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.008120701804112356,
+      "train_accuracy": 1.0,
+      "train_macro_f1": 1.0,
+      "validation_loss": 0.20940211095980235,
+      "validation_accuracy": 0.9285714285714286,
+      "validation_macro_f1": 0.9249164578111947
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.007348381197796418,
+      "train_accuracy": 1.0,
+      "train_macro_f1": 1.0,
+      "validation_loss": 0.20702424618814672,
+      "validation_accuracy": 0.9285714285714286,
+      "validation_macro_f1": 0.9249164578111947
+    }
+  ],
+  "best_validation_macro_f1": 0.9280303030303031,
+  "test": {
+    "loss": 0.09028179038848196,
+    "accuracy": 0.9642857142857143,
+    "macro_f1": 0.9628482972136223,
+    "per_class": {
+      "beetle": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9473684210526316,
+        "support": 9
+      },
+      "grasshopper": {
+        "precision": 1.0,
+        "recall": 0.8888888888888888,
+        "f1": 0.9411764705882353,
+        "support": 9
+      },
+      "mosquito": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      }
+    },
+    "confusion_matrix": [
+      [
+        9,
+        0,
+        0
+      ],
+      [
+        1,
+        8,
+        0
+      ],
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "elapsed_seconds": 1.2849618000909686,
+    "latency_ms_per_image": 45.891492860391736
+  },
+  "checkpoint": "ml\\runs\\classification\\sids-general-insect-classification-v1.0-short-cpu\\best.pt",
+  "checkpoint_bytes": 6203625,
+  "checkpoint_sha256": "38e91e1923086ef1551535ac6dd7c417dc359b75b0f39663e12c060164bed86f",
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu"
+  },
+  "promotion": {
+    "allowed": false,
+    "reason": "Closed-set agricultural classification has no household-scene or unknown/OOD gate; the Python production runtime also has no approved classifier contract"
+  },
+  "limitations": [
+    "BAU labels are coarse folders, not verified species.",
+    "The deduplicated test has only 9-10 images per class.",
+    "No household scenes, random objects, or unknown insects are included in this classifier test."
+  ]
+}

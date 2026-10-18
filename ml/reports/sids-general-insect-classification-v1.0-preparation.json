@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-23",
+  "dataset_version": "sids-general-insect-classification-v1.0",
+  "status": "PREPARED_RESEARCH_CANDIDATE_NOT_TRAINED_NOT_PROMOTED",
+  "task": "coarse-general-insect-classification",
+  "published_split_counts": {
+    "train": {
+      "beetle": 291,
+      "grasshopper": 277,
+      "mosquito": 295
+    },
+    "test": {
+      "beetle": 50,
+      "grasshopper": 46,
+      "mosquito": 50
+    }
+  },
+  "pooled_valid_images": 1009,
+  "invalid_images": {},
+  "perceptual_components": 186,
+  "cross_label_ambiguous_components_removed": 0,
+  "cross_label_ambiguous_images_removed": 0,
+  "deduplicated_representatives": 186,
+  "prepared_counts": {
+    "beetle": {
+      "train": 42,
+      "val": 9,
+      "test": 9
+    },
+    "grasshopper": {
+      "train": 42,
+      "val": 9,
+      "test": 9
+    },
+    "mosquito": {
+      "train": 46,
+      "val": 10,
+      "test": 10
+    }
+  },
+  "split_seed": 20260823,
+  "split_unit": "one representative per global dHash-distance<=2 component",
+  "independent_split_verification": {
+    "train_vs_val_exact_sha_overlap": 0,
+    "train_vs_val_dhash_distance_lte_2_pairs": 0,
+    "train_vs_test_exact_sha_overlap": 0,
+    "train_vs_test_dhash_distance_lte_2_pairs": 0,
+    "val_vs_test_exact_sha_overlap": 0,
+    "val_vs_test_dhash_distance_lte_2_pairs": 0,
+    "status": "PASS"
+  },
+  "limitations": [
+    "BAU folder names are coarse labels, not verified species.",
+    "Images are agricultural insect examples, not a household-scene benchmark.",
+    "The original published split is discarded because of duplicate leakage."
+  ]
+}

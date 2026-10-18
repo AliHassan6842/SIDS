@@ -1,0 +1,79 @@
+{
+  "model_id": "sids-rice-pest-detector",
+  "version": "1.0.0",
+  "task": "pest-detection",
+  "classes": {
+    "0": "rice-leaf-roller",
+    "1": "rice-water-weevil",
+    "2": "cotton-whitefly",
+    "3": "cotton-jassid",
+    "4": "cotton-thrips",
+    "5": "cotton-mealybug",
+    "6": "pink-bollworm",
+    "7": "spotted-bollworm",
+    "8": "american-bollworm",
+    "9": "cotton-leaf-curl",
+    "10": "tomato-early-blight",
+    "11": "tomato-late-blight",
+    "12": "tomato-bacterial-spot",
+    "13": "tomato-yellow-leaf-curl-virus"
+  },
+  "crop_classes": {
+    "rice": [
+      "rice-leaf-roller",
+      "rice-water-weevil"
+    ],
+    "cotton": [
+      "cotton-whitefly",
+      "cotton-jassid",
+      "cotton-thrips",
+      "cotton-mealybug",
+      "pink-bollworm",
+      "spotted-bollworm",
+      "american-bollworm",
+      "cotton-leaf-curl"
+    ],
+    "tomato": [
+      "tomato-early-blight",
+      "tomato-late-blight",
+      "tomato-bacterial-spot",
+      "tomato-yellow-leaf-curl-virus"
+    ]
+  },
+  "artifact_path": "../artifacts/sids-rice-pest-detector-v1.0.0.pt",
+  "sha256": "b3af4057f3d59c21efd27266ee519fe487c0433468f641973b3f89290ea674bc",
+  "input_size": 320,
+  "acceptance_threshold": 0.66,
+  "dataset_version": "sids-rice-pest-detection-v1.3",
+  "evaluation_summary": {
+    "status": "PROMOTED_BOUNDED_FYP",
+    "test_images": 65,
+    "test_boxes": 69,
+    "test_map50": 0.73,
+    "test_map50_95": 0.375,
+    "rice_leaf_roller_test_map50": 0.654,
+    "rice_water_weevil_test_map50": 0.807,
+    "threshold_test_accepted_precision": 1.0,
+    "threshold_test_correct_detection_rate": 0.3076923077,
+    "bau_holdout_false_accept_rate": 0.0444444444,
+    "coco8_holdout_false_accept_rate": 0.0,
+    "cpu_inference_ms_per_image": 78.8,
+    "runtime_known_identified_rate": 0.3076923077,
+    "runtime_known_quality_rejections": 22,
+    "portrait_orientation_normalization": "CLOCKWISE_BEFORE_INFERENCE_WITH_BBOX_REMAP",
+    "runtime_invalid_payload_gate": "PASS_HTTP_400_INVALID_IMAGE",
+    "limitation": "Short CPU transfer run; high precision threshold rejects 45 of 65 known-pest test images",
+    "cotton_whitefly_test_map50": 0.672,
+    "cotton_jassid_test_map50": 0.894,
+    "cotton_thrips_test_map50": 0.659,
+    "cotton_mealybug_test_map50": 0.77,
+    "pink_bollworm_test_map50": 0.72,
+    "spotted_bollworm_test_map50": 0.605,
+    "american_bollworm_test_map50": 0.671,
+    "cotton_leaf_curl_test_map50": 0.64,
+    "tomato_early_blight_test_map50": 0.655,
+    "tomato_late_blight_test_map50": 0.893,
+    "tomato_bacterial_spot_test_map50": 0.834,
+    "tomato_yellow_leaf_curl_virus_test_map50": 0.696
+  }
+}

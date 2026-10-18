@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/TrainingConsentRequest.schema.json",
+  "title": "Explicit scan training-consent update",
+  "type": "object",
+  "properties": {
+    "trainingConsent": { "type": "boolean" }
+  },
+  "required": ["trainingConsent"],
+  "additionalProperties": false
+}

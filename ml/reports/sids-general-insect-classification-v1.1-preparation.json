@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-26",
+  "dataset_version": "sids-general-insect-classification-v1.1",
+  "status": "PREPARED_PRODUCT_CANDIDATE_NOT_PROMOTED",
+  "base_known_dataset": "sids-general-insect-classification-v1.0",
+  "known_splits_unchanged": true,
+  "supported_coarse_labels": [
+    "beetle",
+    "grasshopper",
+    "mosquito"
+  ],
+  "ood_calibration_labels": [
+    "aphids",
+    "armyworm",
+    "bollworm"
+  ],
+  "ood_test_labels": [
+    "mites",
+    "sawfly",
+    "stem_borer"
+  ],
+  "ood_counts": {
+    "calibration": {
+      "aphids": 48,
+      "armyworm": 48,
+      "bollworm": 55
+    },
+    "test": {
+      "mites": 44,
+      "sawfly": 42,
+      "stem_borer": 49
+    }
+  },
+  "source_valid_images": 1607,
+  "invalid_images": {},
+  "global_ood_representatives": 286,
+  "cross_label_ambiguous_components_removed": 1,
+  "cross_label_ambiguous_images_removed": 9,
+  "known_ood_near_duplicates_removed": 0,
+  "dhash_distance": 2,
+  "leakage_policy": "No OOD representative is within dHash distance 2 of a known-class representative",
+  "limitations": [
+    "Supported and unsupported labels are coarse BAU folders, not verified species.",
+    "OOD calibration and test use disjoint unsupported source classes.",
+    "BAU imagery is agricultural and does not establish household-scene performance.",
+    "The known test was previously observed during the v1.0 research run and is not a pristine test."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "experiment_id": "sids-rice-pest-detection-v1.3-hard-negative-cpu",
+  "dataset_version": "sids-rice-pest-detection-v1.3",
+  "starting_checkpoint": "ml/runs/detect/sids-rice-pest-detection-v1.2-short-cpu/weights/best.pt",
+  "architecture": "YOLO11n detection",
+  "supported_classes": [
+    "rice-leaf-roller",
+    "rice-water-weevil"
+  ],
+  "local_cpu_run": {
+    "command": ".venv\\Scripts\\yolo.exe detect train model=ml/runs/detect/sids-rice-pest-detection-v1.2-short-cpu/weights/best.pt data=ml/data/prepared/sids-rice-pest-detection-v1.3/data.yaml epochs=2 imgsz=320 batch=8 device=cpu workers=0 freeze=10 seed=20260822 deterministic=True project=<absolute-workspace>/ml/runs/detect name=sids-rice-pest-detection-v1.3-hard-negative-cpu exist_ok=False plots=False",
+    "epochs": 2,
+    "image_size": 320,
+    "batch": 8,
+    "device": "cpu",
+    "workers": 0,
+    "freeze": 10,
+    "seed": 20260822,
+    "deterministic": true
+  },
+  "recommended_gpu_run_if_local_gate_fails": {
+    "command": "yolo detect train model=yolo11n.pt data=ml/data/prepared/sids-rice-pest-detection-v1.3/data.yaml epochs=50 imgsz=640 batch=16 device=0 workers=4 seed=20260822 deterministic=True project=ml/runs/detect name=sids-rice-pest-detection-v1.3-gpu-full plots=True",
+    "note": "Recreate the ignored prepared dataset from tracked scripts and fetched-source checksums before running. Recalibrate only on frozen validation/BAU/COCO8 calibration fixtures, then execute each untouched holdout exactly once."
+  },
+  "promotion_gates": {
+    "test_overall_map50_min": 0.65,
+    "test_each_class_map50_min": 0.60,
+    "threshold_validation_accepted_precision_min": 0.80,
+    "threshold_validation_correct_detection_rate_min": 0.30,
+    "bau_calibration_false_accept_rate_max": 0.05,
+    "coco8_calibration_false_accept_rate_max": 0.00,
+    "test_accepted_precision_min": 0.80,
+    "test_correct_detection_rate_min": 0.30,
+    "bau_holdout_false_accept_rate_max": 0.10,
+    "coco8_holdout_false_accept_rate_max": 0.10,
+    "invalid_payload_must_be_rejected": true
+  },
+  "scope_constraints": [
+    "BAU hard negatives carry empty YOLO labels and are not mapped to supported classes.",
+    "COCO8 is never product or pest-training evidence and remains probe-only.",
+    "No scientific species mapping is asserted for either supported IP102 label."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "dataset_id": "bau-insectv2-v2",
+  "canonical_dataset": "BAU-Insectv2 Agricultural Plant Insect Dataset",
+  "version": "2",
+  "record_url": "https://data.mendeley.com/datasets/x2c6c8thdk/2",
+  "doi": "10.17632/x2c6c8thdk.2",
+  "download_url": "https://data.mendeley.com/public-files/datasets/x2c6c8thdk/files/3ee56d13-aebf-41ff-8296-67d916f1396c/file_downloaded",
+  "downloaded_file": "ml/data/fetched/bau-insectv2/BAU-Insectv2-v2.zip",
+  "downloaded_bytes": 64389120,
+  "downloaded_sha256": "af2c13d87efd069af0cfc0a064f896b2b941cd8a01ffbd1588d6fb9b5b3881c7",
+  "license": "CC BY 4.0",
+  "annotation_format": "Folder-level coarse classification labels; no bounding boxes",
+  "approved_use": "Supplementary unsupported-input/rejection probe only",
+  "training_approved": false,
+  "reason_not_training": "Labels are coarse genera/groups and are not equivalent to the selected IP102 pest classes",
+  "fetched_at": "2026-08-22"
+}

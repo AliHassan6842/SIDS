@@ -1,0 +1,30 @@
+{
+  "model_id": "sids-rice-pest-detector",
+  "version": "0.1.0-candidate",
+  "task": "pest-detection",
+  "classes": {
+    "0": "rice-leaf-roller",
+    "1": "rice-water-weevil"
+  },
+  "crop_classes": {
+    "rice": [
+      "rice-leaf-roller",
+      "rice-water-weevil"
+    ]
+  },
+  "artifact_path": "../../artifacts/sids-rice-pest-detector-v0.1.0-candidate.pt",
+  "sha256": "d1ee0136125a6ebdd664fd7e932a2cc8ebf1dacb940718977774c2d9e5c33899",
+  "input_size": 320,
+  "acceptance_threshold": 0.68,
+  "dataset_version": "sids-rice-pest-detection-v1.2",
+  "evaluation_summary": {
+    "status": "REJECTED_EXTERNAL_REGRESSION",
+    "test_map50": 0.886,
+    "test_map50_95": 0.534,
+    "threshold_test_accepted_precision": 1.0,
+    "threshold_test_correct_detection_rate": 0.4,
+    "bau_holdout_false_accept_rate": 0.0888888889,
+    "coco8_holdout_false_accept_rate": 0.25,
+    "rejection_reason": "COCO8 holdout false-accept rate exceeded the predeclared 0.10 gate"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/Crop.schema.json",
+  "title": "Public crop catalog entry",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 64 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "imageUrl": { "oneOf": [{ "type": "string", "format": "uri-reference", "maxLength": 255 }, { "type": "null" }] },
+    "identificationSupported": { "type": "boolean" }
+  },
+  "required": ["id", "slug", "name", "imageUrl", "identificationSupported"],
+  "additionalProperties": false
+}

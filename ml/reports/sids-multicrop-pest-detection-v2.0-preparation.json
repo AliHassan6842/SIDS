@@ -1,0 +1,1315 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-23",
+  "dataset_version": "sids-multicrop-pest-detection-v2.0",
+  "status": "PREPARED_CANDIDATE_NOT_TRAINED_NOT_PROMOTED",
+  "taxonomy_authority": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_IP102_A_Large-Scale_Benchmark_Dataset_for_Insect_Pest_Recognition_CVPR_2019_paper.pdf",
+  "scope_rule": "Five IP102 crop super-classes; 2-3 source-native labels per crop; every selected class has at least 100 official-train and 25 official-test images",
+  "source_audit": {
+    "train": {
+      "declared_images": 15171,
+      "declared_annotations": 17833,
+      "selected_source_counts": {
+        "rice-leaf-roller": {
+          "source_category_id": 1,
+          "annotated_images": 139,
+          "boxes": 151
+        },
+        "rice-water-weevil": {
+          "source_category_id": 11,
+          "annotated_images": 123,
+          "boxes": 123
+        },
+        "corn-borer": {
+          "source_category_id": 23,
+          "annotated_images": 339,
+          "boxes": 350
+        },
+        "corn-army-worm": {
+          "source_category_id": 24,
+          "annotated_images": 165,
+          "boxes": 175
+        },
+        "corn-aphids": {
+          "source_category_id": 25,
+          "annotated_images": 703,
+          "boxes": 1113
+        },
+        "english-grain-aphid": {
+          "source_category_id": 28,
+          "annotated_images": 104,
+          "boxes": 250
+        },
+        "wheat-sawfly": {
+          "source_category_id": 35,
+          "annotated_images": 110,
+          "boxes": 117
+        },
+        "flea-beetle": {
+          "source_category_id": 38,
+          "annotated_images": 276,
+          "boxes": 310
+        },
+        "cabbage-army-worm": {
+          "source_category_id": 39,
+          "annotated_images": 197,
+          "boxes": 210
+        },
+        "beet-army-worm": {
+          "source_category_id": 40,
+          "annotated_images": 330,
+          "boxes": 337
+        },
+        "icerya-purchasi": {
+          "source_category_id": 77,
+          "annotated_images": 126,
+          "boxes": 231
+        },
+        "prodenia-litura": {
+          "source_category_id": 87,
+          "annotated_images": 331,
+          "boxes": 352
+        }
+      },
+      "eligible_single_category_images": {
+        "beet-army-worm": 330,
+        "cabbage-army-worm": 197,
+        "corn-aphids": 700,
+        "corn-army-worm": 165,
+        "corn-borer": 339,
+        "english-grain-aphid": 104,
+        "flea-beetle": 276,
+        "icerya-purchasi": 126,
+        "prodenia-litura": 331,
+        "rice-leaf-roller": 139,
+        "rice-water-weevil": 123,
+        "wheat-sawfly": 110
+      },
+      "skipped_mixed_or_unselected_category_images": 3,
+      "skipped_dimension_mismatch": 0,
+      "skipped_invalid_bbox": 0,
+      "invalid_files": {}
+    },
+    "test": {
+      "declared_images": 3798,
+      "declared_annotations": 4444,
+      "selected_source_counts": {
+        "rice-leaf-roller": {
+          "source_category_id": 1,
+          "annotated_images": 35,
+          "boxes": 39
+        },
+        "rice-water-weevil": {
+          "source_category_id": 11,
+          "annotated_images": 30,
+          "boxes": 30
+        },
+        "corn-borer": {
+          "source_category_id": 23,
+          "annotated_images": 85,
+          "boxes": 90
+        },
+        "corn-army-worm": {
+          "source_category_id": 24,
+          "annotated_images": 41,
+          "boxes": 41
+        },
+        "corn-aphids": {
+          "source_category_id": 25,
+          "annotated_images": 176,
+          "boxes": 282
+        },
+        "english-grain-aphid": {
+          "source_category_id": 28,
+          "annotated_images": 26,
+          "boxes": 60
+        },
+        "wheat-sawfly": {
+          "source_category_id": 35,
+          "annotated_images": 28,
+          "boxes": 29
+        },
+        "flea-beetle": {
+          "source_category_id": 38,
+          "annotated_images": 69,
+          "boxes": 74
+        },
+        "cabbage-army-worm": {
+          "source_category_id": 39,
+          "annotated_images": 49,
+          "boxes": 56
+        },
+        "beet-army-worm": {
+          "source_category_id": 40,
+          "annotated_images": 83,
+          "boxes": 83
+        },
+        "icerya-purchasi": {
+          "source_category_id": 77,
+          "annotated_images": 32,
+          "boxes": 59
+        },
+        "prodenia-litura": {
+          "source_category_id": 87,
+          "annotated_images": 83,
+          "boxes": 85
+        }
+      },
+      "eligible_single_category_images": {
+        "beet-army-worm": 83,
+        "cabbage-army-worm": 49,
+        "corn-aphids": 174,
+        "corn-army-worm": 41,
+        "corn-borer": 85,
+        "english-grain-aphid": 26,
+        "flea-beetle": 69,
+        "icerya-purchasi": 32,
+        "prodenia-litura": 83,
+        "rice-leaf-roller": 35,
+        "rice-water-weevil": 30,
+        "wheat-sawfly": 28
+      },
+      "skipped_mixed_or_unselected_category_images": 2,
+      "skipped_dimension_mismatch": 0,
+      "skipped_invalid_bbox": 0,
+      "invalid_files": {}
+    }
+  },
+  "leakage_control": {
+    "official_train_vs_test": {
+      "dhash_distance_threshold": 2,
+      "removed_exact_train_images": [],
+      "removed_near_duplicate_train_pairs": [
+        {
+          "train": "IP000000134.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000169.jpg",
+          "test": "IP000000082.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP000000280.jpg",
+          "test": "IP000000312.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP000000304.jpg",
+          "test": "IP000000544.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP000000319.jpg",
+          "test": "IP000000190.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000354.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000432.jpg",
+          "test": "IP000001064.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP000000623.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP000000652.jpg",
+          "test": "IP000000000.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000706.jpg",
+          "test": "IP000000082.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000724.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000829.jpg",
+          "test": "IP000000110.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000982.jpg",
+          "test": "IP000000000.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000057.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000086.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000098.jpg",
+          "test": "IP010000683.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP010000552.jpg",
+          "test": "IP010000152.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000680.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP010000845.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP022000002.jpg",
+          "test": "IP022000866.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022000084.jpg",
+          "test": "IP022000381.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022000121.jpg",
+          "test": "IP022000029.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP022000155.jpg",
+          "test": "IP022000304.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP022000182.jpg",
+          "test": "IP022000996.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP022000354.jpg",
+          "test": "IP022000351.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP022000357.jpg",
+          "test": "IP022000351.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP022000395.jpg",
+          "test": "IP022001457.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022000405.jpg",
+          "test": "IP022001423.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022000813.jpg",
+          "test": "IP023000290.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP022000929.jpg",
+          "test": "IP022000185.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022001296.jpg",
+          "test": "IP022000866.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022001301.jpg",
+          "test": "IP022000006.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022001312.jpg",
+          "test": "IP022000382.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022001603.jpg",
+          "test": "IP022000557.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP022001619.jpg",
+          "test": "IP022000029.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP022001678.jpg",
+          "test": "IP087001273.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP023000038.jpg",
+          "test": "IP040001393.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP023000103.jpg",
+          "test": "IP023000082.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP023000373.jpg",
+          "test": "IP040001036.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP023000399.jpg",
+          "test": "IP022000127.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP023000527.jpg",
+          "test": "IP040000392.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP023000955.jpg",
+          "test": "IP087001273.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP023001022.jpg",
+          "test": "IP023000349.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024000050.jpg",
+          "test": "IP024003478.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024000100.jpg",
+          "test": "IP024003478.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024000254.jpg",
+          "test": "IP024002263.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024002979.jpg",
+          "test": "IP024003392.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024002992.jpg",
+          "test": "IP024003478.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003003.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003075.jpg",
+          "test": "IP024002269.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003121.jpg",
+          "test": "IP027000037.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003181.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003255.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003260.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003291.jpg",
+          "test": "IP024003484.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003301.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003334.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003336.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003364.jpg",
+          "test": "IP024003484.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003405.jpg",
+          "test": "IP024003041.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003415.jpg",
+          "test": "IP024003776.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003457.jpg",
+          "test": "IP024002377.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003544.jpg",
+          "test": "IP024003484.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003567.jpg",
+          "test": "IP024003998.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003569.jpg",
+          "test": "IP024003540.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003716.jpg",
+          "test": "IP024003546.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003719.jpg",
+          "test": "IP024003392.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003726.jpg",
+          "test": "IP024003392.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003760.jpg",
+          "test": "IP024003998.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003780.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003785.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP024003799.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003836.jpg",
+          "test": "IP024002269.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003871.jpg",
+          "test": "IP024002985.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024003925.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP024003971.jpg",
+          "test": "IP024003998.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024004074.jpg",
+          "test": "IP024002269.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP024004089.jpg",
+          "test": "IP024003998.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP027000596.jpg",
+          "test": "IP024002985.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP027000641.jpg",
+          "test": "IP024003258.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP035000106.jpg",
+          "test": "IP035000260.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP035000136.jpg",
+          "test": "IP035000319.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP035000198.jpg",
+          "test": "IP035000010.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP035000216.jpg",
+          "test": "IP035000051.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP035000284.jpg",
+          "test": "IP035000010.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP035000292.jpg",
+          "test": "IP035000036.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP038000012.jpg",
+          "test": "IP038000679.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP038000270.jpg",
+          "test": "IP038000788.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP038000698.jpg",
+          "test": "IP038000788.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP038000728.jpg",
+          "test": "IP038000258.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP038000767.jpg",
+          "test": "IP038000675.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP039000010.jpg",
+          "test": "IP039000649.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000051.jpg",
+          "test": "IP040001243.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP039000061.jpg",
+          "test": "IP039000747.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000077.jpg",
+          "test": "IP040001074.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP039000100.jpg",
+          "test": "IP040000554.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP039000171.jpg",
+          "test": "IP040001323.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000174.jpg",
+          "test": "IP039000637.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000209.jpg",
+          "test": "IP039000402.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000210.jpg",
+          "test": "IP040001113.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000352.jpg",
+          "test": "IP040000607.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000376.jpg",
+          "test": "IP087001170.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP039000481.jpg",
+          "test": "IP087000045.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000644.jpg",
+          "test": "IP039000402.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000658.jpg",
+          "test": "IP040000095.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP039000662.jpg",
+          "test": "IP039000179.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP039000686.jpg",
+          "test": "IP040001044.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP039000688.jpg",
+          "test": "IP039000168.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP039000698.jpg",
+          "test": "IP040000089.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000719.jpg",
+          "test": "IP087000812.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP039000721.jpg",
+          "test": "IP040000095.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP039000825.jpg",
+          "test": "IP040000089.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000004.jpg",
+          "test": "IP039000402.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000019.jpg",
+          "test": "IP040000547.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP040000033.jpg",
+          "test": "IP039000694.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040000042.jpg",
+          "test": "IP040001074.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040000068.jpg",
+          "test": "IP040000494.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000073.jpg",
+          "test": "IP040000614.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP040000133.jpg",
+          "test": "IP040001074.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040000254.jpg",
+          "test": "IP087000586.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP040000269.jpg",
+          "test": "IP039000759.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000464.jpg",
+          "test": "IP040001077.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040000500.jpg",
+          "test": "IP040000089.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000503.jpg",
+          "test": "IP087000045.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000599.jpg",
+          "test": "IP040000194.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000608.jpg",
+          "test": "IP039000778.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000638.jpg",
+          "test": "IP039000198.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000767.jpg",
+          "test": "IP040000262.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040000798.jpg",
+          "test": "IP040001074.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP040000813.jpg",
+          "test": "IP040001074.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP040000867.jpg",
+          "test": "IP040000554.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040000981.jpg",
+          "test": "IP023001048.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001045.jpg",
+          "test": "IP039000778.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001067.jpg",
+          "test": "IP040001077.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001076.jpg",
+          "test": "IP040000744.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001079.jpg",
+          "test": "IP040001445.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040001085.jpg",
+          "test": "IP022000036.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001122.jpg",
+          "test": "IP040000275.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP040001375.jpg",
+          "test": "IP040001383.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001413.jpg",
+          "test": "IP040001425.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001439.jpg",
+          "test": "IP087000528.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040001465.jpg",
+          "test": "IP040001074.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP040001496.jpg",
+          "test": "IP087000528.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP040001497.jpg",
+          "test": "IP040001044.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP077000003.jpg",
+          "test": "IP077000537.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP077000016.jpg",
+          "test": "IP077000537.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP077000054.jpg",
+          "test": "IP077000545.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP077000127.jpg",
+          "test": "IP077000089.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP077000181.jpg",
+          "test": "IP077000539.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP077000272.jpg",
+          "test": "IP077000130.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP077000340.jpg",
+          "test": "IP077000089.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP077000559.jpg",
+          "test": "IP077000089.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP077000607.jpg",
+          "test": "IP077000621.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP077000688.jpg",
+          "test": "IP077000699.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000021.jpg",
+          "test": "IP087001200.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000025.jpg",
+          "test": "IP040000653.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000105.jpg",
+          "test": "IP087000006.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP087000189.jpg",
+          "test": "IP087001273.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000214.jpg",
+          "test": "IP040001077.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000244.jpg",
+          "test": "IP087000934.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP087000338.jpg",
+          "test": "IP087001205.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000513.jpg",
+          "test": "IP087001141.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000642.jpg",
+          "test": "IP040001445.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP087000664.jpg",
+          "test": "IP040000653.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP087000882.jpg",
+          "test": "IP040001077.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087000893.jpg",
+          "test": "IP087000721.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087001117.jpg",
+          "test": "IP087000083.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP087001159.jpg",
+          "test": "IP039000694.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP087001191.jpg",
+          "test": "IP087000032.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087001207.jpg",
+          "test": "IP087000943.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP087001214.jpg",
+          "test": "IP087000148.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP087001225.jpg",
+          "test": "IP087000732.jpg",
+          "dhash_distance": 0
+        }
+      ]
+    },
+    "train_validation_components": {
+      "dhash_distance_threshold": 2,
+      "perceptual_components": 2497,
+      "multi_image_components": 204,
+      "removed_cross_class_ambiguous_images": [
+        "IP022000770.jpg",
+        "IP022000882.jpg",
+        "IP023000000.jpg",
+        "IP023000019.jpg",
+        "IP023000065.jpg",
+        "IP023000086.jpg",
+        "IP023000095.jpg",
+        "IP023000111.jpg",
+        "IP023000122.jpg",
+        "IP023000365.jpg",
+        "IP023000395.jpg",
+        "IP023000438.jpg",
+        "IP023000439.jpg",
+        "IP023000522.jpg",
+        "IP023000567.jpg",
+        "IP023000628.jpg",
+        "IP023000654.jpg",
+        "IP023000659.jpg",
+        "IP023000771.jpg",
+        "IP023000820.jpg",
+        "IP023000840.jpg",
+        "IP023000968.jpg",
+        "IP023000999.jpg",
+        "IP023001045.jpg",
+        "IP024002033.jpg",
+        "IP024002883.jpg",
+        "IP024002888.jpg",
+        "IP024003588.jpg",
+        "IP024003609.jpg",
+        "IP027000110.jpg",
+        "IP027000192.jpg",
+        "IP027000368.jpg",
+        "IP027000454.jpg",
+        "IP027000573.jpg",
+        "IP039000014.jpg",
+        "IP039000018.jpg",
+        "IP039000034.jpg",
+        "IP039000054.jpg",
+        "IP039000068.jpg",
+        "IP039000069.jpg",
+        "IP039000076.jpg",
+        "IP039000140.jpg",
+        "IP039000156.jpg",
+        "IP039000212.jpg",
+        "IP039000231.jpg",
+        "IP039000272.jpg",
+        "IP039000444.jpg",
+        "IP039000530.jpg",
+        "IP039000537.jpg",
+        "IP039000544.jpg",
+        "IP039000562.jpg",
+        "IP039000579.jpg",
+        "IP039000664.jpg",
+        "IP039000708.jpg",
+        "IP039000756.jpg",
+        "IP039000815.jpg",
+        "IP039000829.jpg",
+        "IP039000835.jpg",
+        "IP040000049.jpg",
+        "IP040000051.jpg",
+        "IP040000088.jpg",
+        "IP040000096.jpg",
+        "IP040000121.jpg",
+        "IP040000126.jpg",
+        "IP040000206.jpg",
+        "IP040000243.jpg",
+        "IP040000248.jpg",
+        "IP040000253.jpg",
+        "IP040000260.jpg",
+        "IP040000321.jpg",
+        "IP040000390.jpg",
+        "IP040000395.jpg",
+        "IP040000488.jpg",
+        "IP040000521.jpg",
+        "IP040000559.jpg",
+        "IP040000683.jpg",
+        "IP040000903.jpg",
+        "IP040000974.jpg",
+        "IP040000975.jpg",
+        "IP040001046.jpg",
+        "IP040001249.jpg",
+        "IP040001284.jpg",
+        "IP040001531.jpg",
+        "IP040001532.jpg",
+        "IP077000311.jpg",
+        "IP087000000.jpg",
+        "IP087000003.jpg",
+        "IP087000009.jpg",
+        "IP087000049.jpg",
+        "IP087000119.jpg",
+        "IP087000206.jpg",
+        "IP087000328.jpg",
+        "IP087000449.jpg",
+        "IP087000458.jpg",
+        "IP087000498.jpg",
+        "IP087000617.jpg",
+        "IP087000671.jpg",
+        "IP087000700.jpg",
+        "IP087000773.jpg",
+        "IP087000781.jpg",
+        "IP087000790.jpg",
+        "IP087000801.jpg",
+        "IP087000822.jpg",
+        "IP087000877.jpg",
+        "IP087001099.jpg",
+        "IP087001105.jpg",
+        "IP087001240.jpg",
+        "IP087001241.jpg",
+        "IP087001270.jpg"
+      ],
+      "split_seed": 20260823,
+      "validation_ratio_target": 0.2,
+      "split_unit": "dHash-distance<=2 perceptual component"
+    },
+    "final_verification": {
+      "train_vs_val": {
+        "exact_sha_overlap": [],
+        "dhash_distance_lte_2_pairs": []
+      },
+      "train_vs_test": {
+        "exact_sha_overlap": [],
+        "dhash_distance_lte_2_pairs": []
+      },
+      "val_vs_test": {
+        "exact_sha_overlap": [],
+        "dhash_distance_lte_2_pairs": []
+      }
+    }
+  },
+  "prepared_counts": {
+    "split_images": {
+      "train": 2128,
+      "val": 531,
+      "test": 735
+    },
+    "split_boxes": {
+      "train": 2722,
+      "val": 668,
+      "test": 924
+    },
+    "class_split_images": {
+      "rice-leaf-roller": {
+        "train": 101,
+        "val": 25,
+        "test": 35
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      },
+      "corn-borer": {
+        "train": 256,
+        "val": 64,
+        "test": 85
+      },
+      "corn-army-worm": {
+        "train": 109,
+        "val": 27,
+        "test": 41
+      },
+      "corn-aphids": {
+        "train": 528,
+        "val": 132,
+        "test": 174
+      },
+      "english-grain-aphid": {
+        "train": 78,
+        "val": 19,
+        "test": 26
+      },
+      "wheat-sawfly": {
+        "train": 83,
+        "val": 21,
+        "test": 28
+      },
+      "flea-beetle": {
+        "train": 217,
+        "val": 54,
+        "test": 69
+      },
+      "cabbage-army-worm": {
+        "train": 122,
+        "val": 30,
+        "test": 49
+      },
+      "beet-army-worm": {
+        "train": 217,
+        "val": 55,
+        "test": 83
+      },
+      "icerya-purchasi": {
+        "train": 92,
+        "val": 23,
+        "test": 32
+      },
+      "prodenia-litura": {
+        "train": 231,
+        "val": 58,
+        "test": 83
+      }
+    },
+    "class_split_boxes": {
+      "rice-leaf-roller": {
+        "train": 106,
+        "val": 31,
+        "test": 39
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      },
+      "corn-borer": {
+        "train": 266,
+        "val": 65,
+        "test": 90
+      },
+      "corn-army-worm": {
+        "train": 115,
+        "val": 30,
+        "test": 41
+      },
+      "corn-aphids": {
+        "train": 857,
+        "val": 187,
+        "test": 278
+      },
+      "english-grain-aphid": {
+        "train": 177,
+        "val": 53,
+        "test": 60
+      },
+      "wheat-sawfly": {
+        "train": 89,
+        "val": 22,
+        "test": 29
+      },
+      "flea-beetle": {
+        "train": 245,
+        "val": 58,
+        "test": 74
+      },
+      "cabbage-army-worm": {
+        "train": 135,
+        "val": 30,
+        "test": 56
+      },
+      "beet-army-worm": {
+        "train": 223,
+        "val": 55,
+        "test": 83
+      },
+      "icerya-purchasi": {
+        "train": 168,
+        "val": 52,
+        "test": 59
+      },
+      "prodenia-litura": {
+        "train": 247,
+        "val": 62,
+        "test": 85
+      }
+    }
+  }
+}

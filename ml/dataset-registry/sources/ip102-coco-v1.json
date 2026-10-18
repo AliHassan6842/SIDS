@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "dataset_id": "ip102-coco-v1",
+  "canonical_dataset": "IP102 v1.1",
+  "version": "COCO derivative published 2025-05-29",
+  "original_project_url": "https://github.com/xpwu95/IP102",
+  "derivative_record_url": "https://zenodo.org/records/15546285",
+  "derivative_doi": "10.5281/zenodo.15546285",
+  "download_url": "https://zenodo.org/records/15546285/files/ip102.zip?download=1",
+  "downloaded_file": "ml/data/fetched/ip102/ip102-coco-v1.zip",
+  "downloaded_bytes": 798292200,
+  "downloaded_sha256": "662187aae875b32d3b43db6c5a4f0cf6a2305ef83d95eddcff1df2c35ce26308",
+  "publisher_md5": "2bfdcd300cae03e1cacb34dada660f6d",
+  "license_or_terms": "Original IP102 publisher states free for academic usage; contact Xiaoping Wu for other purposes. The Zenodo derivative displays no separate license.",
+  "annotation_format": "COCO bounding boxes",
+  "approved_use": "Academic FYP audit, preparation, training, and evaluation only",
+  "redistribution_allowed": false,
+  "fetched_at": "2026-08-22"
+}

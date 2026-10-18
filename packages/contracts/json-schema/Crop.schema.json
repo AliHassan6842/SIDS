@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v1/Crop.schema.json",
+  "title": "Supported public crop",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 64 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "imageUrl": { "oneOf": [{ "type": "string", "format": "uri-reference", "maxLength": 255 }, { "type": "null" }] }
+  },
+  "required": ["id", "slug", "name"],
+  "additionalProperties": false
+}

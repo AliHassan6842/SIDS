@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/GeneralInsectGuidance.schema.json",
+  "title": "Attributed Java-owned general insect safety guidance",
+  "type": "object",
+  "properties": {
+    "harmSummary": { "type": ["string", "null"], "maxLength": 4000 },
+    "safeRemoval": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 },
+      "maxItems": 20
+    },
+    "seekExpertHelpWhen": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 },
+      "maxItems": 20
+    },
+    "sourceName": { "type": "string", "minLength": 1, "maxLength": 300 },
+    "sourceUrl": { "type": "string", "format": "uri", "maxLength": 2000 },
+    "lastVerifiedAt": { "type": "string", "format": "date" }
+  },
+  "required": ["harmSummary", "safeRemoval", "seekExpertHelpWhen", "sourceName", "sourceUrl", "lastVerifiedAt"],
+  "additionalProperties": false
+}

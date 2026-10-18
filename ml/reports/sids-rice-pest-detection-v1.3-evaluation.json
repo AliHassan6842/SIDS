@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "dataset_version": "sids-rice-pest-detection-v1.3",
+  "model_id": "sids-rice-pest-detector",
+  "model_version": "1.0.0",
+  "training": {
+    "starting_checkpoint": "sids-rice-pest-detection-v1.2 best.pt",
+    "epochs": 2,
+    "elapsed_hours": 0.18,
+    "device": "Intel Core i7-6600U CPU",
+    "image_size": 320,
+    "batch": 8,
+    "hard_negative_images": 90
+  },
+  "validation": {
+    "images": 48,
+    "boxes": 49,
+    "precision": 0.575,
+    "recall": 0.776,
+    "map50": 0.799,
+    "map50_95": 0.394,
+    "rice_leaf_roller_map50": 0.792,
+    "rice_water_weevil_map50": 0.806
+  },
+  "test": {
+    "images": 65,
+    "boxes": 69,
+    "precision": 0.721,
+    "recall": 0.645,
+    "map50": 0.73,
+    "map50_95": 0.375,
+    "rice_leaf_roller_map50": 0.654,
+    "rice_leaf_roller_map50_95": 0.313,
+    "rice_water_weevil_map50": 0.807,
+    "rice_water_weevil_map50_95": 0.438,
+    "ultralytics_inference_ms_per_image": 74.9
+  },
+  "acceptance": {
+    "threshold": 0.66,
+    "selection_data": "IP102 validation plus frozen BAU and COCO8 calibration probes only",
+    "known_test_accepted_precision": 1.0,
+    "known_test_correct_detection_rate": 0.3076923077,
+    "known_test_accepted": 20,
+    "known_test_unknown": 45,
+    "bau_holdout_false_accept_rate": 0.0444444444,
+    "bau_holdout_false_accepts": 2,
+    "bau_holdout_images": 45,
+    "coco8_holdout_false_accept_rate": 0.0,
+    "coco8_holdout_false_accepts": 0,
+    "coco8_holdout_images": 4
+  },
+  "runtime_smoke": {
+    "known_images": 65,
+    "known_identified": 17,
+    "known_rejected_subject_too_small": 22,
+    "unsupported_bau_identified": 2,
+    "unsupported_bau_images": 45,
+    "coco8_identified": 0,
+    "coco8_images": 4,
+    "invalid_jpeg": "PASS_INVALID_IMAGE",
+    "known_end_to_end_ms_per_image": 144.2,
+    "coco8_end_to_end_ms_per_image": 108.6
+  },
+  "promotion": {
+    "status": "PROMOTED_BOUNDED_FYP",
+    "manifest": "models/manifests/sids-pest-detector.json",
+    "artifact": "models/artifacts/sids-rice-pest-detector-v1.0.0.pt",
+    "sha256": "b3af4057f3d59c21efd27266ee519fe487c0433468f641973b3f89290ea674bc",
+    "limitations": "High-precision two-label rice-only detector; 45/65 known test images are unknown at the selected threshold before runtime quality filtering"
+  }
+}

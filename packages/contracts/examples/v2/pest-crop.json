@@ -1,0 +1,14 @@
+{
+  "id": "20000000-0000-0000-0000-000000000001",
+  "slug": "rice-leaf-roller",
+  "kind": "CROP_PEST",
+  "commonName": "Rice leaf roller",
+  "scientificName": "Cnaphalocrocis medinalis",
+  "description": "A rice-feeding moth whose larvae fold leaves and feed within folded tissue.",
+  "imageUrl": "/catalog/pests/rice-leaf-roller.jpg",
+  "affectedCrops": [
+    { "id": "10000000-0000-0000-0000-000000000001", "slug": "rice", "name": "Rice", "imageUrl": "/catalog/crops/rice.jpg", "identificationSupported": true }
+  ],
+  "guidance": null,
+  "generalGuidance": null
+}

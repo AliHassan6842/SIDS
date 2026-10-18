@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "dataset_id": "sids-rice-pest-detection-v1.3",
+  "task": "pest-detection",
+  "status": "PROMOTED_BOUNDED_FYP",
+  "derived_from": "sids-rice-pest-detection-v1.2",
+  "crop_scope": [
+    "rice"
+  ],
+  "supported_classes": [
+    "rice-leaf-roller",
+    "rice-water-weevil"
+  ],
+  "scientific_name_mapping": null,
+  "prepared_relative_path": "ml/data/prepared/sids-rice-pest-detection-v1.3",
+  "split_seed": 20260822,
+  "positive_counts": {
+    "train": 193,
+    "val": 48,
+    "test": 65
+  },
+  "hard_negative_counts": {
+    "train": 90,
+    "val": 0,
+    "test": 0
+  },
+  "promoted_model_manifest": "models/manifests/sids-pest-detector.json",
+  "final_image_counts": {
+    "train": 283,
+    "val": 48,
+    "test": 65
+  },
+  "leakage_evidence": "All BAU dHash-distance<=2 components present in the frozen calibration/holdout probe list were excluded; selected hard negatives are mutually dHash-distance>2",
+  "license": {
+    "ip102": "Academic use only; contact original author for other purposes",
+    "bau": "CC BY 4.0",
+    "redistribution": "Raw and prepared images are not committed"
+  }
+}

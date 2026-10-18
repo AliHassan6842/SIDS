@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "experiment_id": "sids-general-insect-classification-v1.0-short-cpu",
+  "dataset_version": "sids-general-insect-classification-v1.0",
+  "task": "coarse-general-insect-classification",
+  "command": ".venv\\Scripts\\python.exe ml\\training\\classification\\train_general_insects.py --data ml\\data\\prepared\\sids-general-insect-classification-v1.0 --run-dir ml\\runs\\classification\\sids-general-insect-classification-v1.0-short-cpu --report ml\\reports\\sids-general-insect-classification-v1.0-short-cpu.json --epochs 8 --batch-size 16 --image-size 160 --learning-rate 0.001 --seed 20260823",
+  "architecture": "torchvision mobilenet_v3_small frozen feature extractor",
+  "pretrained_weights": "MobileNet_V3_Small_Weights.DEFAULT",
+  "epochs": 8,
+  "batch_size": 16,
+  "image_size": 160,
+  "learning_rate": 0.001,
+  "seed": 20260823,
+  "device": "cpu",
+  "promotion_allowed": false,
+  "blocker": "No household-scene/unknown/OOD evaluation and no production classifier contract"
+}

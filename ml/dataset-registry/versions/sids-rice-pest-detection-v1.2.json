@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "dataset_id": "sids-rice-pest-detection-v1.2",
+  "task": "pest-detection",
+  "status": "PREPARED_NOT_PROMOTED",
+  "derived_from": "sids-rice-pest-detection-v1.1",
+  "derivation": "Removed asiatic-rice-borer after weak independent short-run test evidence; retained existing leakage-safe split membership",
+  "crop_scope": [
+    "rice"
+  ],
+  "classes": [
+    {
+      "model_index": 0,
+      "pest_id": "rice-leaf-roller",
+      "source_dataset": "IP102 v1.1 COCO derivative",
+      "source_category_id": 1,
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 1,
+      "pest_id": "rice-water-weevil",
+      "source_dataset": "IP102 v1.1 COCO derivative",
+      "source_category_id": 11,
+      "scientific_name_mapping": null
+    }
+  ],
+  "prepared_relative_path": "ml/data/prepared/sids-rice-pest-detection-v1.2",
+  "prepared_counts": {
+    "images": {
+      "rice-leaf-roller": {
+        "train": 99,
+        "val": 25,
+        "test": 35
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      }
+    },
+    "boxes": {
+      "rice-leaf-roller": {
+        "train": 109,
+        "val": 26,
+        "test": 39
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      }
+    },
+    "split_images": {
+      "train": 193,
+      "val": 48,
+      "test": 65
+    },
+    "split_boxes": {
+      "train": 203,
+      "val": 49,
+      "test": 69
+    }
+  },
+  "split_seed": 20260822,
+  "leakage_evidence": "Inherited v1.1 split; re-verification must show no SHA or dHash-distance<=2 overlap",
+  "license": {
+    "ip102": "Academic use only; contact original author for other purposes",
+    "redistribution": "Raw and prepared images are not committed"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v1/Pest.schema.json",
+  "title": "Supported public pest",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 96 },
+    "commonName": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "scientificName": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "description": { "type": "string", "minLength": 1, "maxLength": 8000 },
+    "imageUrl": { "oneOf": [{ "type": "string", "format": "uri-reference", "maxLength": 255 }, { "type": "null" }] },
+    "affectedCrops": {
+      "type": "array",
+      "items": { "$ref": "Crop.schema.json" },
+      "maxItems": 50
+    },
+    "guidance": { "oneOf": [{ "$ref": "PestGuidance.schema.json" }, { "type": "null" }] }
+  },
+  "required": ["id", "slug", "commonName", "scientificName", "description", "affectedCrops", "guidance"],
+  "additionalProperties": false
+}

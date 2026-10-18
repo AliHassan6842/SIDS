@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/ModelPromotionRequest.schema.json",
+  "title": "Admin-only immutable model promotion request",
+  "type": "object",
+  "properties": {
+    "modelId": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "modelVersion": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "datasetVersion": { "type": "string", "minLength": 1, "maxLength": 120 },
+    "manifestSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "artifactSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "supersedesPromotionId": { "type": ["string", "null"], "format": "uuid" },
+    "reviewIds": {
+      "type": "array",
+      "items": { "type": "string", "format": "uuid" },
+      "maxItems": 1000,
+      "uniqueItems": true
+    }
+  },
+  "required": ["modelId", "modelVersion", "datasetVersion", "manifestSha256", "artifactSha256", "reviewIds"],
+  "additionalProperties": false
+}

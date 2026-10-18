@@ -1,0 +1,10 @@
+{
+  "status": "IDENTIFIED",
+  "reason": null,
+  "prediction": {
+    "pestId": "dataset-approved-pest",
+    "confidence": 0.92,
+    "bbox": { "x": 0.2, "y": 0.3, "width": 0.22, "height": 0.18 }
+  },
+  "model": { "id": "sids-pest-detector", "version": "1.0.0", "datasetVersion": "sids-pests-v1" }
+}

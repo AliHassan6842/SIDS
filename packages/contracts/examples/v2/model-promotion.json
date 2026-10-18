@@ -1,0 +1,12 @@
+{
+  "id": "60000000-0000-0000-0000-000000000001",
+  "modelId": "sids-pest-detector",
+  "modelVersion": "1.1.0",
+  "datasetVersion": "sids-rice-pests-v1.4",
+  "manifestSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "artifactSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "supersedesPromotionId": null,
+  "reviewIds": [],
+  "promotedBy": "30000000-0000-0000-0000-000000000003",
+  "promotedAt": "2026-08-23T12:30:00Z"
+}

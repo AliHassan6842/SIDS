@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "FAIL_NO_THRESHOLD_MEETS_PREDECLARED_GATES",
+  "checkpoint": "ml\\runs\\classification\\sids-general-insect-classification-v1.0-short-cpu\\best.pt",
+  "dataset_version": "sids-general-insect-classification-v1.1",
+  "classes": [
+    "beetle",
+    "grasshopper",
+    "mosquito"
+  ],
+  "known_validation_support": 28,
+  "ood_calibration_support": 151,
+  "confidence_threshold": null,
+  "margin_threshold": null,
+  "selected_metrics": null,
+  "test_data_read": false
+}

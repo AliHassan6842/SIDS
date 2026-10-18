@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-26",
+  "dataset_version": "sids-general-insect-classification-v1.2",
+  "status": "PREPARED_OPEN_SET_PRODUCT_CANDIDATE_NOT_PROMOTED",
+  "base_known_dataset": "sids-general-insect-classification-v1.0",
+  "ood_component_audit_dataset": "sids-general-insect-classification-v1.1",
+  "known_splits_unchanged": true,
+  "supported_coarse_labels": [
+    "beetle",
+    "grasshopper",
+    "mosquito"
+  ],
+  "internal_training_only_label": "unknown-insect",
+  "unknown_partition_by_disjoint_source_class": {
+    "train": [
+      "aphids",
+      "armyworm"
+    ],
+    "calibration": [
+      "bollworm",
+      "mites"
+    ],
+    "test": [
+      "sawfly",
+      "stem_borer"
+    ]
+  },
+  "unknown_counts": {
+    "train": {
+      "aphids": 48,
+      "armyworm": 48
+    },
+    "calibration": {
+      "bollworm": 55,
+      "mites": 44
+    },
+    "test": {
+      "sawfly": 42,
+      "stem_borer": 49
+    }
+  },
+  "preparation_source_report": "ml/reports/sids-general-insect-classification-v1.1-preparation.json",
+  "preparation_source_report_sha256": "4350c743a98aff6bfd0e77abb474cbfb4ad5d828437b21e939743b9acaab9aa4",
+  "leakage_evidence": "v1.1 global dHash<=2 component audit; no known/OOD near overlap",
+  "limitations": [
+    "Unknown training, calibration, and test source classes are disjoint.",
+    "All labels remain coarse BAU folder labels.",
+    "Agricultural imagery does not establish household-scene performance.",
+    "Known test was previously observed by v1.0 research."
+  ]
+}

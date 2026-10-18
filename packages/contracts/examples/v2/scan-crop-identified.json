@@ -1,0 +1,27 @@
+{
+  "id": "40000000-0000-0000-0000-000000000001",
+  "mode": "CROP_PEST",
+  "crop": { "id": "10000000-0000-0000-0000-000000000001", "slug": "rice", "name": "Rice", "imageUrl": "/catalog/crops/rice.jpg", "identificationSupported": true },
+  "status": "IDENTIFIED",
+  "reason": null,
+  "confidence": 0.92,
+  "bbox": { "x": 0.2, "y": 0.3, "width": 0.22, "height": 0.18 },
+  "imageUrl": "/api/v1/scans/40000000-0000-0000-0000-000000000001/image",
+  "pest": {
+    "id": "20000000-0000-0000-0000-000000000001",
+    "slug": "rice-leaf-roller",
+    "kind": "CROP_PEST",
+    "commonName": "Rice leaf roller",
+    "scientificName": "Cnaphalocrocis medinalis",
+    "description": "A rice-feeding moth whose larvae fold leaves and feed within folded tissue.",
+    "imageUrl": "/catalog/pests/rice-leaf-roller.jpg",
+    "affectedCrops": [{ "id": "10000000-0000-0000-0000-000000000001", "slug": "rice", "name": "Rice", "imageUrl": "/catalog/crops/rice.jpg", "identificationSupported": true }],
+    "guidance": null,
+    "generalGuidance": null
+  },
+  "model": { "id": "sids-pest-detector", "version": "1.1.0", "datasetVersion": "sids-rice-pests-v1.4" },
+  "trainingConsent": true,
+  "consentedAt": "2026-08-23T12:00:00Z",
+  "reviewStatus": "PENDING",
+  "createdAt": "2026-08-23T12:00:00Z"
+}

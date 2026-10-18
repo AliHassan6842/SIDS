@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "dataset_id": "sids-multicrop-pest-detection-v2.0",
+  "task": "pest-detection",
+  "status": "PREPARED_CANDIDATE_NOT_TRAINED_NOT_PROMOTED",
+  "source": "ip102-coco-v1",
+  "taxonomy_authority": "https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_IP102_A_Large-Scale_Benchmark_Dataset_for_Insect_Pest_Recognition_CVPR_2019_paper.pdf",
+  "crop_scope": [
+    "beet",
+    "citrus",
+    "corn",
+    "rice",
+    "wheat"
+  ],
+  "classes": [
+    {
+      "model_index": 0,
+      "crop_slug": "rice",
+      "pest_id": "rice-leaf-roller",
+      "source_category_id": 1,
+      "source_label": "rice leaf roller",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 1,
+      "crop_slug": "rice",
+      "pest_id": "rice-water-weevil",
+      "source_category_id": 11,
+      "source_label": "rice water weevil",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 2,
+      "crop_slug": "corn",
+      "pest_id": "corn-borer",
+      "source_category_id": 23,
+      "source_label": "corn borer",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 3,
+      "crop_slug": "corn",
+      "pest_id": "corn-army-worm",
+      "source_category_id": 24,
+      "source_label": "army worm",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 4,
+      "crop_slug": "corn",
+      "pest_id": "corn-aphids",
+      "source_category_id": 25,
+      "source_label": "aphids",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 5,
+      "crop_slug": "wheat",
+      "pest_id": "english-grain-aphid",
+      "source_category_id": 28,
+      "source_label": "english grain aphid",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 6,
+      "crop_slug": "wheat",
+      "pest_id": "wheat-sawfly",
+      "source_category_id": 35,
+      "source_label": "wheat sawfly",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 7,
+      "crop_slug": "beet",
+      "pest_id": "flea-beetle",
+      "source_category_id": 38,
+      "source_label": "flea beetle",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 8,
+      "crop_slug": "beet",
+      "pest_id": "cabbage-army-worm",
+      "source_category_id": 39,
+      "source_label": "cabbage army worm",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 9,
+      "crop_slug": "beet",
+      "pest_id": "beet-army-worm",
+      "source_category_id": 40,
+      "source_label": "beet army worm",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 10,
+      "crop_slug": "citrus",
+      "pest_id": "icerya-purchasi",
+      "source_category_id": 77,
+      "source_label": "Icerya purchasi Maskell",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 11,
+      "crop_slug": "citrus",
+      "pest_id": "prodenia-litura",
+      "source_category_id": 87,
+      "source_label": "Prodenia litura",
+      "scientific_name_mapping": null
+    }
+  ],
+  "prepared_relative_path": "ml/data/prepared/sids-multicrop-pest-detection-v2.0",
+  "prepared_counts": {
+    "split_images": {
+      "train": 2128,
+      "val": 531,
+      "test": 735
+    },
+    "split_boxes": {
+      "train": 2722,
+      "val": 668,
+      "test": 924
+    },
+    "class_split_images": {
+      "rice-leaf-roller": {
+        "train": 101,
+        "val": 25,
+        "test": 35
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      },
+      "corn-borer": {
+        "train": 256,
+        "val": 64,
+        "test": 85
+      },
+      "corn-army-worm": {
+        "train": 109,
+        "val": 27,
+        "test": 41
+      },
+      "corn-aphids": {
+        "train": 528,
+        "val": 132,
+        "test": 174
+      },
+      "english-grain-aphid": {
+        "train": 78,
+        "val": 19,
+        "test": 26
+      },
+      "wheat-sawfly": {
+        "train": 83,
+        "val": 21,
+        "test": 28
+      },
+      "flea-beetle": {
+        "train": 217,
+        "val": 54,
+        "test": 69
+      },
+      "cabbage-army-worm": {
+        "train": 122,
+        "val": 30,
+        "test": 49
+      },
+      "beet-army-worm": {
+        "train": 217,
+        "val": 55,
+        "test": 83
+      },
+      "icerya-purchasi": {
+        "train": 92,
+        "val": 23,
+        "test": 32
+      },
+      "prodenia-litura": {
+        "train": 231,
+        "val": 58,
+        "test": 83
+      }
+    },
+    "class_split_boxes": {
+      "rice-leaf-roller": {
+        "train": 106,
+        "val": 31,
+        "test": 39
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      },
+      "corn-borer": {
+        "train": 266,
+        "val": 65,
+        "test": 90
+      },
+      "corn-army-worm": {
+        "train": 115,
+        "val": 30,
+        "test": 41
+      },
+      "corn-aphids": {
+        "train": 857,
+        "val": 187,
+        "test": 278
+      },
+      "english-grain-aphid": {
+        "train": 177,
+        "val": 53,
+        "test": 60
+      },
+      "wheat-sawfly": {
+        "train": 89,
+        "val": 22,
+        "test": 29
+      },
+      "flea-beetle": {
+        "train": 245,
+        "val": 58,
+        "test": 74
+      },
+      "cabbage-army-worm": {
+        "train": 135,
+        "val": 30,
+        "test": 56
+      },
+      "beet-army-worm": {
+        "train": 223,
+        "val": 55,
+        "test": 83
+      },
+      "icerya-purchasi": {
+        "train": 168,
+        "val": 52,
+        "test": 59
+      },
+      "prodenia-litura": {
+        "train": 247,
+        "val": 62,
+        "test": 85
+      }
+    }
+  },
+  "split_seed": 20260823,
+  "leakage_policy": "No SHA or dHash-distance<=2 component may cross a split",
+  "preparation_report": "ml/reports/sids-multicrop-pest-detection-v2.0-preparation.json",
+  "preparation_report_sha256": "b7acdce78fd4b584f9d51eea4c0779abac5ec3dd64162cc66cdff5998292ce80",
+  "license": {
+    "ip102": "Academic use only; contact original author for other purposes",
+    "redistribution": "Raw and prepared image material is not committed"
+  },
+  "promotion": {
+    "allowed": false,
+    "reason": "No v2 model has been trained or evaluated"
+  }
+}

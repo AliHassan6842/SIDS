@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Small reviewed catalog media set for the bounded academic SIDS FYP UI",
+  "sourceDataset": "IP102 v1.1 academic-use dataset",
+  "sourceManifest": "ml/data/fetched/FETCH_MANIFEST.json",
+  "usageBoundary": "Representative catalog display only. These files are not additional training inputs and BAU images are not represented as supported pests.",
+  "assets": [
+    {
+      "path": "/catalog/crops/rice.jpg",
+      "sourcePreparedPath": "ml/data/prepared/sids-rice-pest-detection-v1.3/images/test/IP000000110.jpg",
+      "sha256": "094f501574f353b64ed1ddb75875d7b5d1eef208d8e50688b9e36461aa9096fb"
+    },
+    {
+      "path": "/catalog/pests/rice-leaf-roller.jpg",
+      "sourcePreparedPath": "ml/data/prepared/sids-rice-pest-detection-v1.3/images/test/IP000000064.jpg",
+      "sha256": "0798c783b4bf6df26d4cc735af875eade264e6ae10ea51d8ce22631fea8a3d09"
+    },
+    {
+      "path": "/catalog/pests/rice-water-weevil.jpg",
+      "sourcePreparedPath": "ml/data/prepared/sids-rice-pest-detection-v1.3/images/test/IP010000031.jpg",
+      "sha256": "218a9570ac84ed1deab0f5d649888a27d9b9b7d483e9bddcadf7de0c9431dec1"
+    }
+  ]
+}

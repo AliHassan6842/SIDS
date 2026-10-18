@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/IdentificationMode.schema.json",
+  "title": "Identification mode",
+  "enum": ["CROP_PEST", "GENERAL_INSECT"]
+}

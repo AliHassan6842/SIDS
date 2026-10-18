@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "dataset_id": "sids-general-insect-classification-v1.0",
+  "task": "coarse-general-insect-classification",
+  "status": "TRAINED_RESEARCH_CANDIDATE_NOT_PROMOTED",
+  "source": "bau-insectv2-v2",
+  "classes": [
+    {
+      "model_index": 0,
+      "class_slug": "beetle",
+      "source_coarse_label": "beetle",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 1,
+      "class_slug": "grasshopper",
+      "source_coarse_label": "grasshopper",
+      "scientific_name_mapping": null
+    },
+    {
+      "model_index": 2,
+      "class_slug": "mosquito",
+      "source_coarse_label": "mosquito",
+      "scientific_name_mapping": null
+    }
+  ],
+  "prepared_relative_path": "ml/data/prepared/sids-general-insect-classification-v1.0",
+  "prepared_counts": {
+    "beetle": {
+      "train": 42,
+      "val": 9,
+      "test": 9
+    },
+    "grasshopper": {
+      "train": 42,
+      "val": 9,
+      "test": 9
+    },
+    "mosquito": {
+      "train": 46,
+      "val": 10,
+      "test": 10
+    }
+  },
+  "split_seed": 20260823,
+  "leakage_policy": "No perceptual component crosses a prepared split",
+  "preparation_report": "ml/reports/sids-general-insect-classification-v1.0-preparation.json",
+  "preparation_report_sha256": "bc9b279d56157b88169f5d7f17f69fb5fd1c0a72d26850339f5a2e18b6469eb8",
+  "license": "CC BY 4.0",
+  "product_support": false,
+  "experiment_report": "ml/reports/sids-general-insect-classification-v1.0-short-cpu.json",
+  "local_checkpoint": "ml/runs/classification/sids-general-insect-classification-v1.0-short-cpu/best.pt",
+  "promotion": {
+    "allowed": false,
+    "reason": "Closed-set agricultural imagery has no household-scene/OOD/unknown evaluation and no approved runtime classifier contract"
+  }
+}

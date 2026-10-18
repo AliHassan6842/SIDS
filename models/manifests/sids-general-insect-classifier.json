@@ -1,0 +1,21 @@
+{
+  "model_id": "sids-general-insect-classifier",
+  "version": "1.0.0",
+  "dataset_version": "sids-general-insect-classification-v1.2",
+  "artifact_path": "../artifacts/sids-general-insect-classifier-v1.0.0.torchscript",
+  "task": "classification",
+  "input_size": 224,
+  "acceptance_threshold": 0.96,
+  "classes": {
+    "0": "beetle",
+    "1": "grasshopper",
+    "2": "mosquito",
+    "3": "unknown-insect"
+  },
+  "crop_classes": {},
+  "evaluation_summary": {
+    "status": "FAIL_NOT_PROMOTED",
+    "latency_p95_ms": 40.97
+  },
+  "sha256": "2fa10c783717bf0ccb7a59017b64848e1c9529e248b41ebbbf26f62e32bbfcc3"
+}

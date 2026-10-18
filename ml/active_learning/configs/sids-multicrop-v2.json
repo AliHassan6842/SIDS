@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "workflow_id": "sids-multicrop-v2-active-learning",
+  "base_dataset_version": "sids-multicrop-pest-detection-v2.0",
+  "base_dataset_manifest": "ml/dataset-registry/versions/sids-multicrop-pest-detection-v2.0.json",
+  "allowed_crop_classes": {
+    "rice": ["rice-leaf-roller", "rice-water-weevil"],
+    "corn": ["corn-borer", "corn-army-worm", "corn-aphids"],
+    "wheat": ["english-grain-aphid", "wheat-sawfly"],
+    "beet": ["flea-beetle", "cabbage-army-worm", "beet-army-worm"],
+    "citrus": ["icerya-purchasi", "prodenia-litura"]
+  },
+  "selection": {
+    "uncertain_confidence_min": 0.35,
+    "uncertain_confidence_max": 0.75,
+    "maximum_top_two_margin": 0.15,
+    "include_unknown": true,
+    "maximum_batch_size": 200,
+    "seed": 20260823
+  },
+  "review": {
+    "required_statuses": ["approved", "rejected"],
+    "approved_annotations_may_be_empty": true,
+    "minimum_reviewer_id_length": 3,
+    "holdout_group_field": "capture_group",
+    "split_ratios": {"train": 0.7, "val": 0.15, "test": 0.15},
+    "split_seed": 20260823
+  },
+  "retrain_gates": {
+    "public_test_overall_map50_min": 0.65,
+    "public_test_each_class_map50_min": 0.5,
+    "field_holdout_macro_map50_min": 0.5,
+    "known_accepted_precision_min": 0.8,
+    "known_correct_detection_rate_min": 0.3,
+    "unsupported_insect_false_accept_rate_max": 0.1,
+    "non_insect_false_accept_rate_max": 0.1,
+    "runtime_invalid_payload_must_reject": true,
+    "automatic_promotion": false
+  },
+  "guardrails": [
+    "Selection never changes a training dataset.",
+    "Only explicitly reviewed and sealed annotations may be materialized.",
+    "Capture groups never cross train/validation/test.",
+    "Existing public and field holdouts never move into training.",
+    "A retrained artifact remains a candidate until every gate is executed and separately approved."
+  ]
+}

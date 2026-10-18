@@ -1,0 +1,1 @@
+This is deliberately not a JPEG image. It exercises deterministic invalid-payload rejection.

@@ -1,0 +1,7 @@
+[
+  { "id": "10000000-0000-0000-0000-000000000001", "slug": "rice", "name": "Rice", "imageUrl": "/catalog/crops/rice.jpg", "identificationSupported": true },
+  { "id": "10000000-0000-0000-0000-000000000002", "slug": "corn", "name": "Corn", "imageUrl": null, "identificationSupported": false },
+  { "id": "10000000-0000-0000-0000-000000000003", "slug": "wheat", "name": "Wheat", "imageUrl": null, "identificationSupported": false },
+  { "id": "10000000-0000-0000-0000-000000000004", "slug": "beet", "name": "Beet", "imageUrl": null, "identificationSupported": false },
+  { "id": "10000000-0000-0000-0000-000000000005", "slug": "citrus", "name": "Citrus", "imageUrl": null, "identificationSupported": false }
+]

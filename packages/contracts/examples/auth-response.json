@@ -1,0 +1,9 @@
+{
+  "token": "eyJhbGciOiJIUzI1NiJ9.example.signature",
+  "user": {
+    "id": "30000000-0000-0000-0000-000000000001",
+    "email": "farmer@example.com",
+    "fullName": "Example Farmer",
+    "language": "en"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "experiment_id": "sids-rice-pest-detection-v1.4-full-finetune-cpu",
+  "purpose": "Bounded fallback for otherwise valid Rice images whose global edge density marks the subject as small",
+  "training": {
+    "starting_checkpoint": "ml/runs/detect/sids-rice-pest-detection-v1.3-hard-negative-cpu/weights/best.pt",
+    "data": "ml/data/prepared/sids-rice-pest-detection-v1.3/data.yaml",
+    "epochs": 6,
+    "image_size": 320,
+    "batch": 8,
+    "device": "cpu",
+    "workers": 0,
+    "freeze": 0,
+    "seed": 20260822,
+    "deterministic": true,
+    "learning_rate": 0.0005,
+    "cosine_learning_rate": true,
+    "duration_hours": 0.154
+  },
+  "validation": {
+    "overall": {
+      "precision": 0.943,
+      "recall": 0.945,
+      "map50": 0.981,
+      "map50_95": 0.514
+    },
+    "rice_leaf_roller": {
+      "precision": 0.960,
+      "recall": 0.934,
+      "map50": 0.984,
+      "map50_95": 0.551
+    },
+    "rice_water_weevil": {
+      "precision": 0.927,
+      "recall": 0.957,
+      "map50": 0.979,
+      "map50_95": 0.477
+    },
+    "cpu_inference_ms_per_image_at_320": 75.7
+  },
+  "selected_runtime": {
+    "image_size": 480,
+    "views": "FULL_PLUS_CENTER_80_PERCENT",
+    "acceptance_threshold": 0.75,
+    "calibration_known_correct_rate": 0.4583333333,
+    "calibration_known_accepted_precision": 1.0,
+    "calibration_bau_false_accepts": "2/45",
+    "calibration_coco8_false_accepts": "0/4",
+    "heldout_known_correct": "23/65",
+    "heldout_known_correct_rate": 0.3538461538,
+    "heldout_known_accepted_precision": 0.9583333333,
+    "heldout_bau_false_accepts": "1/45",
+    "heldout_coco8_false_accepts": "0/4"
+  },
+  "blocked_alternatives": [
+    {
+      "runtime": "FULL_VIEW_640",
+      "threshold": 0.66,
+      "heldout_known_correct_rate": 0.2307692308,
+      "heldout_known_accepted_precision": 0.8333333333,
+      "reason": "Failed the predeclared 0.30 known correct-detection-rate gate"
+    }
+  ],
+  "artifact": {
+    "promoted_role": "SMALL_SUBJECT_FALLBACK_ONLY",
+    "path": "models/artifacts/sids-rice-pest-detector-v1.1.0.pt",
+    "sha256": "58e305fa035a41225463bd7dec53a272cc68ef91d2864a94e1084ae704d5063e",
+    "manifest": "models/manifests/sids-pest-detector-small-subject.json"
+  },
+  "external_user_probe": {
+    "training_use": "NONE",
+    "source": "User-supplied file; provenance and license not established",
+    "filename": "rice-water-weevil-adult-7-1.jpg",
+    "sha256": "228cc31f07cc00f5895c8ae3a073517170cb9756b92ccbec6f080cc62c74c5df",
+    "direct_detector_result": {
+      "pest": "rice-water-weevil",
+      "confidence": 0.8669272065
+    },
+    "live_browser_java_ai_postgres_result": {
+      "scan_id": "a39dcfe7-d696-44e5-9fad-5c228026cb96",
+      "status": "IDENTIFIED",
+      "pest": "rice-water-weevil",
+      "confidence": 0.862072
+    }
+  },
+  "runtime_smoke": {
+    "known_identified": "21/65",
+    "known_quality_rejections": "22/65",
+    "bau_identified": "0/45",
+    "bau_quality_rejections": "36/45",
+    "coco8_identified": "0/4",
+    "malformed_jpeg": "PASS_REJECTED_INVALID_PAYLOAD"
+  },
+  "limitations": [
+    "This fallback is invoked only for SUBJECT_TOO_SMALL; it does not replace the v1.0 primary detector.",
+    "The external user image is a regression probe, not training or formal field-validation evidence.",
+    "The evidence remains bounded to two IP102-native Rice pest labels and academic FYP use."
+  ]
+}

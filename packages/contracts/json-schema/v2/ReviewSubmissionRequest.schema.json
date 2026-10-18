@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/ReviewSubmissionRequest.schema.json",
+  "title": "Consented owner review submission",
+  "type": "object",
+  "properties": {
+    "proposedLabelSlug": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "maxLength": 96
+    },
+    "notes": { "type": ["string", "null"], "maxLength": 1000 }
+  },
+  "additionalProperties": false
+}

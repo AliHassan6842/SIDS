@@ -1,13 +1,9 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import { getToken } from "./tokenStore";
 
-interface Props { children: React.ReactNode; }
-
-const RequireAuth: React.FC<Props> = ({ children }) => {
-  const token = localStorage.getItem("agrosense_token");
+export function RequireAuth({ children }: { children: ReactNode }) {
   const location = useLocation();
-  if (!token) return <Navigate to="/login" state={{ from: location }} replace />;
-  return <>{children}</>;
-};
-
-export default RequireAuth;
+  if (!getToken()) return <Navigate to="/login" replace state={{ from: location.pathname }} />;
+  return children;
+}

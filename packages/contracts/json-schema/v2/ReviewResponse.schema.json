@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/ReviewResponse.schema.json",
+  "title": "Authorized training-sample review record",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "format": "uuid" },
+    "scanId": { "type": "string", "format": "uuid" },
+    "submittedBy": { "type": "string", "format": "uuid" },
+    "mode": { "$ref": "IdentificationMode.schema.json" },
+    "scanStatus": { "enum": ["IDENTIFIED", "UNKNOWN"] },
+    "proposedLabelSlug": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 96 },
+    "submissionNotes": { "type": ["string", "null"], "maxLength": 1000 },
+    "status": { "enum": ["PENDING", "APPROVED", "REJECTED"] },
+    "assignedReviewerId": { "type": ["string", "null"], "format": "uuid" },
+    "reviewerLabelSlug": { "type": ["string", "null"], "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "maxLength": 96 },
+    "reviewerNotes": { "type": ["string", "null"], "maxLength": 1000 },
+    "claimedAt": { "type": ["string", "null"], "format": "date-time" },
+    "reviewedAt": { "type": ["string", "null"], "format": "date-time" },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "required": ["id", "scanId", "submittedBy", "mode", "scanStatus", "proposedLabelSlug", "submissionNotes", "status", "assignedReviewerId", "reviewerLabelSlug", "reviewerNotes", "claimedAt", "reviewedAt", "createdAt"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "assignedReviewerId": { "type": "string" } }, "required": ["assignedReviewerId"] },
+      "then": { "properties": { "claimedAt": { "type": "string", "format": "date-time" } } },
+      "else": { "properties": { "claimedAt": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "status": { "const": "PENDING" } }, "required": ["status"] },
+      "then": { "properties": { "reviewedAt": { "type": "null" }, "reviewerLabelSlug": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "status": { "const": "APPROVED" } }, "required": ["status"] },
+      "then": {
+        "properties": {
+          "assignedReviewerId": { "type": "string" },
+          "reviewerLabelSlug": { "type": "string" },
+          "reviewedAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "REJECTED" } }, "required": ["status"] },
+      "then": { "properties": { "reviewerLabelSlug": { "type": "null" }, "reviewedAt": { "type": "string", "format": "date-time" } } }
+    }
+  ]
+}

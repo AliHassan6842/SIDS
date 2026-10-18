@@ -1,0 +1,6 @@
+{
+  "status": "REJECTED_IMAGE",
+  "reason": "TOO_BLURRY",
+  "prediction": null,
+  "model": { "id": "sids-pest-detector", "version": "1.0.0", "datasetVersion": "sids-pests-v1" }
+}

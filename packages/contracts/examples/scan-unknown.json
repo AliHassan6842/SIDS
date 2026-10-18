@@ -1,0 +1,16 @@
+{
+  "id": "40000000-0000-0000-0000-000000000002",
+  "crop": {
+    "id": "10000000-0000-0000-0000-000000000001",
+    "slug": "rice",
+    "name": "Rice"
+  },
+  "status": "UNKNOWN",
+  "reason": "NO_DETECTION",
+  "confidence": null,
+  "bbox": null,
+  "imageUrl": "/api/v1/scans/40000000-0000-0000-0000-000000000002/image",
+  "pest": null,
+  "model": { "id": "sids-pest-detector", "version": "1.0.0", "datasetVersion": "sids-pests-v1" },
+  "createdAt": "2026-08-22T12:03:00Z"
+}

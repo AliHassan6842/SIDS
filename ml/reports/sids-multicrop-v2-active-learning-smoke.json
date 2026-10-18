@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "executed_at": "2026-08-23",
+  "status": "PASS_WORKFLOW_SMOKE_NOT_MODEL_EVIDENCE",
+  "config": "ml/active_learning/configs/sids-multicrop-v2.json",
+  "fixture": "ml/active_learning/fixtures/inference-example.jsonl",
+  "steps": [
+    {
+      "command": ".venv\\Scripts\\python.exe ml\\active_learning\\select_review_candidates.py --config ml\\active_learning\\configs\\sids-multicrop-v2.json --inference-jsonl ml\\active_learning\\fixtures\\inference-example.jsonl --image-root . --output ml\\data\\prepared\\active-learning-smoke\\selected-final.jsonl",
+      "result": {"selected": 1}
+    },
+    {
+      "command": ".venv\\Scripts\\python.exe ml\\active_learning\\seal_review_batch.py --config ml\\active_learning\\configs\\sids-multicrop-v2.json --reviewed-jsonl ml\\active_learning\\fixtures\\reviewed-example.jsonl --image-root . --batch-id workflow-smoke-final --output ml\\data\\prepared\\active-learning-smoke\\sealed-final.json",
+      "result": {"sealed": 1, "review_status": "approved", "annotations": 0}
+    },
+    {
+      "command": ".venv\\Scripts\\python.exe ml\\active_learning\\materialize_retrain_candidate.py --workspace ml\\data\\prepared\\active-learning-smoke-workspace-final --config ml\\active_learning\\configs\\sids-multicrop-v2.json --base-dataset ml\\data\\prepared\\sids-multicrop-pest-detection-v2.0 --sealed-batch ml\\data\\prepared\\active-learning-smoke\\sealed-final.json --image-root . --output-version workflow-smoke-v2.1-final",
+      "result": {"approved_images_added": 1, "promotion": "NOT_ALLOWED"}
+    }
+  ],
+  "guardrail_evidence": {
+    "image_root_path_containment_checked": true,
+    "selection_sha256_and_dhash_recorded": true,
+    "reviewer_identity_and_timestamp_required": true,
+    "crop_class_allowlist_checked": true,
+    "normalized_bbox_checked": true,
+    "capture_group_split_assignment": true,
+    "base_exact_and_dhash_distance_lte_2_duplicates_fail_closed": true,
+    "models_directory_written": false,
+    "automatic_promotion": false,
+    "pending_review_fail_closed_executed": true,
+    "unsafe_filename_token_fail_closed_executed": true,
+    "base_source_index_unchanged_after_materialization": true,
+    "base_dataset_revalidated_after_materialization": "PASS_0_ERRORS"
+  },
+  "regression_note": "The first smoke exposed metadata mutation through a hard-linked source-index file. Materialization now unlinks/replaces candidate metadata before writing; a clean rerun modified only the isolated candidate and the base dataset independently revalidated with zero errors.",
+  "limitations": "The COCO8 fixture validates workflow mechanics only and is not crop-pest or active-learning model evidence."
+}

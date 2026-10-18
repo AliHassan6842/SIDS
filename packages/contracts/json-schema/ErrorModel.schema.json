@@ -1,42 +1,35 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://sids.ai/schema/ErrorModel.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v1/ErrorModel.schema.json",
   "title": "ErrorModel",
   "description": "Standard error response schema across all services.",
   "type": "object",
   "properties": {
-    "errorCode": {
+    "code": {
       "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]{1,63}$",
       "description": "A domain-specific, stable error code (e.g., 'IMAGE_DECODE_FAILED', 'RATE_LIMIT_EXCEEDED')."
     },
     "message": {
       "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
       "description": "Human-readable error description."
     },
+    "retryable": {
+      "type": "boolean"
+    },
+    "requestId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-]{1,64}$"
+    },
     "details": {
-      "type": "array",
-      "description": "Additional context or validation errors.",
-      "items": {
-        "type": "object",
-        "properties": {
-          "field": {
-            "type": "string"
-          },
-          "issue": {
-            "type": "string"
-          }
-        },
-        "required": ["issue"]
-      }
-    },
-    "timestamp": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "traceId": {
-      "type": "string",
-      "description": "Distributed tracing ID for debugging."
+      "type": "object",
+      "description": "Bounded, non-sensitive code-specific context.",
+      "maxProperties": 10,
+      "additionalProperties": true
     }
   },
-  "required": ["errorCode", "message", "timestamp"]
+  "required": ["code", "message", "retryable", "requestId", "details"],
+  "additionalProperties": false
 }

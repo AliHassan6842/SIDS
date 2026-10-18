@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "status": "OPEN_SET_CANDIDATE_NOT_TESTED_NOT_PROMOTED",
+  "dataset_version": "sids-general-insect-classification-v1.2",
+  "classes": [
+    "beetle",
+    "grasshopper",
+    "mosquito",
+    "unknown-insect"
+  ],
+  "internal_unknown_index": 3,
+  "seed": 20260826,
+  "epochs": 12,
+  "image_size": 160,
+  "batch_size": 16,
+  "learning_rate": 0.0005,
+  "elapsed_seconds": 129.8734328999417,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.3568706570473392,
+      "train_macro_f1": 0.8461857379767828,
+      "validation_loss": 0.8990982076314491,
+      "validation_macro_f1": 0.6417089461726371
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.14244556801179342,
+      "train_macro_f1": 0.9609199957725639,
+      "validation_loss": 1.1458142244909693,
+      "validation_macro_f1": 0.5537763157082636
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.11609956912234821,
+      "train_macro_f1": 0.9703319964349376,
+      "validation_loss": 0.8133773268677118,
+      "validation_macro_f1": 0.6485621891425087
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.10974738193033017,
+      "train_macro_f1": 0.9690799548850396,
+      "validation_loss": 0.6202497594938503,
+      "validation_macro_f1": 0.682846103441637
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.07549203509481343,
+      "train_macro_f1": 0.991916558018253,
+      "validation_loss": 0.871110832597327,
+      "validation_macro_f1": 0.6581450392426003
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.03641256976839716,
+      "train_macro_f1": 1.0,
+      "validation_loss": 0.7872772489007064,
+      "validation_macro_f1": 0.6675372229943456
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.06386192663020529,
+      "train_macro_f1": 0.9871099473061304,
+      "validation_loss": 0.7285257512190211,
+      "validation_macro_f1": 0.661875976308253
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.040393434370150874,
+      "train_macro_f1": 0.9953604261534496,
+      "validation_loss": 1.0768228534638413,
+      "validation_macro_f1": 0.6410218253968254
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.03927032729050359,
+      "train_macro_f1": 0.9957550902942658,
+      "validation_loss": 0.6680655751641341,
+      "validation_macro_f1": 0.6815476190476191
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.022825990333757568,
+      "train_macro_f1": 1.0,
+      "validation_loss": 0.6681937946109321,
+      "validation_macro_f1": 0.6858479755538579
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.02936455867854895,
+      "train_macro_f1": 0.9905696698815964,
+      "validation_loss": 0.9567009670527902,
+      "validation_macro_f1": 0.6647276334776334
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.024507639715365605,
+      "train_macro_f1": 1.0,
+      "validation_loss": 0.7915088013401181,
+      "validation_macro_f1": 0.6634940380132688
+    }
+  ],
+  "best_validation_macro_f1": 0.6858479755538579,
+  "checkpoint": "ml\\runs\\classification\\sids-general-insect-classification-v1.2-open-set-cpu\\best.pt",
+  "checkpoint_bytes": 6207721,
+  "checkpoint_sha256": "a4edf172edda4722b6b92669a5540e0b1c1764b0dffcda77c603a4a421fa2705",
+  "test_data_read": false,
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu"
+  }
+}

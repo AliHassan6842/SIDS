@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "declared_at": "2026-08-26",
+  "candidate_model_id": "sids-general-insect-classifier",
+  "candidate_model_version": "1.0.0",
+  "dataset_version": "sids-general-insect-classification-v1.1",
+  "supported_coarse_labels": ["beetle", "grasshopper", "mosquito"],
+  "scientific_name_mapping": null,
+  "decision_rule": "accept only when top_probability >= confidence_threshold and top1_minus_top2 >= margin_threshold",
+  "threshold_selection": {
+    "data": "known validation plus BAU class-disjoint OOD calibration only",
+    "minimum_known_accepted_precision": 0.9,
+    "minimum_known_coverage": 0.65,
+    "minimum_per_class_known_coverage": 0.5,
+    "maximum_ood_false_accept_rate": 0.05,
+    "objective": "highest known coverage, then lowest OOD FPR, then highest precision"
+  },
+  "promotion_gates": {
+    "minimum_known_accepted_precision": 0.9,
+    "minimum_known_coverage": 0.65,
+    "minimum_per_class_known_coverage": 0.5,
+    "maximum_bau_class_disjoint_ood_false_accept_rate": 0.05,
+    "maximum_coco8_non_insect_false_accept_rate": 0.125,
+    "maximum_cpu_p95_latency_ms": 250,
+    "maximum_artifact_bytes": 8388608,
+    "required_invalid_payload_result": "HTTP_400_INVALID_IMAGE",
+    "required_checksum_result": "PASS",
+    "required_rice_regression_result": "PASS"
+  },
+  "known_test_disclosure": "The 28-image known split was already observed in the v1.0 research run; promotion requires all gates but remains bounded public-dataset evidence, not household-scene evidence.",
+  "automatic_promotion": false
+}

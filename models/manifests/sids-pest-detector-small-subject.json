@@ -1,0 +1,31 @@
+{
+  "model_id": "sids-rice-pest-detector-small-subject",
+  "version": "1.1.0",
+  "task": "pest-detection",
+  "classes": {
+    "0": "rice-leaf-roller",
+    "1": "rice-water-weevil"
+  },
+  "crop_classes": {
+    "rice": [
+      "rice-leaf-roller",
+      "rice-water-weevil"
+    ]
+  },
+  "artifact_path": "../artifacts/sids-rice-pest-detector-v1.1.0.pt",
+  "sha256": "58e305fa035a41225463bd7dec53a272cc68ef91d2864a94e1084ae704d5063e",
+  "input_size": 480,
+  "acceptance_threshold": 0.75,
+  "dataset_version": "sids-rice-pest-detection-v1.4",
+  "evaluation_summary": {
+    "status": "PROMOTED_BOUNDED_SMALL_SUBJECT_FALLBACK",
+    "inference_views": "FULL_PLUS_CENTER_80_PERCENT",
+    "portrait_orientation_normalization": "CLOCKWISE_BEFORE_INFERENCE_WITH_BBOX_REMAP",
+    "heldout_correct_detection_rate": 0.3538461538,
+    "heldout_accepted_precision": 0.9583333333,
+    "bau_holdout_false_accept_rate": 0.0222222222,
+    "coco8_holdout_false_accept_rate": 0.0,
+    "external_adult_water_weevil_confidence": 0.8669271469,
+    "usage_boundary": "ONLY_WHEN_PRIMARY_QUALITY_REASON_IS_SUBJECT_TOO_SMALL"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v1/PestGuidance.schema.json",
+  "title": "Attributable pest guidance owned by Java",
+  "type": "object",
+  "properties": {
+    "damageDescription": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "prevention": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 },
+      "maxItems": 20
+    },
+    "basicManagement": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 },
+      "maxItems": 20
+    },
+    "expertAdviceNote": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "sourceName": { "type": "string", "minLength": 1, "maxLength": 255 },
+    "sourceUrl": { "type": "string", "format": "uri", "pattern": "^https://" },
+    "lastVerifiedAt": { "type": "string", "format": "date" }
+  },
+  "required": ["damageDescription", "prevention", "basicManagement", "expertAdviceNote", "sourceName", "sourceUrl", "lastVerifiedAt"],
+  "additionalProperties": false
+}

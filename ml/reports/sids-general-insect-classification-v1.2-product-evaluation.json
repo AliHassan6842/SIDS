@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "status": "FAIL_NOT_PROMOTED",
+  "model_id": "sids-general-insect-classifier",
+  "model_version": "1.0.0",
+  "dataset_version": "sids-general-insect-classification-v1.2",
+  "classes": [
+    "beetle",
+    "grasshopper",
+    "mosquito",
+    "unknown-insect"
+  ],
+  "supported_classes": [
+    "beetle",
+    "grasshopper",
+    "mosquito"
+  ],
+  "internal_unknown_index": 3,
+  "thresholds": {
+    "confidence_threshold": 0.96,
+    "margin_threshold": 0.9
+  },
+  "known_test_disclosure": "The 28-image known split was already observed in the v1.0 research run; promotion remains bounded public-dataset evidence, not household-scene evidence.",
+  "known_test": {
+    "support": 28,
+    "accepted": 17,
+    "coverage": 0.6071428571428571,
+    "accepted_precision": 1.0,
+    "per_class": {
+      "beetle": {
+        "support": 9,
+        "accepted": 8,
+        "coverage": 0.8888888888888888,
+        "accepted_correct": 8
+      },
+      "grasshopper": {
+        "support": 9,
+        "accepted": 4,
+        "coverage": 0.4444444444444444,
+        "accepted_correct": 4
+      },
+      "mosquito": {
+        "support": 10,
+        "accepted": 5,
+        "coverage": 0.5,
+        "accepted_correct": 5
+      }
+    }
+  },
+  "bau_class_disjoint_ood_test": {
+    "support": 91,
+    "false_accepts": 6,
+    "false_accept_rate": 0.06593406593406594
+  },
+  "coco8_external_non_insect_probe": {
+    "support": 8,
+    "false_accepts": 0,
+    "false_accept_rate": 0.0
+  },
+  "latency": {
+    "samples": 127,
+    "mean_ms": 21.509118893323098,
+    "p95_ms": 40.97490001004189,
+    "scope": "preprocessed single-image model forward on local CPU"
+  },
+  "artifact": "ml\\runs\\classification\\sids-general-insect-classification-v1.2-open-set-cpu\\sids-general-insect-classifier-v1.0.0.torchscript",
+  "artifact_bytes": 6515641,
+  "artifact_sha256": "2fa10c783717bf0ccb7a59017b64848e1c9529e248b41ebbbf26f62e32bbfcc3",
+  "export_max_abs_difference": 0.0,
+  "checks": {
+    "known_accepted_precision": true,
+    "known_coverage": false,
+    "per_class_known_coverage": false,
+    "bau_class_disjoint_ood_fpr": false,
+    "coco8_non_insect_fpr": true,
+    "cpu_p95_latency": true,
+    "artifact_size": true,
+    "export_equivalence": true
+  },
+  "positive_fixture_candidates": {
+    "beetle": [
+      {
+        "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\test\\beetle\\BAU_beetle_2da5655d0f5f2cffb0ff.jpg",
+        "expected": 0,
+        "predicted": 0,
+        "confidence": 0.999992847442627,
+        "margin": 0.9999890923500061,
+        "accepted": true
+      },
+      {
+        "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\test\\beetle\\BAU_beetle_3bfe6a5f0714c3c6eda7.jpg",
+        "expected": 0,
+        "predicted": 0,
+        "confidence": 0.9998014569282532,
+        "margin": 0.9996033906936646,
+        "accepted": true
+      }
+    ],
+    "grasshopper": [
+      {
+        "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\test\\grasshopper\\BAU_grasshopper_10b6c90d72c52e99addb.jpg",
+        "expected": 1,
+        "predicted": 1,
+        "confidence": 0.9998993873596191,
+        "margin": 0.9998037219047546,
+        "accepted": true
+      },
+      {
+        "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\test\\grasshopper\\BAU_grasshopper_14012f0d5ceba0f55a1e.jpg",
+        "expected": 1,
+        "predicted": 1,
+        "confidence": 0.9995742440223694,
+        "margin": 0.9991625547409058,
+        "accepted": true
+      }
+    ],
+    "mosquito": [
+      {
+        "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\test\\mosquito\\BAU_mosquito_129e325fcefa847e8bce.jpg",
+        "expected": 2,
+        "predicted": 2,
+        "confidence": 0.9957597851753235,
+        "margin": 0.9921570420265198,
+        "accepted": true
+      },
+      {
+        "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\test\\mosquito\\BAU_mosquito_464940dfa956fb2d102c.jpg",
+        "expected": 2,
+        "predicted": 2,
+        "confidence": 0.9971392154693604,
+        "margin": 0.9946070909500122,
+        "accepted": true
+      }
+    ]
+  },
+  "ood_false_accept_rows": [
+    {
+      "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\unknown\\test\\sawfly\\BAU_OPEN_sawfly_1dbafb76649d65f58480.jpg",
+      "predicted": 0,
+      "confidence": 0.9756755828857422,
+      "margin": 0.9578667283058167,
+      "accepted": true
+    },
+    {
+      "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\unknown\\test\\sawfly\\BAU_OPEN_sawfly_acee43083f5631f6fe91.jpg",
+      "predicted": 0,
+      "confidence": 0.9998071789741516,
+      "margin": 0.9996735453605652,
+      "accepted": true
+    },
+    {
+      "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\unknown\\test\\sawfly\\BAU_OPEN_sawfly_c653e22c270fa33a9f65.jpg",
+      "predicted": 0,
+      "confidence": 0.998388409614563,
+      "margin": 0.9971839785575867,
+      "accepted": true
+    },
+    {
+      "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\unknown\\test\\sawfly\\BAU_OPEN_sawfly_e397ad015c342859add0.jpg",
+      "predicted": 1,
+      "confidence": 0.9673041701316833,
+      "margin": 0.938273549079895,
+      "accepted": true
+    },
+    {
+      "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\unknown\\test\\sawfly\\BAU_OPEN_sawfly_e3f21c79a9d3fb9b7105.jpg",
+      "predicted": 0,
+      "confidence": 0.9824050068855286,
+      "margin": 0.970416247844696,
+      "accepted": true
+    },
+    {
+      "path": "ml\\data\\prepared\\sids-general-insect-classification-v1.2\\unknown\\test\\stem_borer\\BAU_OPEN_stem_borer_e357c87d133e80110753.jpg",
+      "predicted": 1,
+      "confidence": 0.9876590371131897,
+      "margin": 0.9761640429496765,
+      "accepted": true
+    }
+  ],
+  "coco8_rows": [
+    {
+      "path": "datasets\\coco8\\images\\train\\000000000009.jpg",
+      "predicted": 0,
+      "confidence": 0.51080721616745,
+      "margin": 0.028378784656524658,
+      "accepted": false
+    },
+    {
+      "path": "datasets\\coco8\\images\\train\\000000000025.jpg",
+      "predicted": 3,
+      "confidence": 0.8721170425415039,
+      "margin": 0.8058311343193054,
+      "accepted": false
+    },
+    {
+      "path": "datasets\\coco8\\images\\train\\000000000030.jpg",
+      "predicted": 1,
+      "confidence": 0.6660333871841431,
+      "margin": 0.4819020628929138,
+      "accepted": false
+    },
+    {
+      "path": "datasets\\coco8\\images\\train\\000000000034.jpg",
+      "predicted": 0,
+      "confidence": 0.8901087045669556,
+      "margin": 0.8252556324005127,
+      "accepted": false
+    },
+    {
+      "path": "datasets\\coco8\\images\\val\\000000000036.jpg",
+      "predicted": 0,
+      "confidence": 0.6083266735076904,
+      "margin": 0.2344948947429657,
+      "accepted": false
+    },
+    {
+      "path": "datasets\\coco8\\images\\val\\000000000042.jpg",
+      "predicted": 0,
+      "confidence": 0.6772404313087463,
+      "margin": 0.3746524155139923,
+      "accepted": false
+    },
+    {
+      "path": "datasets\\coco8\\images\\val\\000000000049.jpg",
+      "predicted": 3,
+      "confidence": 0.6715165376663208,
+      "margin": 0.49649617075920105,
+      "accepted": false
+    },
+    {
+      "path": "datasets\\coco8\\images\\val\\000000000061.jpg",
+      "predicted": 3,
+      "confidence": 0.984679639339447,
+      "margin": 0.9759595394134521,
+      "accepted": false
+    }
+  ],
+  "test_executed_once": true,
+  "promotion": "NOT_PERFORMED_BY_EVALUATOR"
+}

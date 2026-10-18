@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v1/LoginRequest.schema.json",
+  "title": "Login request",
+  "type": "object",
+  "properties": {
+    "email": { "type": "string", "format": "email", "maxLength": 320 },
+    "password": { "type": "string", "minLength": 1, "pattern": ".*\\S.*" }
+  },
+  "required": ["email", "password"],
+  "additionalProperties": false
+}

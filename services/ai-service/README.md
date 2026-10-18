@@ -1,9 +1,16 @@
-# AI service boundary
+# SIDS private AI service
 
-This directory is reserved for the future production Python/FastAPI inference runtime owned by the AI / Research Lead. No service or Python package is initialized in F0.
+Python 3.11/FastAPI service for bounded image decoding, sanitization, quality validation, and approved rice-pest model inference. It does not own users, authorization, agronomic policy, or durable business data.
 
-Planned technology includes FastAPI, Pydantic, PyTorch, OpenCV, Pillow, ONNX Runtime, NumPy, Albumentations, pytest, Ruff, and Pyright or Mypy.
+Install and verify with the committed Poetry lockfile:
 
-The runtime will validate image quality, route supported problem types, execute approved pest/disease/severity models, compute embeddings and similar-case features, express uncertainty and unknown/OOD outcomes, and return inference/model metadata.
+```powershell
+python -m pip install poetry==2.1.3
+poetry install --with dev
+poetry run ruff check src tests
+poetry run mypy src
+poetry run pytest
+poetry run uvicorn sids_ai.app:app --app-dir src --reload --port 8000
+```
 
-Python performs computation. It must not choose pesticides, dosages, legal treatments, economic thresholds, farm-wide risk, user authorization, or farm permissions.
+`AI_SERVICE_SERVICE_TOKEN` protects private endpoints. `AI_SERVICE_MODEL_MANIFEST` points to the promoted manifest described in the root README. `/health` is liveness; `/ready` reports whether a checksum-verified model is loaded.

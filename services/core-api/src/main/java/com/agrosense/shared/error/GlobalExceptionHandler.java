@@ -1,70 +1,42 @@
 package com.agrosense.shared.error;
 
-import com.agrosense.shared.error.exceptions.AuthorizationException;
-import com.agrosense.shared.error.exceptions.BaseException;
-import com.agrosense.shared.error.exceptions.BusinessRuleViolationException;
-import com.agrosense.shared.error.exceptions.ResourceNotFoundException;
+import jakarta.servlet.http.HttpServletRequest;
+import java.util.Map;
+import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.context.request.WebRequest;
-
-import java.util.UUID;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex, WebRequest request) {
-        return buildResponse(HttpStatus.NOT_FOUND, ex, request);
+    @ExceptionHandler(ApiException.class)
+    ResponseEntity<ApiError> api(ApiException e, HttpServletRequest request) {
+        return ResponseEntity.status(e.status()).body(error(e.code(), e.getMessage(), e.retryable(), request));
     }
-
-    @ExceptionHandler(AuthorizationException.class)
-    public ResponseEntity<ErrorResponse> handleAuthorizationException(AuthorizationException ex, WebRequest request) {
-        return buildResponse(HttpStatus.FORBIDDEN, ex, request);
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    ResponseEntity<ApiError> validation(MethodArgumentNotValidException e, HttpServletRequest request) {
+        return ResponseEntity.badRequest().body(error("VALIDATION_FAILED", "Request validation failed.", false, request));
     }
-
-    @ExceptionHandler(BusinessRuleViolationException.class)
-    public ResponseEntity<ErrorResponse> handleBusinessRuleViolationException(BusinessRuleViolationException ex, WebRequest request) {
-        return buildResponse(HttpStatus.UNPROCESSABLE_ENTITY, ex, request);
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    ResponseEntity<ApiError> invalidPathValue(MethodArgumentTypeMismatchException e, HttpServletRequest request) {
+        return ResponseEntity.badRequest().body(error("VALIDATION_FAILED", "Request validation failed.", false, request));
     }
-
-    @ExceptionHandler(BaseException.class)
-    public ResponseEntity<ErrorResponse> handleBaseException(BaseException ex, WebRequest request) {
-        return buildResponse(HttpStatus.BAD_REQUEST, ex, request);
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    ResponseEntity<ApiError> uploadTooLarge(MaxUploadSizeExceededException e, HttpServletRequest request) {
+        return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
+            .body(error("IMAGE_TOO_LARGE", "Image exceeds the byte limit.", true, request));
     }
-
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleAllUncaughtException(Exception ex, WebRequest request) {
-        String requestId = getRequestId(request);
-        ErrorResponse errorResponse = new ErrorResponse(
-                "INTERNAL_SERVER_ERROR",
-                "An unexpected error occurred.",
-                requestId,
-                true,
-                null
-        );
-        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+    ResponseEntity<ApiError> unexpected(Exception e, HttpServletRequest request) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+            .body(error("INTERNAL_ERROR", "The request could not be completed.", true, request));
     }
-
-    private ResponseEntity<ErrorResponse> buildResponse(HttpStatus status, BaseException ex, WebRequest request) {
-        String requestId = getRequestId(request);
-        ErrorResponse errorResponse = new ErrorResponse(
-                ex.getCode(),
-                ex.getMessage(),
-                requestId,
-                ex.isRetryable(),
-                ex.getDetails()
-        );
-        return new ResponseEntity<>(errorResponse, status);
-    }
-
-    private String getRequestId(WebRequest request) {
-        String reqId = request.getHeader("X-Request-Id");
-        if (reqId == null || reqId.isBlank()) {
-            reqId = UUID.randomUUID().toString();
-        }
-        return reqId;
+    private ApiError error(String code, String message, boolean retryable, HttpServletRequest request) {
+        Object existing = request.getAttribute("requestId");
+        return new ApiError(code, message, retryable, existing == null ? UUID.randomUUID().toString() : existing.toString(), Map.of());
     }
 }

@@ -1,0 +1,25 @@
+{
+  "id": "20000000-0000-0000-0000-000000000001",
+  "slug": "rice-leaf-roller",
+  "commonName": "Rice leaf roller",
+  "scientificName": "Cnaphalocrocis medinalis",
+  "description": "A rice-feeding moth whose larvae fold leaves and feed within the folded leaf tissue.",
+  "imageUrl": "/catalog/pests/rice-leaf-roller.jpg",
+  "affectedCrops": [
+    {
+      "id": "10000000-0000-0000-0000-000000000001",
+      "slug": "rice",
+      "name": "Rice",
+      "imageUrl": "/catalog/crops/rice.jpg"
+    }
+  ],
+  "guidance": {
+    "damageDescription": "Larvae fold rice leaves and scrape green tissue.",
+    "prevention": ["Conserve spiders and other natural enemies."],
+    "basicManagement": ["Inspect folded leaves to confirm larvae are present."],
+    "expertAdviceNote": "Identification alone does not determine whether pesticide treatment is required.",
+    "sourceName": "IRRI Rice Knowledge Bank — Insects",
+    "sourceUrl": "https://www.knowledgebank.irri.org/step-by-step-production/growth/pests-and-diseases/insects",
+    "lastVerifiedAt": "2026-08-22"
+  }
+}

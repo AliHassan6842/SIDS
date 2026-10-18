@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sids.local/contracts/v2/TrainingConsentResponse.schema.json",
+  "title": "Current owner-controlled training consent",
+  "type": "object",
+  "properties": {
+    "scanId": { "type": "string", "format": "uuid" },
+    "trainingConsent": { "type": "boolean" },
+    "consentedAt": { "type": ["string", "null"], "format": "date-time" },
+    "reviewStatus": { "$ref": "ReviewStatus.schema.json" }
+  },
+  "required": ["scanId", "trainingConsent", "consentedAt", "reviewStatus"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "trainingConsent": { "const": true } }, "required": ["trainingConsent"] },
+      "then": { "properties": { "consentedAt": { "type": "string", "format": "date-time" } } },
+      "else": { "properties": { "consentedAt": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "reviewStatus": { "const": "PENDING" } }, "required": ["reviewStatus"] },
+      "then": { "properties": { "trainingConsent": { "const": true } } }
+    }
+  ]
+}

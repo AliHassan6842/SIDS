@@ -1,0 +1,6 @@
+{
+  "valid": false,
+  "reason": "TOO_BLURRY",
+  "insectCandidate": true,
+  "quality": { "brightness": "OK", "blur": "LOW", "subjectSize": "OK" }
+}

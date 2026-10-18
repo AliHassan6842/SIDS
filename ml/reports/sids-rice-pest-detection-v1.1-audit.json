@@ -1,0 +1,1866 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-22",
+  "dataset_version": "sids-rice-pest-detection-v1.1",
+  "ip102": {
+    "train": {
+      "images_declared": 15171,
+      "annotations_declared": 17833,
+      "categories_declared": 102,
+      "missing_image_files": 0,
+      "invalid_image_files": {},
+      "dimension_mismatches": 3,
+      "bbox_issues": {
+        "NON_POSITIVE_AREA": 1,
+        "OUT_OF_BOUNDS": 3
+      },
+      "category_counts": [
+        {
+          "source_category_id": 1,
+          "source_name": "rice leaf roller",
+          "images": 139,
+          "boxes": 151
+        },
+        {
+          "source_category_id": 2,
+          "source_name": "rice leaf caterpillar",
+          "images": 91,
+          "boxes": 104
+        },
+        {
+          "source_category_id": 3,
+          "source_name": "paddy stem maggot",
+          "images": 20,
+          "boxes": 20
+        },
+        {
+          "source_category_id": 4,
+          "source_name": "asiatic rice borer",
+          "images": 133,
+          "boxes": 145
+        },
+        {
+          "source_category_id": 5,
+          "source_name": "yellow rice borer",
+          "images": 65,
+          "boxes": 66
+        },
+        {
+          "source_category_id": 6,
+          "source_name": "rice gall midge",
+          "images": 74,
+          "boxes": 76
+        },
+        {
+          "source_category_id": 7,
+          "source_name": "Rice Stemfly",
+          "images": 22,
+          "boxes": 22
+        },
+        {
+          "source_category_id": 8,
+          "source_name": "brown plant hopper",
+          "images": 89,
+          "boxes": 95
+        },
+        {
+          "source_category_id": 9,
+          "source_name": "white backed plant hopper",
+          "images": 62,
+          "boxes": 62
+        },
+        {
+          "source_category_id": 10,
+          "source_name": "small brown plant hopper",
+          "images": 41,
+          "boxes": 42
+        },
+        {
+          "source_category_id": 11,
+          "source_name": "rice water weevil",
+          "images": 123,
+          "boxes": 123
+        },
+        {
+          "source_category_id": 12,
+          "source_name": "rice leafhopper",
+          "images": 94,
+          "boxes": 96
+        },
+        {
+          "source_category_id": 13,
+          "source_name": "grain spreader thrips",
+          "images": 16,
+          "boxes": 16
+        },
+        {
+          "source_category_id": 14,
+          "source_name": "rice shell pest",
+          "images": 29,
+          "boxes": 29
+        },
+        {
+          "source_category_id": 15,
+          "source_name": "grub",
+          "images": 347,
+          "boxes": 556
+        },
+        {
+          "source_category_id": 16,
+          "source_name": "mole cricket",
+          "images": 690,
+          "boxes": 696
+        },
+        {
+          "source_category_id": 17,
+          "source_name": "wireworm",
+          "images": 339,
+          "boxes": 423
+        },
+        {
+          "source_category_id": 18,
+          "source_name": "white margined moth",
+          "images": 39,
+          "boxes": 47
+        },
+        {
+          "source_category_id": 19,
+          "source_name": "black cutworm",
+          "images": 240,
+          "boxes": 250
+        },
+        {
+          "source_category_id": 20,
+          "source_name": "large cutworm",
+          "images": 122,
+          "boxes": 136
+        },
+        {
+          "source_category_id": 21,
+          "source_name": "yellow cutworm",
+          "images": 155,
+          "boxes": 166
+        },
+        {
+          "source_category_id": 22,
+          "source_name": "red spider",
+          "images": 128,
+          "boxes": 131
+        },
+        {
+          "source_category_id": 23,
+          "source_name": "corn borer",
+          "images": 339,
+          "boxes": 350
+        },
+        {
+          "source_category_id": 24,
+          "source_name": "army worm",
+          "images": 165,
+          "boxes": 175
+        },
+        {
+          "source_category_id": 25,
+          "source_name": "aphids",
+          "images": 703,
+          "boxes": 1113
+        },
+        {
+          "source_category_id": 26,
+          "source_name": "Potosiabre vitarsis",
+          "images": 162,
+          "boxes": 191
+        },
+        {
+          "source_category_id": 27,
+          "source_name": "peach borer",
+          "images": 193,
+          "boxes": 204
+        },
+        {
+          "source_category_id": 28,
+          "source_name": "english grain aphid",
+          "images": 104,
+          "boxes": 250
+        },
+        {
+          "source_category_id": 29,
+          "source_name": "green bug",
+          "images": 22,
+          "boxes": 60
+        },
+        {
+          "source_category_id": 30,
+          "source_name": "bird cherry-oataphid",
+          "images": 54,
+          "boxes": 97
+        },
+        {
+          "source_category_id": 31,
+          "source_name": "wheat blossom midge",
+          "images": 19,
+          "boxes": 19
+        },
+        {
+          "source_category_id": 32,
+          "source_name": "penthaleus major",
+          "images": 57,
+          "boxes": 58
+        },
+        {
+          "source_category_id": 33,
+          "source_name": "longlegged spider mite",
+          "images": 47,
+          "boxes": 49
+        },
+        {
+          "source_category_id": 34,
+          "source_name": "wheat phloeothrips",
+          "images": 73,
+          "boxes": 86
+        },
+        {
+          "source_category_id": 35,
+          "source_name": "wheat sawfly",
+          "images": 110,
+          "boxes": 117
+        },
+        {
+          "source_category_id": 36,
+          "source_name": "cerodonta denticornis",
+          "images": 21,
+          "boxes": 22
+        },
+        {
+          "source_category_id": 37,
+          "source_name": "beet fly",
+          "images": 27,
+          "boxes": 27
+        },
+        {
+          "source_category_id": 38,
+          "source_name": "flea beetle",
+          "images": 276,
+          "boxes": 310
+        },
+        {
+          "source_category_id": 39,
+          "source_name": "cabbage army worm",
+          "images": 197,
+          "boxes": 210
+        },
+        {
+          "source_category_id": 40,
+          "source_name": "beet army worm",
+          "images": 330,
+          "boxes": 337
+        },
+        {
+          "source_category_id": 41,
+          "source_name": "Beet spot flies",
+          "images": 55,
+          "boxes": 57
+        },
+        {
+          "source_category_id": 42,
+          "source_name": "meadow moth",
+          "images": 78,
+          "boxes": 80
+        },
+        {
+          "source_category_id": 43,
+          "source_name": "beet weevil",
+          "images": 117,
+          "boxes": 126
+        },
+        {
+          "source_category_id": 44,
+          "source_name": "sericaorient alismots chulsky",
+          "images": 65,
+          "boxes": 82
+        },
+        {
+          "source_category_id": 45,
+          "source_name": "alfalfa weevil",
+          "images": 66,
+          "boxes": 72
+        },
+        {
+          "source_category_id": 46,
+          "source_name": "flax budworm",
+          "images": 328,
+          "boxes": 350
+        },
+        {
+          "source_category_id": 47,
+          "source_name": "alfalfa plant bug",
+          "images": 182,
+          "boxes": 191
+        },
+        {
+          "source_category_id": 48,
+          "source_name": "tarnished plant bug",
+          "images": 278,
+          "boxes": 294
+        },
+        {
+          "source_category_id": 49,
+          "source_name": "Locustoidea",
+          "images": 426,
+          "boxes": 443
+        },
+        {
+          "source_category_id": 50,
+          "source_name": "lytta polita",
+          "images": 195,
+          "boxes": 219
+        },
+        {
+          "source_category_id": 51,
+          "source_name": "legume blister beetle",
+          "images": 348,
+          "boxes": 380
+        },
+        {
+          "source_category_id": 52,
+          "source_name": "blister beetle",
+          "images": 748,
+          "boxes": 815
+        },
+        {
+          "source_category_id": 53,
+          "source_name": "therioaphis maculata Buckton",
+          "images": 2,
+          "boxes": 2
+        },
+        {
+          "source_category_id": 54,
+          "source_name": "odontothrips loti",
+          "images": 52,
+          "boxes": 52
+        },
+        {
+          "source_category_id": 55,
+          "source_name": "Thrips",
+          "images": 38,
+          "boxes": 39
+        },
+        {
+          "source_category_id": 56,
+          "source_name": "alfalfa seed chalcid",
+          "images": 16,
+          "boxes": 16
+        },
+        {
+          "source_category_id": 57,
+          "source_name": "Pieris canidia",
+          "images": 45,
+          "boxes": 46
+        },
+        {
+          "source_category_id": 58,
+          "source_name": "Apolygus lucorum",
+          "images": 28,
+          "boxes": 28
+        },
+        {
+          "source_category_id": 59,
+          "source_name": "Limacodidae",
+          "images": 84,
+          "boxes": 177
+        },
+        {
+          "source_category_id": 60,
+          "source_name": "Viteus vitifoliae",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 61,
+          "source_name": "Colomerus vitis",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 62,
+          "source_name": "Brevipoalpus lewisi McGregor",
+          "images": 2,
+          "boxes": 2
+        },
+        {
+          "source_category_id": 63,
+          "source_name": "oides decempunctata",
+          "images": 107,
+          "boxes": 141
+        },
+        {
+          "source_category_id": 64,
+          "source_name": "Polyphagotars onemus latus",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 65,
+          "source_name": "Pseudococcus comstocki Kuwana",
+          "images": 41,
+          "boxes": 60
+        },
+        {
+          "source_category_id": 66,
+          "source_name": "parathrene regalis",
+          "images": 25,
+          "boxes": 25
+        },
+        {
+          "source_category_id": 67,
+          "source_name": "Ampelophaga",
+          "images": 223,
+          "boxes": 223
+        },
+        {
+          "source_category_id": 68,
+          "source_name": "Lycorma delicatula",
+          "images": 270,
+          "boxes": 270
+        },
+        {
+          "source_category_id": 69,
+          "source_name": "Xylotrechus",
+          "images": 126,
+          "boxes": 126
+        },
+        {
+          "source_category_id": 70,
+          "source_name": "Cicadella viridis",
+          "images": 165,
+          "boxes": 165
+        },
+        {
+          "source_category_id": 71,
+          "source_name": "Miridae",
+          "images": 1012,
+          "boxes": 1014
+        },
+        {
+          "source_category_id": 72,
+          "source_name": "Trialeurodes vaporariorum",
+          "images": 84,
+          "boxes": 89
+        },
+        {
+          "source_category_id": 73,
+          "source_name": "Erythroneura apicalis",
+          "images": 10,
+          "boxes": 11
+        },
+        {
+          "source_category_id": 74,
+          "source_name": "Papilio xuthus",
+          "images": 79,
+          "boxes": 86
+        },
+        {
+          "source_category_id": 75,
+          "source_name": "Panonchus citri McGregor",
+          "images": 34,
+          "boxes": 68
+        },
+        {
+          "source_category_id": 76,
+          "source_name": "Phyllocoptes oleiverus ashmead",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 77,
+          "source_name": "Icerya purchasi Maskell",
+          "images": 126,
+          "boxes": 231
+        },
+        {
+          "source_category_id": 78,
+          "source_name": "Unaspis yanonensis",
+          "images": 25,
+          "boxes": 444
+        },
+        {
+          "source_category_id": 79,
+          "source_name": "Ceroplastes rubens",
+          "images": 52,
+          "boxes": 285
+        },
+        {
+          "source_category_id": 80,
+          "source_name": "Chrysomphalus aonidum",
+          "images": 40,
+          "boxes": 144
+        },
+        {
+          "source_category_id": 81,
+          "source_name": "Parlatoria zizyphus Lucus",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 82,
+          "source_name": "Nipaecoccus vastalor",
+          "images": 22,
+          "boxes": 34
+        },
+        {
+          "source_category_id": 83,
+          "source_name": "Aleurocanthus spiniferus",
+          "images": 48,
+          "boxes": 121
+        },
+        {
+          "source_category_id": 84,
+          "source_name": "Tetradacus c Bactrocera minax",
+          "images": 37,
+          "boxes": 45
+        },
+        {
+          "source_category_id": 85,
+          "source_name": "Dacus dorsalis(Hendel)",
+          "images": 92,
+          "boxes": 105
+        },
+        {
+          "source_category_id": 86,
+          "source_name": "Bactrocera tsuneonis",
+          "images": 20,
+          "boxes": 21
+        },
+        {
+          "source_category_id": 87,
+          "source_name": "Prodenia litura",
+          "images": 331,
+          "boxes": 352
+        },
+        {
+          "source_category_id": 88,
+          "source_name": "Adristyrannus",
+          "images": 106,
+          "boxes": 106
+        },
+        {
+          "source_category_id": 89,
+          "source_name": "Phyllocnistis citrella Stainton",
+          "images": 18,
+          "boxes": 18
+        },
+        {
+          "source_category_id": 90,
+          "source_name": "Toxoptera citricidus",
+          "images": 14,
+          "boxes": 17
+        },
+        {
+          "source_category_id": 91,
+          "source_name": "Toxoptera aurantii",
+          "images": 18,
+          "boxes": 24
+        },
+        {
+          "source_category_id": 92,
+          "source_name": "Aphis citricola Vander Goot",
+          "images": 5,
+          "boxes": 7
+        },
+        {
+          "source_category_id": 93,
+          "source_name": "Scirtothrips dorsalis Hood",
+          "images": 60,
+          "boxes": 62
+        },
+        {
+          "source_category_id": 94,
+          "source_name": "Dasineura sp",
+          "images": 17,
+          "boxes": 17
+        },
+        {
+          "source_category_id": 95,
+          "source_name": "Lawana imitata Melichar",
+          "images": 102,
+          "boxes": 121
+        },
+        {
+          "source_category_id": 96,
+          "source_name": "Salurnis marginella Guerr",
+          "images": 138,
+          "boxes": 146
+        },
+        {
+          "source_category_id": 97,
+          "source_name": "Deporaus marginatus Pascoe",
+          "images": 51,
+          "boxes": 53
+        },
+        {
+          "source_category_id": 98,
+          "source_name": "Chlumetia transversa",
+          "images": 48,
+          "boxes": 48
+        },
+        {
+          "source_category_id": 99,
+          "source_name": "Mango flat beak leafhopper",
+          "images": 10,
+          "boxes": 10
+        },
+        {
+          "source_category_id": 100,
+          "source_name": "Rhytidodera bowrinii white",
+          "images": 110,
+          "boxes": 111
+        },
+        {
+          "source_category_id": 101,
+          "source_name": "Sternochetus frigidus",
+          "images": 52,
+          "boxes": 53
+        },
+        {
+          "source_category_id": 102,
+          "source_name": "Cicadellidae",
+          "images": 2348,
+          "boxes": 2382
+        }
+      ],
+      "selected_single_class_images": {
+        "asiatic-rice-borer": 133,
+        "rice-leaf-roller": 139,
+        "rice-water-weevil": 123
+      }
+    },
+    "test": {
+      "images_declared": 3798,
+      "annotations_declared": 4444,
+      "categories_declared": 102,
+      "missing_image_files": 0,
+      "invalid_image_files": {},
+      "dimension_mismatches": 0,
+      "bbox_issues": {},
+      "category_counts": [
+        {
+          "source_category_id": 1,
+          "source_name": "rice leaf roller",
+          "images": 35,
+          "boxes": 39
+        },
+        {
+          "source_category_id": 2,
+          "source_name": "rice leaf caterpillar",
+          "images": 23,
+          "boxes": 26
+        },
+        {
+          "source_category_id": 3,
+          "source_name": "paddy stem maggot",
+          "images": 5,
+          "boxes": 5
+        },
+        {
+          "source_category_id": 4,
+          "source_name": "asiatic rice borer",
+          "images": 33,
+          "boxes": 34
+        },
+        {
+          "source_category_id": 5,
+          "source_name": "yellow rice borer",
+          "images": 16,
+          "boxes": 16
+        },
+        {
+          "source_category_id": 6,
+          "source_name": "rice gall midge",
+          "images": 19,
+          "boxes": 19
+        },
+        {
+          "source_category_id": 7,
+          "source_name": "Rice Stemfly",
+          "images": 6,
+          "boxes": 6
+        },
+        {
+          "source_category_id": 8,
+          "source_name": "brown plant hopper",
+          "images": 22,
+          "boxes": 22
+        },
+        {
+          "source_category_id": 9,
+          "source_name": "white backed plant hopper",
+          "images": 16,
+          "boxes": 16
+        },
+        {
+          "source_category_id": 10,
+          "source_name": "small brown plant hopper",
+          "images": 11,
+          "boxes": 12
+        },
+        {
+          "source_category_id": 11,
+          "source_name": "rice water weevil",
+          "images": 30,
+          "boxes": 30
+        },
+        {
+          "source_category_id": 12,
+          "source_name": "rice leafhopper",
+          "images": 23,
+          "boxes": 23
+        },
+        {
+          "source_category_id": 13,
+          "source_name": "grain spreader thrips",
+          "images": 4,
+          "boxes": 4
+        },
+        {
+          "source_category_id": 14,
+          "source_name": "rice shell pest",
+          "images": 7,
+          "boxes": 7
+        },
+        {
+          "source_category_id": 15,
+          "source_name": "grub",
+          "images": 87,
+          "boxes": 118
+        },
+        {
+          "source_category_id": 16,
+          "source_name": "mole cricket",
+          "images": 174,
+          "boxes": 176
+        },
+        {
+          "source_category_id": 17,
+          "source_name": "wireworm",
+          "images": 85,
+          "boxes": 109
+        },
+        {
+          "source_category_id": 18,
+          "source_name": "white margined moth",
+          "images": 10,
+          "boxes": 13
+        },
+        {
+          "source_category_id": 19,
+          "source_name": "black cutworm",
+          "images": 60,
+          "boxes": 67
+        },
+        {
+          "source_category_id": 20,
+          "source_name": "large cutworm",
+          "images": 31,
+          "boxes": 40
+        },
+        {
+          "source_category_id": 21,
+          "source_name": "yellow cutworm",
+          "images": 39,
+          "boxes": 43
+        },
+        {
+          "source_category_id": 22,
+          "source_name": "red spider",
+          "images": 32,
+          "boxes": 37
+        },
+        {
+          "source_category_id": 23,
+          "source_name": "corn borer",
+          "images": 85,
+          "boxes": 90
+        },
+        {
+          "source_category_id": 24,
+          "source_name": "army worm",
+          "images": 41,
+          "boxes": 41
+        },
+        {
+          "source_category_id": 25,
+          "source_name": "aphids",
+          "images": 176,
+          "boxes": 282
+        },
+        {
+          "source_category_id": 26,
+          "source_name": "Potosiabre vitarsis",
+          "images": 41,
+          "boxes": 47
+        },
+        {
+          "source_category_id": 27,
+          "source_name": "peach borer",
+          "images": 48,
+          "boxes": 50
+        },
+        {
+          "source_category_id": 28,
+          "source_name": "english grain aphid",
+          "images": 26,
+          "boxes": 60
+        },
+        {
+          "source_category_id": 29,
+          "source_name": "green bug",
+          "images": 5,
+          "boxes": 12
+        },
+        {
+          "source_category_id": 30,
+          "source_name": "bird cherry-oataphid",
+          "images": 13,
+          "boxes": 28
+        },
+        {
+          "source_category_id": 31,
+          "source_name": "wheat blossom midge",
+          "images": 5,
+          "boxes": 6
+        },
+        {
+          "source_category_id": 32,
+          "source_name": "penthaleus major",
+          "images": 14,
+          "boxes": 14
+        },
+        {
+          "source_category_id": 33,
+          "source_name": "longlegged spider mite",
+          "images": 12,
+          "boxes": 15
+        },
+        {
+          "source_category_id": 34,
+          "source_name": "wheat phloeothrips",
+          "images": 18,
+          "boxes": 22
+        },
+        {
+          "source_category_id": 35,
+          "source_name": "wheat sawfly",
+          "images": 28,
+          "boxes": 29
+        },
+        {
+          "source_category_id": 36,
+          "source_name": "cerodonta denticornis",
+          "images": 5,
+          "boxes": 5
+        },
+        {
+          "source_category_id": 37,
+          "source_name": "beet fly",
+          "images": 7,
+          "boxes": 7
+        },
+        {
+          "source_category_id": 38,
+          "source_name": "flea beetle",
+          "images": 69,
+          "boxes": 74
+        },
+        {
+          "source_category_id": 39,
+          "source_name": "cabbage army worm",
+          "images": 49,
+          "boxes": 56
+        },
+        {
+          "source_category_id": 40,
+          "source_name": "beet army worm",
+          "images": 83,
+          "boxes": 83
+        },
+        {
+          "source_category_id": 41,
+          "source_name": "Beet spot flies",
+          "images": 14,
+          "boxes": 14
+        },
+        {
+          "source_category_id": 42,
+          "source_name": "meadow moth",
+          "images": 20,
+          "boxes": 20
+        },
+        {
+          "source_category_id": 43,
+          "source_name": "beet weevil",
+          "images": 29,
+          "boxes": 31
+        },
+        {
+          "source_category_id": 44,
+          "source_name": "sericaorient alismots chulsky",
+          "images": 16,
+          "boxes": 18
+        },
+        {
+          "source_category_id": 45,
+          "source_name": "alfalfa weevil",
+          "images": 16,
+          "boxes": 19
+        },
+        {
+          "source_category_id": 46,
+          "source_name": "flax budworm",
+          "images": 82,
+          "boxes": 85
+        },
+        {
+          "source_category_id": 47,
+          "source_name": "alfalfa plant bug",
+          "images": 45,
+          "boxes": 46
+        },
+        {
+          "source_category_id": 48,
+          "source_name": "tarnished plant bug",
+          "images": 70,
+          "boxes": 71
+        },
+        {
+          "source_category_id": 49,
+          "source_name": "Locustoidea",
+          "images": 107,
+          "boxes": 109
+        },
+        {
+          "source_category_id": 50,
+          "source_name": "lytta polita",
+          "images": 49,
+          "boxes": 51
+        },
+        {
+          "source_category_id": 51,
+          "source_name": "legume blister beetle",
+          "images": 87,
+          "boxes": 96
+        },
+        {
+          "source_category_id": 52,
+          "source_name": "blister beetle",
+          "images": 187,
+          "boxes": 198
+        },
+        {
+          "source_category_id": 53,
+          "source_name": "therioaphis maculata Buckton",
+          "images": 1,
+          "boxes": 3
+        },
+        {
+          "source_category_id": 54,
+          "source_name": "odontothrips loti",
+          "images": 13,
+          "boxes": 13
+        },
+        {
+          "source_category_id": 55,
+          "source_name": "Thrips",
+          "images": 9,
+          "boxes": 9
+        },
+        {
+          "source_category_id": 56,
+          "source_name": "alfalfa seed chalcid",
+          "images": 4,
+          "boxes": 4
+        },
+        {
+          "source_category_id": 57,
+          "source_name": "Pieris canidia",
+          "images": 11,
+          "boxes": 11
+        },
+        {
+          "source_category_id": 58,
+          "source_name": "Apolygus lucorum",
+          "images": 7,
+          "boxes": 7
+        },
+        {
+          "source_category_id": 59,
+          "source_name": "Limacodidae",
+          "images": 21,
+          "boxes": 47
+        },
+        {
+          "source_category_id": 60,
+          "source_name": "Viteus vitifoliae",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 61,
+          "source_name": "Colomerus vitis",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 62,
+          "source_name": "Brevipoalpus lewisi McGregor",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 63,
+          "source_name": "oides decempunctata",
+          "images": 27,
+          "boxes": 35
+        },
+        {
+          "source_category_id": 64,
+          "source_name": "Polyphagotars onemus latus",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 65,
+          "source_name": "Pseudococcus comstocki Kuwana",
+          "images": 10,
+          "boxes": 13
+        },
+        {
+          "source_category_id": 66,
+          "source_name": "parathrene regalis",
+          "images": 6,
+          "boxes": 6
+        },
+        {
+          "source_category_id": 67,
+          "source_name": "Ampelophaga",
+          "images": 56,
+          "boxes": 56
+        },
+        {
+          "source_category_id": 68,
+          "source_name": "Lycorma delicatula",
+          "images": 68,
+          "boxes": 68
+        },
+        {
+          "source_category_id": 69,
+          "source_name": "Xylotrechus",
+          "images": 31,
+          "boxes": 31
+        },
+        {
+          "source_category_id": 70,
+          "source_name": "Cicadella viridis",
+          "images": 41,
+          "boxes": 41
+        },
+        {
+          "source_category_id": 71,
+          "source_name": "Miridae",
+          "images": 253,
+          "boxes": 254
+        },
+        {
+          "source_category_id": 72,
+          "source_name": "Trialeurodes vaporariorum",
+          "images": 21,
+          "boxes": 23
+        },
+        {
+          "source_category_id": 73,
+          "source_name": "Erythroneura apicalis",
+          "images": 2,
+          "boxes": 2
+        },
+        {
+          "source_category_id": 74,
+          "source_name": "Papilio xuthus",
+          "images": 20,
+          "boxes": 22
+        },
+        {
+          "source_category_id": 75,
+          "source_name": "Panonchus citri McGregor",
+          "images": 9,
+          "boxes": 14
+        },
+        {
+          "source_category_id": 76,
+          "source_name": "Phyllocoptes oleiverus ashmead",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 77,
+          "source_name": "Icerya purchasi Maskell",
+          "images": 32,
+          "boxes": 59
+        },
+        {
+          "source_category_id": 78,
+          "source_name": "Unaspis yanonensis",
+          "images": 6,
+          "boxes": 102
+        },
+        {
+          "source_category_id": 79,
+          "source_name": "Ceroplastes rubens",
+          "images": 13,
+          "boxes": 85
+        },
+        {
+          "source_category_id": 80,
+          "source_name": "Chrysomphalus aonidum",
+          "images": 10,
+          "boxes": 39
+        },
+        {
+          "source_category_id": 81,
+          "source_name": "Parlatoria zizyphus Lucus",
+          "images": 0,
+          "boxes": 0
+        },
+        {
+          "source_category_id": 82,
+          "source_name": "Nipaecoccus vastalor",
+          "images": 6,
+          "boxes": 12
+        },
+        {
+          "source_category_id": 83,
+          "source_name": "Aleurocanthus spiniferus",
+          "images": 12,
+          "boxes": 27
+        },
+        {
+          "source_category_id": 84,
+          "source_name": "Tetradacus c Bactrocera minax",
+          "images": 9,
+          "boxes": 13
+        },
+        {
+          "source_category_id": 85,
+          "source_name": "Dacus dorsalis(Hendel)",
+          "images": 23,
+          "boxes": 26
+        },
+        {
+          "source_category_id": 86,
+          "source_name": "Bactrocera tsuneonis",
+          "images": 5,
+          "boxes": 6
+        },
+        {
+          "source_category_id": 87,
+          "source_name": "Prodenia litura",
+          "images": 83,
+          "boxes": 85
+        },
+        {
+          "source_category_id": 88,
+          "source_name": "Adristyrannus",
+          "images": 27,
+          "boxes": 27
+        },
+        {
+          "source_category_id": 89,
+          "source_name": "Phyllocnistis citrella Stainton",
+          "images": 5,
+          "boxes": 5
+        },
+        {
+          "source_category_id": 90,
+          "source_name": "Toxoptera citricidus",
+          "images": 3,
+          "boxes": 5
+        },
+        {
+          "source_category_id": 91,
+          "source_name": "Toxoptera aurantii",
+          "images": 4,
+          "boxes": 4
+        },
+        {
+          "source_category_id": 92,
+          "source_name": "Aphis citricola Vander Goot",
+          "images": 1,
+          "boxes": 1
+        },
+        {
+          "source_category_id": 93,
+          "source_name": "Scirtothrips dorsalis Hood",
+          "images": 15,
+          "boxes": 15
+        },
+        {
+          "source_category_id": 94,
+          "source_name": "Dasineura sp",
+          "images": 5,
+          "boxes": 5
+        },
+        {
+          "source_category_id": 95,
+          "source_name": "Lawana imitata Melichar",
+          "images": 26,
+          "boxes": 29
+        },
+        {
+          "source_category_id": 96,
+          "source_name": "Salurnis marginella Guerr",
+          "images": 34,
+          "boxes": 37
+        },
+        {
+          "source_category_id": 97,
+          "source_name": "Deporaus marginatus Pascoe",
+          "images": 13,
+          "boxes": 13
+        },
+        {
+          "source_category_id": 98,
+          "source_name": "Chlumetia transversa",
+          "images": 12,
+          "boxes": 12
+        },
+        {
+          "source_category_id": 99,
+          "source_name": "Mango flat beak leafhopper",
+          "images": 3,
+          "boxes": 3
+        },
+        {
+          "source_category_id": 100,
+          "source_name": "Rhytidodera bowrinii white",
+          "images": 28,
+          "boxes": 29
+        },
+        {
+          "source_category_id": 101,
+          "source_name": "Sternochetus frigidus",
+          "images": 12,
+          "boxes": 12
+        },
+        {
+          "source_category_id": 102,
+          "source_name": "Cicadellidae",
+          "images": 588,
+          "boxes": 593
+        }
+      ],
+      "selected_single_class_images": {
+        "asiatic-rice-borer": 33,
+        "rice-leaf-roller": 35,
+        "rice-water-weevil": 30
+      }
+    }
+  },
+  "bau_insectv2": {
+    "annotation_type": "folder-level coarse class labels; no bounding boxes found",
+    "class_counts": {
+      "train": {
+        "aphids": 266,
+        "armyworm": 223,
+        "beetle": 291,
+        "bollworm": 245,
+        "grasshopper": 277,
+        "mites": 254,
+        "mosquito": 295,
+        "sawfly": 200,
+        "stem_borer": 181
+      },
+      "test": {
+        "aphids": 44,
+        "armyworm": 43,
+        "beetle": 50,
+        "bollworm": 36,
+        "grasshopper": 46,
+        "mites": 42,
+        "mosquito": 50,
+        "sawfly": 37,
+        "stem_borer": 36
+      }
+    },
+    "valid_images": {
+      "train": 2232,
+      "test": 384
+    },
+    "invalid_images": {},
+    "exact_duplicate_clusters_cross_split": 303,
+    "exact_duplicate_files_cross_split": 1690,
+    "exact_duplicate_cluster_samples": [
+      [
+        "test/aphids/jpg_0 - Copy.jpg",
+        "test/aphids/jpg_0.jpg",
+        "train/aphids/jpg_0 - Copy (2).jpg",
+        "train/aphids/jpg_0 - Copy (3).jpg",
+        "train/aphids/jpg_0 - Copy (4).jpg",
+        "train/aphids/jpg_0 - Copy.jpg",
+        "train/aphids/jpg_0.jpg"
+      ],
+      [
+        "test/aphids/jpg_42.jpg",
+        "train/aphids/jpg_1 - Copy (2).jpg",
+        "train/aphids/jpg_1 - Copy (3).jpg",
+        "train/aphids/jpg_1 - Copy (4).jpg",
+        "train/aphids/jpg_1 - Copy.jpg",
+        "train/aphids/jpg_1.jpg"
+      ],
+      [
+        "test/aphids/jpg_37.jpg",
+        "train/aphids/jpg_11 - Copy (2).jpg",
+        "train/aphids/jpg_11 - Copy (3).jpg",
+        "train/aphids/jpg_11 - Copy (4).jpg",
+        "train/aphids/jpg_11 - Copy.jpg",
+        "train/aphids/jpg_11.jpg"
+      ],
+      [
+        "test/aphids/jpg_44.jpg",
+        "train/aphids/jpg_12 - Copy (2).jpg",
+        "train/aphids/jpg_12 - Copy (3).jpg",
+        "train/aphids/jpg_12 - Copy (4).jpg",
+        "train/aphids/jpg_12 - Copy.jpg",
+        "train/aphids/jpg_12.jpg"
+      ],
+      [
+        "test/aphids/jpg_46 - Copy.jpg",
+        "test/aphids/jpg_46.jpg",
+        "train/aphids/jpg_13 - Copy (2).jpg",
+        "train/aphids/jpg_13 - Copy (3).jpg",
+        "train/aphids/jpg_13 - Copy (4).jpg",
+        "train/aphids/jpg_13 - Copy.jpg",
+        "train/aphids/jpg_13.jpg"
+      ],
+      [
+        "test/aphids/jpg_56.jpg",
+        "train/aphids/jpg_14 - Copy (2).jpg",
+        "train/aphids/jpg_14 - Copy (3).jpg",
+        "train/aphids/jpg_14 - Copy (4).jpg",
+        "train/aphids/jpg_14 - Copy.jpg",
+        "train/aphids/jpg_14.jpg"
+      ],
+      [
+        "test/aphids/jpg_55 - Copy.jpg",
+        "test/aphids/jpg_55.jpg",
+        "train/aphids/jpg_16 - Copy (2).jpg",
+        "train/aphids/jpg_16 - Copy (3).jpg",
+        "train/aphids/jpg_16 - Copy (4).jpg",
+        "train/aphids/jpg_16 - Copy.jpg",
+        "train/aphids/jpg_16.jpg"
+      ],
+      [
+        "test/aphids/jpg_23.jpg",
+        "train/aphids/jpg_21 - Copy (2).jpg",
+        "train/aphids/jpg_21 - Copy (3).jpg",
+        "train/aphids/jpg_21 - Copy (4).jpg",
+        "train/aphids/jpg_21 - Copy.jpg",
+        "train/aphids/jpg_21.jpg"
+      ],
+      [
+        "test/aphids/jpg_7 - Copy.jpg",
+        "test/aphids/jpg_7.jpg",
+        "train/aphids/jpg_24 - Copy (2).jpg",
+        "train/aphids/jpg_24 - Copy (3).jpg",
+        "train/aphids/jpg_24 - Copy (4).jpg",
+        "train/aphids/jpg_24 - Copy.jpg",
+        "train/aphids/jpg_24.jpg"
+      ],
+      [
+        "test/aphids/jpg_33.jpg",
+        "train/aphids/jpg_25 - Copy (2).jpg",
+        "train/aphids/jpg_25 - Copy (3).jpg",
+        "train/aphids/jpg_25 - Copy (4).jpg",
+        "train/aphids/jpg_25 - Copy.jpg",
+        "train/aphids/jpg_25.jpg"
+      ],
+      [
+        "test/aphids/jpg_19.jpg",
+        "train/aphids/jpg_26 - Copy (2).jpg",
+        "train/aphids/jpg_26 - Copy (3).jpg",
+        "train/aphids/jpg_26 - Copy (4).jpg",
+        "train/aphids/jpg_26 - Copy.jpg",
+        "train/aphids/jpg_26.jpg"
+      ],
+      [
+        "test/aphids/jpg_30.jpg",
+        "train/aphids/jpg_3 - Copy (2).jpg",
+        "train/aphids/jpg_3 - Copy (3).jpg",
+        "train/aphids/jpg_3 - Copy (4).jpg",
+        "train/aphids/jpg_3 - Copy.jpg",
+        "train/aphids/jpg_3.jpg"
+      ],
+      [
+        "test/aphids/jpg_54 - Copy.jpg",
+        "test/aphids/jpg_54.jpg",
+        "train/aphids/jpg_30 - Copy (2).jpg",
+        "train/aphids/jpg_30 - Copy (3).jpg",
+        "train/aphids/jpg_30 - Copy (4).jpg",
+        "train/aphids/jpg_30 - Copy.jpg",
+        "train/aphids/jpg_30.jpg"
+      ],
+      [
+        "test/aphids/jpg_35.jpg",
+        "train/aphids/jpg_32 - Copy (2).jpg",
+        "train/aphids/jpg_32 - Copy (3).jpg",
+        "train/aphids/jpg_32 - Copy (4).jpg",
+        "train/aphids/jpg_32 - Copy.jpg",
+        "train/aphids/jpg_32.jpg"
+      ],
+      [
+        "test/aphids/jpg_6 - Copy.jpg",
+        "test/aphids/jpg_6.jpg",
+        "train/aphids/jpg_33 - Copy (2).jpg",
+        "train/aphids/jpg_33 - Copy (3).jpg",
+        "train/aphids/jpg_33 - Copy (4).jpg",
+        "train/aphids/jpg_33 - Copy.jpg",
+        "train/aphids/jpg_33.jpg"
+      ],
+      [
+        "test/aphids/jpg_40.jpg",
+        "train/aphids/jpg_35 - Copy (2).jpg",
+        "train/aphids/jpg_35 - Copy (3).jpg",
+        "train/aphids/jpg_35 - Copy (4).jpg",
+        "train/aphids/jpg_35 - Copy.jpg",
+        "train/aphids/jpg_35.jpg"
+      ],
+      [
+        "test/aphids/jpg_47.jpg",
+        "train/aphids/jpg_36 - Copy (2).jpg",
+        "train/aphids/jpg_36 - Copy (3).jpg",
+        "train/aphids/jpg_36 - Copy (4).jpg",
+        "train/aphids/jpg_36 - Copy.jpg",
+        "train/aphids/jpg_36.jpg"
+      ],
+      [
+        "test/aphids/jpg_9 - Copy.jpg",
+        "test/aphids/jpg_9.jpg",
+        "train/aphids/jpg_39 - Copy (2).jpg",
+        "train/aphids/jpg_39 - Copy (3).jpg",
+        "train/aphids/jpg_39 - Copy (4).jpg",
+        "train/aphids/jpg_39 - Copy.jpg",
+        "train/aphids/jpg_39.jpg"
+      ],
+      [
+        "test/aphids/jpg_24.jpg",
+        "train/aphids/jpg_42 - Copy (2).jpg",
+        "train/aphids/jpg_42 - Copy (3).jpg",
+        "train/aphids/jpg_42 - Copy (4).jpg",
+        "train/aphids/jpg_42 - Copy.jpg",
+        "train/aphids/jpg_42.jpg"
+      ],
+      [
+        "test/aphids/jpg_29.jpg",
+        "train/aphids/jpg_44 - Copy (2).jpg",
+        "train/aphids/jpg_44 - Copy (3).jpg",
+        "train/aphids/jpg_44 - Copy (4).jpg",
+        "train/aphids/jpg_44 - Copy.jpg",
+        "train/aphids/jpg_44.jpg"
+      ]
+    ],
+    "identical_dhash_clusters_cross_split_review_required": 287,
+    "identical_dhash_cluster_samples": [
+      [
+        "test/aphids/jpg_0 - Copy.jpg",
+        "test/aphids/jpg_0.jpg",
+        "train/aphids/jpg_0 - Copy (2).jpg",
+        "train/aphids/jpg_0 - Copy (3).jpg",
+        "train/aphids/jpg_0 - Copy (4).jpg",
+        "train/aphids/jpg_0 - Copy.jpg",
+        "train/aphids/jpg_0.jpg"
+      ],
+      [
+        "test/aphids/jpg_42.jpg",
+        "train/aphids/jpg_1 - Copy (2).jpg",
+        "train/aphids/jpg_1 - Copy (3).jpg",
+        "train/aphids/jpg_1 - Copy (4).jpg",
+        "train/aphids/jpg_1 - Copy.jpg",
+        "train/aphids/jpg_1.jpg"
+      ],
+      [
+        "test/aphids/jpg_37.jpg",
+        "train/aphids/jpg_11 - Copy (2).jpg",
+        "train/aphids/jpg_11 - Copy (3).jpg",
+        "train/aphids/jpg_11 - Copy (4).jpg",
+        "train/aphids/jpg_11 - Copy.jpg",
+        "train/aphids/jpg_11.jpg"
+      ],
+      [
+        "test/aphids/jpg_44.jpg",
+        "train/aphids/jpg_12 - Copy (2).jpg",
+        "train/aphids/jpg_12 - Copy (3).jpg",
+        "train/aphids/jpg_12 - Copy (4).jpg",
+        "train/aphids/jpg_12 - Copy.jpg",
+        "train/aphids/jpg_12.jpg"
+      ],
+      [
+        "test/aphids/jpg_46 - Copy.jpg",
+        "test/aphids/jpg_46.jpg",
+        "train/aphids/jpg_13 - Copy (2).jpg",
+        "train/aphids/jpg_13 - Copy (3).jpg",
+        "train/aphids/jpg_13 - Copy (4).jpg",
+        "train/aphids/jpg_13 - Copy.jpg",
+        "train/aphids/jpg_13.jpg"
+      ],
+      [
+        "test/aphids/jpg_56.jpg",
+        "train/aphids/jpg_14 - Copy (2).jpg",
+        "train/aphids/jpg_14 - Copy (3).jpg",
+        "train/aphids/jpg_14 - Copy (4).jpg",
+        "train/aphids/jpg_14 - Copy.jpg",
+        "train/aphids/jpg_14.jpg"
+      ],
+      [
+        "test/aphids/jpg_55 - Copy.jpg",
+        "test/aphids/jpg_55.jpg",
+        "test/aphids/jpg_9 - Copy.jpg",
+        "test/aphids/jpg_9.jpg",
+        "train/aphids/jpg_16 - Copy (2).jpg",
+        "train/aphids/jpg_16 - Copy (3).jpg",
+        "train/aphids/jpg_16 - Copy (4).jpg",
+        "train/aphids/jpg_16 - Copy.jpg",
+        "train/aphids/jpg_16.jpg",
+        "train/aphids/jpg_39 - Copy (2).jpg",
+        "train/aphids/jpg_39 - Copy (3).jpg",
+        "train/aphids/jpg_39 - Copy (4).jpg",
+        "train/aphids/jpg_39 - Copy.jpg",
+        "train/aphids/jpg_39.jpg"
+      ],
+      [
+        "test/aphids/jpg_23.jpg",
+        "train/aphids/jpg_21 - Copy (2).jpg",
+        "train/aphids/jpg_21 - Copy (3).jpg",
+        "train/aphids/jpg_21 - Copy (4).jpg",
+        "train/aphids/jpg_21 - Copy.jpg",
+        "train/aphids/jpg_21.jpg"
+      ],
+      [
+        "test/aphids/jpg_7 - Copy.jpg",
+        "test/aphids/jpg_7.jpg",
+        "train/aphids/jpg_24 - Copy (2).jpg",
+        "train/aphids/jpg_24 - Copy (3).jpg",
+        "train/aphids/jpg_24 - Copy (4).jpg",
+        "train/aphids/jpg_24 - Copy.jpg",
+        "train/aphids/jpg_24.jpg"
+      ],
+      [
+        "test/aphids/jpg_33.jpg",
+        "train/aphids/jpg_25 - Copy (2).jpg",
+        "train/aphids/jpg_25 - Copy (3).jpg",
+        "train/aphids/jpg_25 - Copy (4).jpg",
+        "train/aphids/jpg_25 - Copy.jpg",
+        "train/aphids/jpg_25.jpg"
+      ],
+      [
+        "test/aphids/jpg_19.jpg",
+        "train/aphids/jpg_26 - Copy (2).jpg",
+        "train/aphids/jpg_26 - Copy (3).jpg",
+        "train/aphids/jpg_26 - Copy (4).jpg",
+        "train/aphids/jpg_26 - Copy.jpg",
+        "train/aphids/jpg_26.jpg"
+      ],
+      [
+        "test/aphids/jpg_30.jpg",
+        "train/aphids/jpg_3 - Copy (2).jpg",
+        "train/aphids/jpg_3 - Copy (3).jpg",
+        "train/aphids/jpg_3 - Copy (4).jpg",
+        "train/aphids/jpg_3 - Copy.jpg",
+        "train/aphids/jpg_3.jpg"
+      ],
+      [
+        "test/aphids/jpg_54 - Copy.jpg",
+        "test/aphids/jpg_54.jpg",
+        "train/aphids/jpg_30 - Copy (2).jpg",
+        "train/aphids/jpg_30 - Copy (3).jpg",
+        "train/aphids/jpg_30 - Copy (4).jpg",
+        "train/aphids/jpg_30 - Copy.jpg",
+        "train/aphids/jpg_30.jpg"
+      ],
+      [
+        "test/aphids/jpg_35.jpg",
+        "train/aphids/jpg_32 - Copy (2).jpg",
+        "train/aphids/jpg_32 - Copy (3).jpg",
+        "train/aphids/jpg_32 - Copy (4).jpg",
+        "train/aphids/jpg_32 - Copy.jpg",
+        "train/aphids/jpg_32.jpg"
+      ],
+      [
+        "test/aphids/jpg_6 - Copy.jpg",
+        "test/aphids/jpg_6.jpg",
+        "train/aphids/jpg_33 - Copy (2).jpg",
+        "train/aphids/jpg_33 - Copy (3).jpg",
+        "train/aphids/jpg_33 - Copy (4).jpg",
+        "train/aphids/jpg_33 - Copy.jpg",
+        "train/aphids/jpg_33.jpg"
+      ],
+      [
+        "test/aphids/jpg_40.jpg",
+        "train/aphids/jpg_35 - Copy (2).jpg",
+        "train/aphids/jpg_35 - Copy (3).jpg",
+        "train/aphids/jpg_35 - Copy (4).jpg",
+        "train/aphids/jpg_35 - Copy.jpg",
+        "train/aphids/jpg_35.jpg"
+      ],
+      [
+        "test/aphids/jpg_47.jpg",
+        "train/aphids/jpg_36 - Copy (2).jpg",
+        "train/aphids/jpg_36 - Copy (3).jpg",
+        "train/aphids/jpg_36 - Copy (4).jpg",
+        "train/aphids/jpg_36 - Copy.jpg",
+        "train/aphids/jpg_36.jpg"
+      ],
+      [
+        "test/aphids/jpg_24.jpg",
+        "train/aphids/jpg_42 - Copy (2).jpg",
+        "train/aphids/jpg_42 - Copy (3).jpg",
+        "train/aphids/jpg_42 - Copy (4).jpg",
+        "train/aphids/jpg_42 - Copy.jpg",
+        "train/aphids/jpg_42.jpg"
+      ],
+      [
+        "test/aphids/jpg_29.jpg",
+        "train/aphids/jpg_44 - Copy (2).jpg",
+        "train/aphids/jpg_44 - Copy (3).jpg",
+        "train/aphids/jpg_44 - Copy (4).jpg",
+        "train/aphids/jpg_44 - Copy.jpg",
+        "train/aphids/jpg_44.jpg"
+      ],
+      [
+        "test/aphids/jpg_2 - Copy.jpg",
+        "test/aphids/jpg_2.jpg",
+        "train/aphids/jpg_58 - Copy (2).jpg",
+        "train/aphids/jpg_58 - Copy (3).jpg",
+        "train/aphids/jpg_58 - Copy (4).jpg",
+        "train/aphids/jpg_58 - Copy.jpg",
+        "train/aphids/jpg_58.jpg"
+      ]
+    ],
+    "taxonomy_use": "supplementary rejection probe only; no BAU label is mapped to a supported species"
+  },
+  "leakage_control": {
+    "official_train_vs_test": {
+      "removed_exact_train_images": [],
+      "removed_near_duplicate_train_images": [
+        "IP000000134.jpg",
+        "IP000000169.jpg",
+        "IP000000280.jpg",
+        "IP000000304.jpg",
+        "IP000000319.jpg",
+        "IP000000354.jpg",
+        "IP000000432.jpg",
+        "IP000000623.jpg",
+        "IP000000652.jpg",
+        "IP000000706.jpg",
+        "IP000000724.jpg",
+        "IP000000829.jpg",
+        "IP000000982.jpg",
+        "IP003000104.jpg",
+        "IP003000234.jpg",
+        "IP003000341.jpg",
+        "IP003000702.jpg",
+        "IP003000855.jpg",
+        "IP003000866.jpg",
+        "IP010000057.jpg",
+        "IP010000086.jpg",
+        "IP010000098.jpg",
+        "IP010000552.jpg",
+        "IP010000680.jpg",
+        "IP010000845.jpg"
+      ],
+      "near_duplicate_pairs": [
+        {
+          "train": "IP000000134.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000169.jpg",
+          "test": "IP000000082.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP000000280.jpg",
+          "test": "IP000000312.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP000000304.jpg",
+          "test": "IP000000544.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP000000319.jpg",
+          "test": "IP000000190.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000354.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000432.jpg",
+          "test": "IP000001064.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP000000623.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP000000652.jpg",
+          "test": "IP000000000.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000706.jpg",
+          "test": "IP000000082.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000724.jpg",
+          "test": "IP000000861.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000829.jpg",
+          "test": "IP000000110.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP000000982.jpg",
+          "test": "IP000000000.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP003000104.jpg",
+          "test": "IP003000022.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP003000234.jpg",
+          "test": "IP003000857.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP003000341.jpg",
+          "test": "IP003000168.jpg",
+          "dhash_distance": 0
+        },
+        {
+          "train": "IP003000702.jpg",
+          "test": "IP003000857.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP003000855.jpg",
+          "test": "IP003000857.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP003000866.jpg",
+          "test": "IP003000849.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000057.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000086.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000098.jpg",
+          "test": "IP010000683.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP010000552.jpg",
+          "test": "IP010000152.jpg",
+          "dhash_distance": 2
+        },
+        {
+          "train": "IP010000680.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 1
+        },
+        {
+          "train": "IP010000845.jpg",
+          "test": "IP010000031.jpg",
+          "dhash_distance": 1
+        }
+      ],
+      "dhash_distance_threshold": 2
+    },
+    "prepared_train_vs_validation": {
+      "dhash_distance_threshold": 2,
+      "perceptual_components": 315,
+      "multi_image_components": 42,
+      "removed_cross_class_ambiguous_images": [
+        "IP000000205.jpg",
+        "IP000000782.jpg",
+        "IP003000649.jpg",
+        "IP003000787.jpg"
+      ],
+      "split_unit": "perceptual component; no dHash-distance<=2 component crosses train/validation"
+    }
+  },
+  "prepared": {
+    "split_images": {
+      "train": 292,
+      "val": 74,
+      "test": 98
+    },
+    "split_boxes": {
+      "train": 312,
+      "val": 77,
+      "test": 103
+    },
+    "class_split_images": {
+      "rice-leaf-roller": {
+        "train": 99,
+        "val": 25,
+        "test": 35
+      },
+      "asiatic-rice-borer": {
+        "train": 99,
+        "val": 26,
+        "test": 33
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      }
+    },
+    "class_split_boxes": {
+      "rice-leaf-roller": {
+        "train": 109,
+        "val": 26,
+        "test": 39
+      },
+      "asiatic-rice-borer": {
+        "train": 109,
+        "val": 28,
+        "test": 34
+      },
+      "rice-water-weevil": {
+        "train": 94,
+        "val": 23,
+        "test": 30
+      }
+    }
+  },
+  "scope_rule": "Rice-only; source-native IP102 classes with at least 120 official-train images and 30 official-test images. Only images whose annotations contain one selected class are used."
+}
